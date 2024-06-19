@@ -232,92 +232,177 @@ $wp_customize->add_section('footer', array(
 /*
 административное поле по смене номера
 */
-$setting_tel = 'tg_num';
 
-$wp_customize->add_setting($setting_tel, array(
+//header
+$header_num_wa = 'num_wa';
+
+$wp_customize->add_setting($header_num_wa, array(
   'default' => '',
   'sanitize_callback' => 'sanitize_text_field',
   'transport' => 'postMessage'
 ));
-$wp_customize->add_control($setting_tel, array(
+$wp_customize->add_control($header_num_wa, array(
   'section' => 'header',
   'type' => 'text',
-  'label' => 'Номер telegram',
+  'label' => 'Header: Номер телеграм',
 ));
 
-$header_img = 'site_logo';
 
-$wp_customize->add_setting($header_img, array(
+
+$header_num_mobile = 'num_mobile';
+
+$wp_customize->add_setting($header_num_mobile, array(
   'default' => '',
   'sanitize_callback' => 'sanitize_text_field',
   'transport' => 'postMessage'
 ));
-$wp_customize->add_setting( 'site_logo' );
-
-$wp_customize->add_control(
-  new WP_Customize_Image_Control(
-      $wp_customize,
-      'logo_control',
-      array(
-          'label'    => 'Логотип сайта',
-          'settings' => 'site_logo',
-          'section'  => 'header'
-      )
-  )
-);
-
-$setting_contacts_addr = 'contacts_addr';
-
-$wp_customize->add_setting($setting_contacts_addr, array(
-  'default' => '',
-  'sanitize_callback' => 'sanitize_text_field',
-  'transport' => 'postMessage'
-));
-$wp_customize->add_control($setting_contacts_addr, array(
+$wp_customize->add_control($header_num_mobile, array(
   'section' => 'header',
   'type' => 'text',
-  'label' => 'Контакты: Адрес',
+  'label' => 'Header: Мобильный номер',
 ));
 
-$setting_contacts_number = 'contacts_number';
 
-$wp_customize->add_setting($setting_contacts_number, array(
+
+$header_mail = 'mail';
+
+$wp_customize->add_setting($header_mail, array(
   'default' => '',
   'sanitize_callback' => 'sanitize_text_field',
   'transport' => 'postMessage'
 ));
-$wp_customize->add_control($setting_contacts_number, array(
+$wp_customize->add_control($header_mail, array(
   'section' => 'header',
   'type' => 'text',
-  'label' => 'Контакты: Телефон',
+  'label' => 'Header: Почта',
 ));
 
-$setting_contacts_mail = 'contacts_mail';
 
-$wp_customize->add_setting($setting_contacts_mail, array(
+
+$header_address = 'address_head';
+
+$wp_customize->add_setting($header_address, array(
   'default' => '',
   'sanitize_callback' => 'sanitize_text_field',
   'transport' => 'postMessage'
 ));
-$wp_customize->add_control($setting_contacts_mail, array(
+$wp_customize->add_control($header_address, array(
   'section' => 'header',
   'type' => 'text',
-  'label' => 'Контакты: Почтовый адрес',
+  'label' => 'Header: Адрес',
 ));
 
-$setting_contacts_tg = 'contacts_tg';
 
-$wp_customize->add_setting($setting_contacts_tg, array(
+
+//footer
+$footer_num_1 = 'num_footer1';
+
+$wp_customize->add_setting($footer_num_1, array(
   'default' => '',
   'sanitize_callback' => 'sanitize_text_field',
   'transport' => 'postMessage'
 ));
-$wp_customize->add_control($setting_contacts_tg, array(
-  'section' => 'header',
+$wp_customize->add_control($footer_num_1, array(
+  'section' => 'footer',
   'type' => 'text',
-  'label' => 'Контакты: Telegram',
+  'label' => 'Footer: Номер 1',
+));
+
+
+
+$footer_num_footer2 = 'num_footer2';
+
+$wp_customize->add_setting($footer_num_footer2, array(
+  'default' => '',
+  'sanitize_callback' => 'sanitize_text_field',
+  'transport' => 'postMessage'
+));
+$wp_customize->add_control($footer_num_footer2, array(
+  'section' => 'footer',
+  'type' => 'text',
+  'label' => 'Footer: Номер 2',
+));
+
+
+
+$footer_mail = 'mail_footer';
+
+$wp_customize->add_setting($footer_mail, array(
+  'default' => '',
+  'sanitize_callback' => 'sanitize_text_field',
+  'transport' => 'postMessage'
+));
+$wp_customize->add_control($footer_mail, array(
+  'section' => 'footer',
+  'type' => 'text',
+  'label' => 'Footer: Почта',
+));
+
+
+
+$footer_address_foot = 'address_foot';
+
+$wp_customize->add_setting($footer_address_foot, array(
+  'default' => '',
+  'sanitize_callback' => 'sanitize_text_field',
+  'transport' => 'postMessage'
+));
+$wp_customize->add_control($footer_address_foot, array(
+  'section' => 'footer',
+  'type' => 'text',
+  'label' => 'Footer: Адрес',
+));
+
+
+
+$footer_working_hours_clinic = 'working_hours_clinic';
+
+$wp_customize->add_setting($footer_working_hours_clinic, array(
+  'default' => '',
+  'sanitize_callback' => 'sanitize_text_field',
+  'transport' => 'postMessage'
+));
+$wp_customize->add_control($footer_working_hours_clinic, array(
+  'section' => 'footer',
+  'type' => 'text',
+  'label' => 'Footer: Рабочие часы клиники',
+));
+
+
+
+$footer_working_hours_lab = 'working_hours_lab';
+
+$wp_customize->add_setting($footer_working_hours_lab, array(
+  'default' => '',
+  'sanitize_callback' => 'sanitize_text_field',
+  'transport' => 'postMessage'
+));
+$wp_customize->add_control($footer_working_hours_lab, array(
+  'section' => 'footer',
+  'type' => 'text',
+  'label' => 'Footer: Рабочие часы лаборатории',
+));
+
+
+
+$footer_copyright = 'copyright';
+
+$wp_customize->add_setting($footer_copyright, array(
+  'default' => '',
+  'sanitize_callback' => 'sanitize_text_field',
+  'transport' => 'postMessage'
+));
+$wp_customize->add_control($footer_copyright, array(
+  'section' => 'footer',
+  'type' => 'text',
+  'label' => 'Footer: Copyright',
 ));
 }
+
+
+
+
+
 
 
 
