@@ -98,10 +98,21 @@ padding-right:15px
 }
 @media(max-width:1367px){
 .container{
-max-width: 1200px;
+	max-width: 1200px;
 }
 }
-
+a{
+	color: var(--pr);
+	text-decoration:none;
+}
+a:hover{
+	color: var(--pr-hover);
+	text-decoration:none;
+}
+a:focus. a:active{
+	color: var(--pr-active);
+	text-decoration:none;
+}
 h1{
 font-size: 6.4rem;
 line-height:6.8rem;
@@ -237,6 +248,9 @@ background-color:var(--white);
 }
 .pdf {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.75 10.5V3.625C3.75 3.45924 3.81585 3.30027 3.93306 3.18306C4.05027 3.06585 4.20924 3 4.375 3H11.875L16.25 7.375V10.5' stroke='%23098DEE' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M11.875 3V7.375H16.25' stroke='%23098DEE' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.75 16.125H5C5.33152 16.125 5.64946 15.9933 5.88388 15.7589C6.1183 15.5245 6.25 15.2065 6.25 14.875C6.25 14.5435 6.1183 14.2255 5.88388 13.9911C5.64946 13.7567 5.33152 13.625 5 13.625H3.75V17.375' stroke='%23098DEE' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.875 13.625H14.6875V17.375' stroke='%23098DEE' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.5625 15.8125H14.6875' stroke='%23098DEE' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10 17.375C10.4973 17.375 10.9742 17.1775 11.3258 16.8258C11.6775 16.4742 11.875 15.9973 11.875 15.5C11.875 15.0027 11.6775 14.5258 11.3258 14.1742C10.9742 13.8225 10.4973 13.625 10 13.625H8.90625V17.375H10Z' stroke='%23098DEE' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.info {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 18.4707C14.6421 18.4707 18 15.1128 18 10.9707C18 6.82857 14.6421 3.4707 10.5 3.4707C6.35786 3.4707 3 6.82857 3 10.9707C3 15.1128 6.35786 18.4707 10.5 18.4707Z' stroke='%23098DEE' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.875 10.3457H10.5V14.7207H11.125' stroke='%23098DEE' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.3438 8.1582C10.6889 8.1582 10.9688 7.87838 10.9688 7.5332C10.9688 7.18803 10.6889 6.9082 10.3438 6.9082C9.99857 6.9082 9.71875 7.18803 9.71875 7.5332C9.71875 7.87838 9.99857 8.1582 10.3438 8.1582Z' fill='%23098DEE'/%3E%3C/svg%3E");
 }
 .header__bottom-block{
 	padding:1.6rem 0;
@@ -596,11 +610,41 @@ ul.paginate {
 	height:0.8rem;
 }
 /*секция врачей*/
-
-.splide--doctors{
-	padding-top:132px;
+.splide--doctors .splide__track{
+	margin: 0 -5rem 0 -5rem;
+	padding: 13.2rem 5rem 5rem 5rem;
 }
-
+.splide__arrows{
+	margin-bottom:0;
+	width: 116px;
+    justify-content: space-between;
+}
+.splide__arrow{
+    background-color: var(--white);
+	border:1px solid var(--white);
+    width: 5.2rem;
+    height: 5.2rem;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+	margin-top: -3.4rem;
+}
+.splide__arrow svg{
+	stroke:#9097A8;
+}
+.splide__arrow:hover{
+	border:1px solid var(--pr);
+}
+.splide__arrow:active, .splide__arrow:focus{
+	border:1px solid var(--pr-active);
+}
+.splide__arrow:hover svg {
+    fill: none;
+    stroke: var(--pr);
+}
+.splide__arrow:active svg, .splide__arrow:focus svg{
+ stroke: var(--pr-active);
+}
 .doctors .container{
 	position:relative;
 }
@@ -609,6 +653,7 @@ ul.paginate {
 	border-radius:2.4rem;
 	max-width: 293px;
 	border: 1px solid var(--b2);
+	min-height: 460px;
 }
 .doctor-card__content{
 	padding:3.2rem;
@@ -618,12 +663,30 @@ ul.paginate {
 	color:var(--b5);
 	margin:1.2rem 0 2.4rem;
 }
+.doctor-card a.info {
+	margin: 3.2rem auto;
+	display: block;
+	padding-left:3.2rem;
+	max-width:155px;
+	background-repeat:no-repeat;
+	background-position:left center;
+}
 .doctor-card .btn {
 	margin: 0 3.2rem;
 	display: block;
 	text-align:center;
 	box-shadow: 0 1.5rem 3rem rgba(9,141,238, 0.3);
 }
+.doctor-card .doctor-card__footer{
+overflow: hidden;
+    max-height: 0;	
+	transition:all 0.3s linear;
+}
+.doctor-card:hover {
+	transform:scale(1.2);
+	transition:all 0.3s linear;
+	border:1px solid var(--pr);
+}
 .doctor-card:hover .doctor-card__footer{
-	
+    max-height: 200px;	
 }
