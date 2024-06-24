@@ -5,56 +5,101 @@
 }
 
 @font-face {
-    font-family: "TTNorms";
+    font-family: "Gilroy";
     src: url("./fonts/TTNorms-Medium.woff2");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: "TTNorms";
-    src: url("./fonts/TTNorms-Bold.woff2");
-    font-weight: 700;
+    font-family: "Gilroy";
+    src: url("./fonts/Gilroy-Semibold.woff2");
+    font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: "TTNorms";
-    src: url("./fonts/TTNorms-Black.woff2");
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: "TTNorms";
-    src: url("./fonts/TTNorms-Heavy.woff2");
+    font-family: "Gilroy";
+    src: url("./fonts/Gilroy-Bold.woff2");
     font-weight: 900;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: "TTFirsNeue";
-    src: url("./fonts/TTFirsNeue-Regular.woff2");
+    font-family: "Inter";
+    src: url("./fonts/InterTight-Regular.woff2");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
-@font-face {
-    font-family: "TTFirsNeue";
-    src: url("./fonts/TTFirsNeue-Medium.woff2");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+
+
+:root {
+--white: #ffffff;
+--b9: #000000;
+--b8: #020B23;
+--b7: #182543;
+--b6: #535F7C;
+--b5: #9097A8;
+--b4: #C8CCD6;
+--b3: #E9EBEF;
+--b2: #F1F3F7;
+--pr: #098DEE;
+--pr-hover: #058BC4;
+--pr-active: #005F86;
+--sec: #7ADBFF;
+--sec-hover: #4DBAE1;
+--sec-active: #35829E;
+--yellow: #FFE175;
+--red: #FF7575;
+--purple:#757AFF;
+}
+body, html {
+border: none;
+width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+min-width:320px;
+
+}
+body {
+margin: 0;
+font-family: 'Inter';
+font-weight:400;
+font-size:1.6rem;
+line-height:130%;
+color: var(--b600);
+display: flex;
+flex-direction: column;
+min-height:100vh;
+background-size: cover;
+background-image:url("../img/bg.jpg");
+background-repeat:no-repeat;
+background-position:top right;
 }
 
-@media(max-width:1199px){
+@media(max-width:1366px){
+body { 
+   font-size:1.4rem;
 }
-@media(max-width:600px){
 }
-@media (max-width: 330px){
+.container{
+box-sizing: border-box;	
+margin:0 auto;
+width: 100%;
+padding-left: 15px;
+padding-right:15px
+} 
+@media(min-width:1530px){
+.container{
+	max-width:1440px;
 }
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3
 }
 @media(max-width:1367px){
 .container{
@@ -69,7 +114,11 @@ a:hover{
 	color: var(--pr-hover);
 	text-decoration:none;
 }
+<<<<<<< HEAD
 a:focus, a:active{
+=======
+a:focus. a:active{
+>>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3
 	color: var(--pr-active);
 	text-decoration:none;
 }
@@ -140,7 +189,11 @@ color:var(--white);
 	border-radius:50%;
 	background-color:var(--white);
 	display:flex;
+<<<<<<< HEAD
 	align-items: center;
+=======
+	align-items-center;
+>>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3
 	justify-content:center;
 	background-repeat:no-repeat;
 	background-position:center;
@@ -656,5 +709,9 @@ overflow: hidden;
 }
 .doctor-card:hover .doctor-card__footer{
     max-height: 200px;	
+<<<<<<< HEAD
 }
 >>>>>>> Stashed changes
+=======
+}
+>>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3

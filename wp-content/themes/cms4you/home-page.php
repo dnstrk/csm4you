@@ -4,9 +4,12 @@ Template Name: Medical
 */
 get_header();
 ?>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 =======
 <!--  -->
+=======
+>>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3
 <!--первая секция-->
 <section class="top">
 	<div class="h-100 container">
@@ -138,9 +141,122 @@ get_header();
 		</div>
 	</div>
 </section>
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3
 
-
+<!--третья секция-->
+<section id="doctors" class="doctors">
+<img class="bg1" src="<?php echo get_template_directory_uri()?>/assets/img/bg1.jpg"/>
+	<div class="container">
+	<h2>Врачи клиники</h2>
+		<div class="splide splide--doctors" id="splide-doctors">
+            <div class="splide__track" id="banner-track">
+                <ul class="splide__list" id="banner-list">
+				<!--слайд. Слайды это уже цикл-->
+					<li class="splide__slide">
+					<!--карточка врача-->
+						<div class="card doctor-card">
+							<div class="doctor-card__img">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/pavlova-big.png"/>
+							</div>
+							<div class="doctor-card__content">
+								<h4>Павлова Зухра Шариповна</h4>
+								<p>Эндокринолог-андролог, научный руководитель клиники, врач, дмн</p>
+							</div>
+							<div class="doctor-card__footer">
+								<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+								<a href="#doctor" data-bfmodal="#doctor" class="link info">О специалисте</a>
+							</div>
+						</div>
+					</li>
+					<!--конец цикла все li что ниже можно удалять-->
+					<li class="splide__slide">
+						<!--карточка врача-->
+							<div class="card doctor-card">
+								<div class="doctor-card__img">
+									<img src="<?php echo get_template_directory_uri()?>/assets/img/terehova-big.png"/>
+								</div>
+								<div class="doctor-card__content">
+									<h4>Терехова Анна Леонтьевна</h4>
+									<p>Врач-эндокринолог, врач превентивной и Anti-Age медицины, кмн</p>
+								</div>
+								<div class="doctor-card__footer">
+									<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+									<a href="#doctor" data-bfmodal="#doctor" class="link info">О специалисте</a>
+								</div>
+							</div>
+					</li>
+					<li class="splide__slide">
+						<!--карточка врача-->
+						<div class="card doctor-card">
+							<div class="doctor-card__img">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/ryabseva-big.png"/>
+							</div>
+							<div class="doctor-card__content">
+								<h4>Рябцева Ольга Юрьевна</h4>
+								<p>Эндокринолог, врач, кмн</p>
+							</div>
+							<div class="doctor-card__footer">
+								<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+								<a href="#doctor" data-bfmodal="#doctor" class="link info">О специалисте</a>
+							</div>
+						</div>
+					</li>
+					<li class="splide__slide">
+						<!--карточка врача-->
+						<div class="card doctor-card">
+							<div class="doctor-card__img">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/dolgushin-big.png"/>
+							</div>
+							<div class="doctor-card__content">
+								<h4>Долгушин Григорий Олегович</h4>
+								<p>Эндокринолог, врач</p>
+							</div>
+							<div class="doctor-card__footer">
+								<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+								<a href="#doctor" data-bfmodal="#doctor" class="link info">О специалисте</a>
+							</div>
+						</div>
+					</li>
+					<li class="splide__slide">
+					<!--карточка врача-->
+					<div class="card doctor-card">
+							<div class="doctor-card__img">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/tishuk-big.png"/>
+							</div>
+							<div class="doctor-card__content">
+								<h4>Тишук Анастасия Васильевна</h4>
+								<p>Врач УЗИ</p>
+							</div>
+							<div class="doctor-card__footer">
+								<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+								<a href="#doctor" data-bfmodal="#doctor" class="link info">О специалисте</a>
+							</div>
+						</div>
+					</li>
+					<li class="splide__slide">
+					<!--карточка врача-->
+					<div class="card doctor-card">
+							<div class="doctor-card__img">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/gorbunov-big.png"/>
+							</div>
+							<div class="doctor-card__content">
+								<h4>Горбунов Роман Михайлович</h4>
+								<p>Врач УЗИ</p>
+							</div>
+							<div class="doctor-card__footer">
+								<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+								<a href="#doctor" data-bfmodal="#doctor" class="link info">О специалисте</a>
+							</div>
+						</div>
+					</li>					
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
 <?php
 get_footer();
 ?>
