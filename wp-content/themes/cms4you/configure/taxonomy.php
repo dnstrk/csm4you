@@ -1,108 +1,76 @@
 <?php 
+add_action( 'init', 'add_project_post_type', 0 );
 
-function create_doctor_post_type() {
-    $labels = array(
-        'name' => __( 'Доктора' ),
-        'singular_name' => __( 'Доктор' ),
-        'add_new' => __( 'Создать' ),
-        'add_new_item' => __( 'Создание карточки врача' ),
-        'edit_item' => __( 'Редактировать карточку' ),
-        'new_item' => __( 'Новый доктор' ),
-        'view_item' => __( 'Просмотр доктора' ),
-        'search_items' => __( 'Поиск доктора' ),
-        'not_found' => __( 'Доктора не найдены' ),
-        'not_found_in_trash' => __( 'Доктора в корзине отсутствуют' ),
-        'parent_item_colon' => '',
-        'menu_name' => __( 'Доктора' )
+
+if ( ! function_exists('add_project_post_type') ) {
+    function add_project_post_type() {
+        $labels = array(
+        'name'                  => 'Проекты',
+        'singular_name'         => 'Проект',
+        'menu_name'             => 'Проекты',
+        'name_admin_bar'        => 'Список проектов',
+        'archives'              => 'Архив проектов',
+        'attributes'            => 'Атрибуты проекта',
+        'parent_item_colon'     => 'Проекты',
+        'all_items'             => 'Все проекты',
+        'add_new_item'          => 'Добавить новый проект',
+        'add_new'               => 'Добавить проект',
+        'new_item'              => 'Новый проект',
+        'edit_item'             => 'Редактировать проект',
+        'update_item'           => 'Обновить проект',
+        'view_item'             => 'Смотреть проект',
+        'view_items'            => 'Смотреть проекты',
+        'search_items'          => 'Найти проект',
+        'not_found'             => 'Не найдено',
+        'not_found_in_trash'    => 'В корзине не найдено',
+        'featured_image'        => 'Избранное фото',
+        'set_featured_image'    => 'Установить фото проекта',
+        'remove_featured_image' => 'Удалить фото проекта',
+        'use_featured_image'    => 'Использовать в качестве фото проекта',
+        'insert_into_item'      => 'Добавить к проекту',
+        'uploaded_to_this_item' => 'Добавить к этому проекту',
+        'items_list'            => 'Список проектов',
+        'items_list_navigation' => 'Items list navigation',
+        'filter_items_list'     => 'Фильтр проектов',
+        );
+        $rewrite = array(
+        'slug'                  => 'project',
+        'with_front'            => true,
+        'pages'                 => true,
+        'feeds'                 => true,
+        );
+        $args = array(
+        'label'                 => 'Проект',
+        'description'           => 'Описание проекта',
+        'labels'                => $labels,
+        'supports'              => array( 'title', 'editor','thumbnail', 'custom-fields', 'page-attributes', 'excerpt' ),
+        'hierarchical'          => true,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 5,
+        'show_in_admin_bar'     => false,
+        'show_in_nav_menus'     => true,
+        'menu_icon'             => 'dashicons-star-filled',
+        'can_export'            => true,
+        'has_archive'           => false,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true,
+        'query_var'             => 'project',
+        'rewrite'               => $rewrite,
+        'capability_type'       => 'post',
+        'taxonomies'          => array( 'category', 'project', 'post_tag' ),
     );
+        register_post_type( 'project', $args );
+        add_filter( "the_excerpt", "add_class_excerpt" );
+        function add_class_excerpt( $excerpt ) {
+        return str_replace( '<p>', '<p class="excerpt">', $excerpt );
+        }
+    }
+    
+    
+    }
 
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'query_var' => true,
-        'rewrite' => array( 'slug' => 'doctor' ),
-        'capability_type' => 'post',
-        'has_archive' => true,
-        'hierarchical' => false,
-        'menu_position' => null,
-        'supports' => array( 'title', 'excerpt', 'editor', 'thumbnail' ),
-    );
 
-    register_post_type( 'doctor', $args );
-}
-add_action( 'init', 'create_doctor_post_type' );
-
-function create_review_post_type() {
-    $labels = array(
-        'name' => __( 'Отзывы' ),
-        'singular_name' => __( 'Отзыв' ),
-        'add_new' => __( 'Создать' ),
-        'add_new_item' => __( 'Добавить новый отзыв' ),
-        'edit_item' => __( 'Редактировать отзыв' ),
-        'new_item' => __( 'Новый отзыв' ),
-        'view_item' => __( 'Просмотр отзыва' ),
-        'search_items' => __( 'Поиск отзыва' ),
-        'not_found' => __( 'Отзывы не найдены' ),
-        'not_found_in_trash' => __( 'Отзывы в корзине отсутствуют' ),
-        'parent_item_colon' => '',
-        'menu_name' => __( 'Отзывы' )
-    );
-
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'query_var' => true,
-        'rewrite' => array( 'slug' => 'review' ),
-        'capability_type' => 'post',
-        'has_archive' => true,
-        'hierarchical' => false,
-        'menu_position' => null,
-        'supports' => array( 'title', 'editor', 'excerpt' ),
-    );
-
-    register_post_type( 'review', $args );
-}
-add_action( 'init', 'create_review_post_type' );
-
-function create_service_post_type() {
-    $labels = array(
-        'name' => __( 'Услуги' ),
-        'singular_name' => __( 'Услуга' ),
-        'add_new' => __( 'Создать' ),
-        'add_new_item' => __( 'Создать услугу' ),
-        'edit_item' => __( 'Редактировать услугу' ),
-        'new_item' => __( 'Новая услуга' ),
-        'view_item' => __( 'Просмотр услуги' ),
-        'search_items' => __( 'Поиск услуг' ),
-        'not_found' => __( 'Услуги не найдены' ),
-        'not_found_in_trash' => __( 'Услуги в корзине отсутствуют' ),
-        'parent_item_colon' => '',
-        'menu_name' => __( 'Услуги' )
-    );
-
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'query_var' => true,
-        'rewrite' => array( 'slug' => 'service' ),
-        'capability_type' => 'post',
-        'has_archive' => true,
-        'hierarchical' => false,
-        'menu_position' => null,
-        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
-    );
-
-    register_post_type( 'service', $args );
-}
-add_action( 'init', 'create_service_post_type' );
 
 ?>
