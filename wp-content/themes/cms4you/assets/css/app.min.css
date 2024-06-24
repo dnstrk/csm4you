@@ -95,11 +95,6 @@ padding-right:15px
 .container{
 	max-width:1440px;
 }
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3
 }
 @media(max-width:1367px){
 .container{
@@ -114,11 +109,7 @@ a:hover{
 	color: var(--pr-hover);
 	text-decoration:none;
 }
-<<<<<<< HEAD
 a:focus, a:active{
-=======
-a:focus. a:active{
->>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3
 	color: var(--pr-active);
 	text-decoration:none;
 }
@@ -189,11 +180,7 @@ color:var(--white);
 	border-radius:50%;
 	background-color:var(--white);
 	display:flex;
-<<<<<<< HEAD
 	align-items: center;
-=======
-	align-items-center;
->>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3
 	justify-content:center;
 	background-repeat:no-repeat;
 	background-position:center;
@@ -709,9 +696,4 @@ overflow: hidden;
 }
 .doctor-card:hover .doctor-card__footer{
     max-height: 200px;	
-<<<<<<< HEAD
 }
->>>>>>> Stashed changes
-=======
-}
->>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3

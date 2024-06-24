@@ -4,12 +4,6 @@ Template Name: Medical
 */
 get_header();
 ?>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
-<!--  -->
-=======
->>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3
 <!--первая секция-->
 <section class="top">
 	<div class="h-100 container">
