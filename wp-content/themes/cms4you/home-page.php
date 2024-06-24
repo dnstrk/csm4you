@@ -135,6 +135,10 @@ get_header();
 		</div>
 	</div>
 </section>
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+=======
+>>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3
 
 <!--третья секция-->
 <section id="doctors" class="doctors">
