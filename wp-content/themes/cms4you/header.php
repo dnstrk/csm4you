@@ -6,16 +6,23 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <?php wp_head(); ?>
 </head>
+<?php 
+$num_wa = get_theme_mod('num_wa');
+$num_mobile = get_theme_mod('num_mobile');
+$mail = get_theme_mod('mail');
+$address_head = get_theme_mod('address_head');
+?>
+
 <body style="min-height:5000px" class="<?php if(is_front_page()){echo "home-page";} ?>">
 	<header id="header" class="header">
 		<div class="header__top-block">
 			<div class="container">
 				<div class="d-flex flex-column flex-md-row justify-content-end">
 					<ul class="top-menu d-flex flex-column flex-md-row align-items-center">
-						<li><a class="whatsup" href="#">8 (926) 077-58-16</a></li>
-						<li><a class="phone" href="#">8 (499) 705-96-97</a></li>
-						<li><a class="email" href="mailto:clinic@csm4you.ru">clinic@csm4you.ru</a></li>
-						<li><a class="adress" href="#">Москва, 2-я Фрунзенская, д. 2/36, м. Фрунзенская</a></li>
+						<li><a class="whatsup" href="#"><?php echo $num_wa ?></a></li>
+						<li><a class="phone" href="#"><?php echo $num_mobile ?></a></li>
+						<li><a class="email" href="mailto:<?php echo $mail ?>"><?php echo $mail ?></a></li>
+						<li><a class="adress" href="#"><?php echo $address_head ?></a></li>
 					<ul>
 				</div>
 			</div>

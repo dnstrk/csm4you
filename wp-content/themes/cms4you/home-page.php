@@ -3,7 +3,15 @@
 Template Name: Medical
 */
 get_header();
+
+//первая секция
+$banner_h1 = get_post_meta( get_the_ID(), 'banner_h1', true );
+$banner_p = get_post_meta( get_the_ID(), 'banner_p', true );
+$banner_cards = get_post_meta( get_the_ID(), 'banner_cards', true );
+
+
 ?>
+
 <!--первая секция-->
 <section class="top">
 	<div class="h-100 container">
@@ -17,8 +25,8 @@ get_header();
 	</div>
 	<div class="row h-100">
 			<div class="h-100 col-md-7 d-flex flex-column justify-content-center">
-				<h1>Клиника Системной Медицины</h1>
-				<p class="subtitle">Уникальная клиника в Москве, подходящая к организму человека, как к целостной живой системе</p>
+				<h1><?php echo $banner_h1 ?></h1>
+				<p class="subtitle"><?php echo $banner_p ?></p>
 			</div>
 			<div class="offset-lg-1 col-md-4">
 				<div class="top-card">
@@ -135,11 +143,6 @@ get_header();
 		</div>
 	</div>
 </section>
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> 814b84c416a90dbe1dffe7dce2a96ab1072ceda3
-
 <!--третья секция-->
 <section id="doctors" class="doctors">
 <img class="bg1" src="<?php echo get_template_directory_uri()?>/assets/img/bg1.jpg"/>
