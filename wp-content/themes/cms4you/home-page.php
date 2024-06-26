@@ -4,11 +4,22 @@ Template Name: Medical
 */
 get_header();
 
-//первая секция
+//секция top
 $banner_h1 = get_post_meta( get_the_ID(), 'banner_h1', true );
 $banner_p = get_post_meta( get_the_ID(), 'banner_p', true );
+
+//секция about
 $banner_cards = get_post_meta( get_the_ID(), 'banner_cards', true );
 
+
+//секция about-content
+$aboutContent_h3 = get_post_meta( get_the_ID(), 'aboutContent_h3', true );
+$aboutContent_p1 = get_post_meta( get_the_ID(), 'aboutContent_p1', true );
+$aboutContent_p2 = get_post_meta( get_the_ID(), 'aboutContent_p2', true );
+$aboutContent_file = get_post_meta( get_the_ID(), 'aboutContent_file', true );
+
+//секция about-content
+$doctors_h3 = get_post_meta( get_the_ID(), 'doctors_h3', true );
 
 ?>
 
@@ -52,60 +63,34 @@ $banner_cards = get_post_meta( get_the_ID(), 'banner_cards', true );
 	<div class="container">
 		<div class="row">
 			<!--Здесь у тебя цикл с карточками-->
-			<div class="col-md-4">
-				<div class="about-card">
-					<div class="about-card__header">
-						<div class="about-card__img">
-							<img src="<?php echo get_template_directory_uri()?>/assets/img/icon1.svg"/>
-						</div>
-						<div class="about-card__title">
-							<h4>Системный подход</h4>
-						</div>
-					</div>
-					<div class="about-card__content">
-						<p>Глубокое, фундаментальное знание основ медицины и такой системный подход позволяют выявить и воздействовать на скрытые нарушения в организме, которые и являются истинной причиной всех симптомов и жалоб пациента.</p>
-					</div>
-				</div>
-			</div>
-			<!--Здесь у тебя конец цикла, две нижние карточки удаляем-->
-			<div class="col-md-4">
-				<div class="about-card">
-					<div class="about-card__header">
-						<div class="about-card__img">
-							<img src="<?php echo get_template_directory_uri()?>/assets/img/icon2.svg"/>
-						</div>
-						<div class="about-card__title">
-							<h4>Комплексное решение</h4>
+			<?php if($banner_cards){?>
+				<?php foreach ( (array) $banner_cards as $key => $card ) { ?>
+					<div class="col-md-4">
+						<div class="about-card">
+							<div class="about-card__header">
+								<div class="about-card__img">
+									<img src="<?php echo $card['banner_card_img'] ?>"/>
+									
+								</div>
+								<div class="about-card__title">
+									<h4><?php echo $card['banner_card_h5'] ?></h4>
+								</div>
+							</div>
+							<div class="about-card__content">
+								<p><?php echo $card['banner_card_p'] ?></p>
+							</div>
 						</div>
 					</div>
-					<div class="about-card__content">
-						<p>Ключевым принципом нашей концепции является комплексное решение медицинских проблем пациента и индивидуальный подход к каждому человеку. Для наших пациентов мы создали максимально удобный и комфортный механизм получения медицинской помощи в короткие сроки в одном месте.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="about-card">
-					<div class="about-card__header">
-						<div class="about-card__img">
-							<img src="<?php echo get_template_directory_uri()?>/assets/img/icon3.svg"/>
-						</div>
-						<div class="about-card__title">
-							<h4>Квалифицированные врачи</h4>
-						</div>
-					</div>
-					<div class="about-card__content">
-						<p>В нашей Клинике работают высококвалифицированные врачи, ведущие специалисты своих областей, кандидаты и доктора наук, у каждого из которых за плечами имеется успешный многолетний опыт медицинской практики.</p>
-					</div>
-				</div>
-			</div>
+				<?php }?>
+			<?php } ?>
 		</div>
 		<div class="about-content">
 			<div class="row">
 				<div class="col-md-6 ">
-					<h2>О нашей клинике</h2>
-					<p>Уникальное медицинское учреждение в Москве, которое подходит к организму человека как к целостной живой системе. <br>Здесь работают высококвалифицированные врачи, кандидаты и доктора наук, имеющие многолетний опыт медицинской практики.
+					<h2><?php echo $aboutContent_h3 ?></h2>
+					<p><?php echo $aboutContent_p1 ?>
 					</p>
-					<p>Клиника предлагает комплексное решение медицинских проблем пациента и индивидуальный подход к каждому человеку. Врачи выявляют и воздействуют на скрытые нарушения в организме, являющиеся истинной причиной всех симптомов и жалоб пациента. В клинике используются глубокое знание основ медицины и системный подход для устранения причин плохого самочувствия и приведения организма в порядок.
+					<p><?php echo $aboutContent_p2 ?>
 					</p>
 					<a href="#" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
 				</div>
@@ -147,7 +132,7 @@ $banner_cards = get_post_meta( get_the_ID(), 'banner_cards', true );
 <section id="doctors" class="doctors">
 <img class="bg1" src="<?php echo get_template_directory_uri()?>/assets/img/bg1.jpg"/>
 	<div class="container">
-	<h2>Врачи клиники</h2>
+	<h2><?php echo $doctors_h3 ?></h2>
 		<div class="splide splide--doctors" id="splide-doctors">
             <div class="splide__track" id="banner-track">
                 <ul class="splide__list" id="banner-list">
