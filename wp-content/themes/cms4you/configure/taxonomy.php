@@ -105,4 +105,31 @@ function create_service_post_type() {
 }
 add_action( 'init', 'create_service_post_type' );
 
+function create_service_taxonomy() {
+    $labels = array(
+        'name' => __( 'Категории услуг' ),
+        'singular_name' => __( 'Категории' ),
+        'search_items' => __( 'Поиск категорий' ),
+        'all_items' => __( 'Все категории' ),
+        'parent_item' => __( 'Родительская категория' ),
+        'parent_item_colon' => __( 'Родительская категория:' ),
+        'edit_item' => __( 'Добавить категорию' ),
+        'update_item' => __( 'Обновить категорию' ),
+        'add_new_item' => __( 'Создать новую категорию' ),
+        'new_item_name' => __( 'Новое имя категории' ),
+        'menu_name' => __( 'Категории' ),
+    );
+
+    $args = array(
+        'hierarchical' => true,
+        'labels' => $labels,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'query_var' => true,
+        'rewrite' => array( 'slug' => 'service-category' ),
+    );
+
+    register_taxonomy( 'service_category', array( 'service' ), $args );
+}
+add_action( 'init', 'create_service_taxonomy', 0 );
 ?>

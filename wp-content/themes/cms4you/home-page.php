@@ -18,8 +18,17 @@ $aboutContent_p1 = get_post_meta( get_the_ID(), 'aboutContent_p1', true );
 $aboutContent_p2 = get_post_meta( get_the_ID(), 'aboutContent_p2', true );
 $aboutContent_file = get_post_meta( get_the_ID(), 'aboutContent_file', true );
 
-//секция about-content
+//секция doctors
 $doctors_h3 = get_post_meta( get_the_ID(), 'doctors_h3', true );
+
+//секция Price-list
+$priceList_h3 = get_post_meta( get_the_ID(), 'priceList_h3', true );
+
+//Секция Online-register
+
+//Секция Review
+$review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
+
 
 ?>
 
@@ -244,62 +253,47 @@ $doctors_h3 = get_post_meta( get_the_ID(), 'doctors_h3', true );
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 card-price">
-				<h2>Прайс-лист</h2>
+				<h2><?php echo $priceList_h3 ?></h2>
+				<div class="price-table">
+				<?php
+				$category_slugs = array('priem-speczialista', 'uzi');
+				foreach ($category_slugs as $category_slug) {
+					// Получение объекта категории по слагу
+					$category = get_term_by('slug', $category_slug, 'service_category');
+				
+					// Проверка, что категория существует
+					if ($category) :
+						// Параметры запроса
+						$args = array(
+							'post_type' => 'service', // Кастомный тип записей
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'service_category', // Таксономия
+									'field'    => 'slug',
+									'terms'    => $category_slug, // Слаг категории
+								),
+							),
+						);
+						$query = new WP_Query( $args );
+				
+						if ( $query->have_posts() ) :?>
 				<!--Тип поста услуги, заголовок - категория услуг, цикл запускаем с фильтром по категории в аргументах-->
-				<div class="price-table">
-					<h3>Прием специалиста</h3>
-					<!--Цикл-->
+					<h3><?php echo $category->name ?></h3>
+					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
 					<div class="d-flex price-table__row">
-						<p>Прием (осмотр, консультация) врача-эндокринолога первичный</p>
-						<h4>2 500 ₽</h4>
+						<p><?php the_title(); ?></p>
+						<h4><?php the_content(); ?></h4>
 						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
 					</div>
-					<!--Конец Цикла, остальное можешь удалить-->
-					<div class="d-flex price-table__row">
-						<p>Прием (осмотр, консультация) врача-эндокринолога повторный</p>
-						<h4>1 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-				</div>
-				<!--Тип поста услуги, другая категория-->
-				<div class="price-table">
-					<h3>УЗИ</h3>
-					<!--Цикл-->
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование органов эндокринной системы (надпочечники, щитовидная железа)</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование органов малого таза</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование молочных желез</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование органов пищеварительного тракта</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование печени</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование почек</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование брюшной полости</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
+					<?php endwhile; ?>
+					<?php
+						wp_reset_postdata();
+       			 	else : ?>
+						<p><?php _e('No services found in this category.', 'your-text-domain'); ?></p>
+        			<?php endif;
+   				else : ?>
+        			<p><?php _e('Category not found.', 'your-text-domain'); ?></p>
+ 				<?php endif;}?>
 				</div>
 				<a href="#" class="arrow-right">Смотреть полный прайс-лист</a>
 			</div>
@@ -332,7 +326,7 @@ $doctors_h3 = get_post_meta( get_the_ID(), 'doctors_h3', true );
 </section>
 <section id="review" class="review">
 	<div class="container">
-		<h2>Отзывы клиентов</h2>
+		<h2><?php echo $review_h3 ?></h2>
 	</div>
 		<div class="splide splide--reviews" id="splide-reviews">
             <div class="splide__track" id="banner-track">

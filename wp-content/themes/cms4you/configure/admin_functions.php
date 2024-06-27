@@ -41,7 +41,7 @@ add_action( 'admin_notices', 'my_plugin_notice' );
 function my_plugin_notice() {
   ?>
   <div style="display:flex; align-items:center; background:transparent; border:0px;" class="notice notice-success">
-    <img style="margin-right:15px; width:120px" src="логотипчик"/><p style="font-weight: 500; color: #твой зеленый; text-transform: uppercase;">Привет! Это административная панель сайта<br><span style="font-weight: 800;">Мяу-мяу?</span></p>
+    <p style="font-weight: 500; color: #твой зеленый; text-transform: uppercase;">Административная панель сайта<br></p>
   </div>
   <?php
 }
