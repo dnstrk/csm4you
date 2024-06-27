@@ -247,6 +247,131 @@ get_header();
 		</div>
 	</div>
 </section>
+<!--третья секция-->
+<section id="price" class="price">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 card-price">
+				<h2>Прайс-лист</h2>
+				<!--Тип поста услуги, заголовок - категория услуг, цикл запускаем с фильтром по категории в аргументах-->
+				<div class="price-table">
+					<h3>Прием специалиста</h3>
+					<!--Цикл-->
+					<div class="d-flex price-table__row">
+						<p>Прием (осмотр, консультация) врача-эндокринолога первичный</p>
+						<h4>2 500 ₽</h4>
+						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+					</div>
+					<!--Конец Цикла, остальное можешь удалить-->
+					<div class="d-flex price-table__row">
+						<p>Прием (осмотр, консультация) врача-эндокринолога повторный</p>
+						<h4>1 500 ₽</h4>
+						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+					</div>
+				</div>
+				<!--Тип поста услуги, другая категория-->
+				<div class="price-table">
+					<h3>УЗИ</h3>
+					<!--Цикл-->
+					<div class="d-flex price-table__row">
+						<p>Ультразвуковое обследование органов эндокринной системы (надпочечники, щитовидная железа)</p>
+						<h4>2 500 ₽</h4>
+						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+					</div>
+					<div class="d-flex price-table__row">
+						<p>Ультразвуковое обследование органов малого таза</p>
+						<h4>2 500 ₽</h4>
+						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+					</div>
+					<div class="d-flex price-table__row">
+						<p>Ультразвуковое обследование молочных желез</p>
+						<h4>2 500 ₽</h4>
+						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+					</div>
+					<div class="d-flex price-table__row">
+						<p>Ультразвуковое обследование органов пищеварительного тракта</p>
+						<h4>2 500 ₽</h4>
+						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+					</div>
+					<div class="d-flex price-table__row">
+						<p>Ультразвуковое обследование печени</p>
+						<h4>2 500 ₽</h4>
+						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+					</div>
+					<div class="d-flex price-table__row">
+						<p>Ультразвуковое обследование почек</p>
+						<h4>2 500 ₽</h4>
+						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+					</div>
+					<div class="d-flex price-table__row">
+						<p>Ультразвуковое обследование брюшной полости</p>
+						<h4>2 500 ₽</h4>
+						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+					</div>
+				</div>
+				<a href="#" class="arrow-right">Смотреть полный прайс-лист</a>
+			</div>
+			<div class="offset-lg-1 col-lg-3 col-md-4">
+				<div class="hot-spot blue mb-5">
+					<img src="<?php echo get_template_directory_uri()?>/assets/img/hotspotblue.png"/>
+					<div class="hot-spot__content">
+					<h3>Доктор знает</h3>
+					<p>Блог доктора и ученого Павловой. Полезные советы, разоблачение мифов и многое другое</p>
+					<ul class="sotials">
+						<li><a href="#" class="ok" ></a></li>
+						<li><a href="#" class="tg" ></a></li>
+						<li><a href="#" class="wk" ></a></li>
+					</ul>
+					</div>
+				</div>
+				<div class="hot-spot green">
+					<img src="<?php echo get_template_directory_uri()?>/assets/img/hotspotgreen.png"/>
+					<div class="hot-spot__content">
+						<h3>Запишитесь <a href="#" data-bfmodal="#post" >онлайн</a></h3>
+						<p>Выберите услугу/врача, дату и свободное время.</p>
+						<a href="#post" class="btn btn--big btn--rounded btn--primary" data-bfmodal="#post">Записаться</a>
+						<p><small>Подавая заявку вы даёте <a href="#">согласие на обработку данных</a></small></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</section>
+<section id="review" class="review">
+	<div class="container">
+		<h2>Отзывы клиентов</h2>
+	</div>
+		<div class="splide splide--reviews" id="splide-reviews">
+            <div class="splide__track" id="banner-track">
+                <ul class="splide__list" id="banner-list">
+				<!--слайд. Слайды это уже цикл-->
+					<li class="splide__slide">
+						<div class="card-review">
+							<div class="post-data">09.06.2024</div>
+							<h4>Коробейников С.В.</h4>
+							<p>Выражаю огромную благодарность, доктору Зухре Шариповне, за успешную работу. Спасибо за профессионализм, поддержку и внимательное отношение. Когда я пришел в первый раз на прием мое состояние можно охарактеризовать следующими стихами: «А я все думаю, что горы сдвину, Поля засею, орошу долины, Развернуть <a href="#">Развернуть</a></p>
+						</div>
+					</li>
+					<li class="splide__slide">
+						<div class="card-review">
+							<div class="post-data">09.06.2024</div>
+							<h4>Насыров Р.М.</h4>
+							<p>В нашей современной жизни и условиях важно встретить хорошего специалиста в своей области. Мне повезло – я познакомился с замечательным врачом – Зухрой Шариповной. Теперь я могу смело отправлять к ней на прием своих родственников, друзей и знакомых, зная, что им помогут с их проблемами. <a href="#">Развернуть</a></p>
+						</div>
+					</li>
+					<li class="splide__slide">
+						<div class="card-review">
+							<div class="post-data">09.06.2024</div>
+							<h4>Насыров Р.М.</h4>
+							<p>В нашей современной жизни и условиях важно встретить хорошего специалиста в своей области. Мне повезло – я познакомился с замечательным врачом – Зухрой Шариповной. Теперь я могу смело отправлять к ней на прием своих родственников, друзей и знакомых, зная, что им помогут с их проблемами. <a href="#">Развернуть</a></p>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+</section>
 <?php
 get_footer();
 ?>
