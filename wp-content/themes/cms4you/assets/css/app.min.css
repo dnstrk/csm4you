@@ -136,11 +136,12 @@ font-size: 2rem;
 line-height:2rem;
 font-family: 'Gilroy', sans-serif;	
 }
-h4 {
+h5 {
 font-size: 1.6rem;
 line-height:1.6rem;
 font-family: 'Gilroy', sans-serif;	
 }
+
 @media(max-width:768px){
 h1{
 font-size: 3rem;
@@ -201,6 +202,12 @@ color:var(--white);
 	letter-spacing:1px;
 	background-repeat:no-repeat;
 	background-position:left 1.6rem center;
+}
+.btn--transparent {
+	background-color: var(--white);
+	color: var(--pr);
+	border:1px solid var(--pr);
+
 }
 /*модалки*/
 .bfmodal__opened{position:fixed;right:0;left:0;overflow:hidden}.bfmodal__shadow{position:fixed;border:none;display:block;width:100%;top:0;bottom:0;right:0;left:0;overflow:hidden;pointer-events:none;z-index:98;opacity:0;transition:opacity 1s ease;background-color:rgba(195,195,195,0.5);}
@@ -655,7 +662,7 @@ ul.paginate {
 }
 .splide__arrow{
     background-color: var(--white);
-	border:1px solid var(--white);
+	border:1px solid var(--b2);
     width: 5.2rem;
     height: 5.2rem;
     border-radius: 50%;
@@ -840,4 +847,91 @@ margin-bottom:3.2rem;
 }
 .card-review h4 {
 	margin:1.2rem 0;
+}
+.card-review__content p{
+	display:none;
+}
+.card-review__content p:first-child{
+	display:inline;
+}
+.card-review__content p.active{
+	display:block;
+}
+section.news{
+	padding-top:9rem;
+	margin-bottom:10rem;
+}
+.news-card{
+	display:block;
+	overflow:hidden;
+	border-radius:2.4rem;
+	border:1px solid var(--b2);
+	max-width:384px;
+	margin:0 auto;
+	transition:all 0.3s linear;
+	min-height:100%;
+}
+.news-card__content{
+	padding: 3.2rem;
+}
+.news-card__content h4 {
+	color:var(--b8);
+	margin:2.1rem 0;
+}
+.news-card__content p{
+	color:var(--b5);
+	font-size:1.4rem;
+}
+.news-card img {
+	transition:all 0.3s linear;	
+}
+.news-card:hover img {
+	transform: scale(1.2);
+	transition:all 0.3s linear;
+}
+.splide--news{
+	margin-top:3.2rem;
+}
+.splide__arrows--news{
+	margin-right:1.2rem;
+}
+.splide__arrows--news .splide__arrow{
+	margin-top:0;
+}
+section.contacts {
+	padding-top:4rem;
+	position:relative;
+}
+.contacts-card{
+	position:relative;
+	max-width:40rem;
+	background-color:var(--white);
+	margin-top:-4rem;
+	border:1px solid var(--b2);
+	padding:3.2rem;
+	border-radius:2.4rem;
+}
+.contacts-card__contacts{
+	padding:1.2rem 0;
+}
+.contacts-card__contacts a, .contacts-card__contacts p{
+	padding: 1.2rem 1.2rem 1.2rem 2.4rem;
+    background-repeat: no-repeat;
+    background-position: left center;
+	display:block;
+	color:var(--b8);
+}
+.contacts-card__content{
+	padding:1.2rem 0;
+}
+.contacts-card__content p {
+	color:var(--b6);
+	margin:0.5rem 0;
+}
+.map{
+	position:absolute;
+	top:4rem;
+	right:0;
+	left:0;
+	min-height:539px;
 }

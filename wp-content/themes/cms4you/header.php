@@ -6,7 +6,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <?php wp_head(); ?>
 </head>
-<body style="min-height:5000px" class="<?php if(is_front_page()){echo "home-page";} ?>">
+<body class="<?php if(is_front_page()){echo "home-page";} ?>">
 	<header id="header" class="header">
 		<div class="header__top-block">
 			<div class="container">
