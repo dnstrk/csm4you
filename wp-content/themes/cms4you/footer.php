@@ -1,7 +1,31 @@
 
 </main>
 <footer>
-
+	<div class="container">
+		<div class="d-flex align-items-center justify-content-between">
+			<div class="footer__left-part">
+				<div class="d-flex">
+				 <a href="/" class="footer__logo">
+					<img class="footer__img" src="<?php echo get_template_directory_uri()?>/assets/img/logo-fixed.svg">
+				 </a>
+				 <p>© 2018-2024. Клиника системной медицины.<br> Лицензия №ЛО-77-01-010748 от 11.08.2015 </p>
+				 
+				</div>
+				<a href="#">Соглашение по обработке персональных данных</a>
+			</div>
+			<div class="footer__right-part">
+				<ul class="footer-menu d-flex flex-column flex-md-row align-items-center">
+							<li><a class="" href="#">О клинике</a></li>
+							<li><a class="" href="#">Врачи</a></li>
+							<li><a class="" href="#">Прайс-лист</a></li>
+							<li><a class="" href="#">Отзывы</a></li>
+							<li><a class="" href="#">Новости</a></li>
+							<li><a class="" href="#">Контакты</a></li>
+				</ul>
+			</div>
+		
+		</div>
+	</div>
 </footer>
 <div class="bfmodal" id="post" aria-hidden="true">
 	<div class="bfmodal__wrap">

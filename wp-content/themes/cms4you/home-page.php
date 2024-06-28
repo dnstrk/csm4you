@@ -91,44 +91,50 @@ get_header();
 				</div>
 			</div>
 		</div>
-		<div class="about-content">
-			<div class="row">
-				<div class="col-md-6 ">
-					<h2>О нашей клинике</h2>
-					<p>Уникальное медицинское учреждение в Москве, которое подходит к организму человека как к целостной живой системе. <br>Здесь работают высококвалифицированные врачи, кандидаты и доктора наук, имеющие многолетний опыт медицинской практики.
-					</p>
-					<p>Клиника предлагает комплексное решение медицинских проблем пациента и индивидуальный подход к каждому человеку. Врачи выявляют и воздействуют на скрытые нарушения в организме, являющиеся истинной причиной всех симптомов и жалоб пациента. В клинике используются глубокое знание основ медицины и системный подход для устранения причин плохого самочувствия и приведения организма в порядок.
-					</p>
-					<a href="#" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
-				</div>
-				<div class="col-md-6 ">
-					<!--сдайдер клиники-->
-					<div class="ms-auto me-auto carousel-wrapper">
-						 <ul class="carousel">
-							<li class="carusel__item left-pos" id="5">
-								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide5.jpg"/>
-							</li>
-							<li class="carusel__item  main-pos" id="1">
-								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide1.jpg"/>
-							</li>
-							<li class="carusel__item right-pos" id="2">
-								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide2.jpg"/>
-							</li>
-							<li class="carusel__item back-pos" id="3">
-								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide3.jpg"/>
-							</li>
-							<li class="carusel__item back-pos" id="4">
-								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide4.jpg"/>
-							</li>
-							
-						 </ul>
-						<ul class="paginate">
-							<li class="paginate__item" data-id="5"></li>
-							<li class="paginate__item active" data-id="1"></li>
-							<li class="paginate__item" data-id="2"></li>
-							<li class="paginate__item" data-id="3"></li>
-							<li class="paginate__item" data-id="4"></li>
-						</ul>
+		<div class="about-content__wrapper">
+			<div class="blobs">
+					<img class="blob1" src="http://cms4you/wp-content/themes/cms4you/assets/img/blob1.png">
+					<img class="blob4" src="http://cms4you/wp-content/themes/cms4you/assets/img/blob4.png" >
+			</div>
+			<div class="about-content">
+				<div class="row">
+					<div class="col-md-6 ">
+						<h2>О нашей клинике</h2>
+						<p>Уникальное медицинское учреждение в Москве, которое подходит к организму человека как к целостной живой системе. <br>Здесь работают высококвалифицированные врачи, кандидаты и доктора наук, имеющие многолетний опыт медицинской практики.
+						</p>
+						<p>Клиника предлагает комплексное решение медицинских проблем пациента и индивидуальный подход к каждому человеку. Врачи выявляют и воздействуют на скрытые нарушения в организме, являющиеся истинной причиной всех симптомов и жалоб пациента. В клинике используются глубокое знание основ медицины и системный подход для устранения причин плохого самочувствия и приведения организма в порядок.
+						</p>
+						<a href="#" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
+					</div>
+					<div class="col-md-6 ">
+						<!--сдайдер клиники-->
+						<div class="ms-auto me-auto carousel-wrapper">
+							 <ul class="carousel">
+								<li class="carusel__item left-pos" id="5">
+									<img src="<?php echo get_template_directory_uri()?>/assets/img/slide5.jpg"/>
+								</li>
+								<li class="carusel__item  main-pos" id="1">
+									<img src="<?php echo get_template_directory_uri()?>/assets/img/slide1.jpg"/>
+								</li>
+								<li class="carusel__item right-pos" id="2">
+									<img src="<?php echo get_template_directory_uri()?>/assets/img/slide2.jpg"/>
+								</li>
+								<li class="carusel__item back-pos" id="3">
+									<img src="<?php echo get_template_directory_uri()?>/assets/img/slide3.jpg"/>
+								</li>
+								<li class="carusel__item back-pos" id="4">
+									<img src="<?php echo get_template_directory_uri()?>/assets/img/slide4.jpg"/>
+								</li>
+								
+							 </ul>
+							<ul class="paginate">
+								<li class="paginate__item" data-id="5"></li>
+								<li class="paginate__item active" data-id="1"></li>
+								<li class="paginate__item" data-id="2"></li>
+								<li class="paginate__item" data-id="3"></li>
+								<li class="paginate__item" data-id="4"></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -142,6 +148,9 @@ get_header();
 	<div class="container">
 	<h2>Врачи клиники</h2>
 		<div class="splide splide--doctors" id="splide-doctors">
+			<div class="blobs">
+				<img class="blob6" src="http://cms4you/wp-content/themes/cms4you/assets/img/blob6.png">
+			</div>
             <div class="splide__track" id="banner-track">
                 <ul class="splide__list" id="banner-list">
 				<!--слайд. Слайды это уже цикл-->
@@ -251,65 +260,71 @@ get_header();
 <section id="price" class="price">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 card-price">
-				<h2>Прайс-лист</h2>
-				<!--Тип поста услуги, заголовок - категория услуг, цикл запускаем с фильтром по категории в аргументах-->
-				<div class="price-table">
-					<h3>Прием специалиста</h3>
-					<!--Цикл-->
-					<div class="d-flex price-table__row">
-						<p>Прием (осмотр, консультация) врача-эндокринолога первичный</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+			<div class="col-md-8 card-price__wrapper">
+			<div class="blobs">
+				<img class="blob1" src="http://cms4you/wp-content/themes/cms4you/assets/img/blob1.png">
+				<img class="blob4" src="http://cms4you/wp-content/themes/cms4you/assets/img/blob4.png" >
+			</div>
+				<div class="card-price">
+					<h2>Прайс-лист</h2>
+					<!--Тип поста услуги, заголовок - категория услуг, цикл запускаем с фильтром по категории в аргументах-->
+					<div class="price-table">
+						<h3>Прием специалиста</h3>
+						<!--Цикл-->
+						<div class="d-flex price-table__row">
+							<p>Прием (осмотр, консультация) врача-эндокринолога первичный</p>
+							<h4>2 500 ₽</h4>
+							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+						</div>
+						<!--Конец Цикла, остальное можешь удалить-->
+						<div class="d-flex price-table__row">
+							<p>Прием (осмотр, консультация) врача-эндокринолога повторный</p>
+							<h4>1 500 ₽</h4>
+							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+						</div>
 					</div>
-					<!--Конец Цикла, остальное можешь удалить-->
-					<div class="d-flex price-table__row">
-						<p>Прием (осмотр, консультация) врача-эндокринолога повторный</p>
-						<h4>1 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+					<!--Тип поста услуги, другая категория-->
+					<div class="price-table">
+						<h3>УЗИ</h3>
+						<!--Цикл-->
+						<div class="d-flex price-table__row">
+							<p>Ультразвуковое обследование органов эндокринной системы (надпочечники, щитовидная железа)</p>
+							<h4>2 500 ₽</h4>
+							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+						</div>
+						<div class="d-flex price-table__row">
+							<p>Ультразвуковое обследование органов малого таза</p>
+							<h4>2 500 ₽</h4>
+							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+						</div>
+						<div class="d-flex price-table__row">
+							<p>Ультразвуковое обследование молочных желез</p>
+							<h4>2 500 ₽</h4>
+							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+						</div>
+						<div class="d-flex price-table__row">
+							<p>Ультразвуковое обследование органов пищеварительного тракта</p>
+							<h4>2 500 ₽</h4>
+							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+						</div>
+						<div class="d-flex price-table__row">
+							<p>Ультразвуковое обследование печени</p>
+							<h4>2 500 ₽</h4>
+							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+						</div>
+						<div class="d-flex price-table__row">
+							<p>Ультразвуковое обследование почек</p>
+							<h4>2 500 ₽</h4>
+							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+						</div>
+						<div class="d-flex price-table__row">
+							<p>Ультразвуковое обследование брюшной полости</p>
+							<h4>2 500 ₽</h4>
+							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+						</div>
 					</div>
+					<a href="#" class="arrow-right">Смотреть полный прайс-лист</a>
 				</div>
-				<!--Тип поста услуги, другая категория-->
-				<div class="price-table">
-					<h3>УЗИ</h3>
-					<!--Цикл-->
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование органов эндокринной системы (надпочечники, щитовидная железа)</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование органов малого таза</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование молочных желез</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование органов пищеварительного тракта</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование печени</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование почек</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-					<div class="d-flex price-table__row">
-						<p>Ультразвуковое обследование брюшной полости</p>
-						<h4>2 500 ₽</h4>
-						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-					</div>
-				</div>
-				<a href="#" class="arrow-right">Смотреть полный прайс-лист</a>
 			</div>
 			<div class="offset-lg-1 col-lg-3 col-md-4">
 				<div class="hot-spot blue mb-5">
@@ -476,6 +491,7 @@ get_header();
 			<h5>Время работы лаборатории</h5>
 			<p>понедельник-пятница: с 08:00 до 15:00, суббота: с 09:00 до 15:00</p>
 		</div>
+		<a href="#post" data-bfmodal="#post" class="btn btn--big btn--rounded btn--primary btn-shadow">Записаться</a>
 	</div>
 	</div>
 </section>
