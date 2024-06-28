@@ -8,6 +8,7 @@
 </head>
 <body class="<?php if(is_front_page()){echo "home-page";} ?>">
 	<header id="header" class="header">
+		
 		<div class="header__top-block">
 			<div class="container">
 				<div class="d-flex flex-column flex-md-row justify-content-end">
@@ -21,14 +22,22 @@
 			</div>
 		</div>
 		<div class="header__bottom-block">
+			
 			<div class="container">
-				<div class="d-flex flex-column w100 flex-md-row justify-content-end header__bottom-block-content">
+			
+				<div class="d-flex  w100 flex-row justify-content-between justify-content-md-end header__bottom-block-content">
+				<div id="hamburger" class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
 					<a href="/" class="logo">
 						<img class="header__img" src="<?php echo get_template_directory_uri()?>/assets/img/logo.svg">
 						<img class="header__img--fixed" src="<?php echo get_template_directory_uri()?>/assets/img/logo-fixed.svg">
 					</a>
-					<nav>
-						<ul class="header-menu d-flex flex-column flex-md-row align-items-center">
+					<nav id="header-nav">
+						<ul class="header-menu d-md-flex flex-column flex-md-row align-items-center">
 							<li><a class="" href="#">О клинике</a></li>
 							<li><a class="" href="#">Врачи</a></li>
 							<li><a class="" href="#">Прайс-лист</a></li>

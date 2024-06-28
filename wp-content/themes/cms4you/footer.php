@@ -2,7 +2,7 @@
 </main>
 <footer>
 	<div class="container">
-		<div class="d-flex align-items-center justify-content-between">
+		<div class="d-flex flex-column flex-lg-row align-items-center justify-content-between">
 			<div class="footer__left-part">
 				<div class="d-flex">
 				 <a href="/" class="footer__logo">
@@ -14,7 +14,7 @@
 				<a href="#">Соглашение по обработке персональных данных</a>
 			</div>
 			<div class="footer__right-part">
-				<ul class="footer-menu d-flex flex-column flex-md-row align-items-center">
+				<ul class="footer-menu d-flex align-items-center">
 							<li><a class="" href="#">О клинике</a></li>
 							<li><a class="" href="#">Врачи</a></li>
 							<li><a class="" href="#">Прайс-лист</a></li>

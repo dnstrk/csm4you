@@ -6,7 +6,7 @@ get_header();
 ?>
 <!--первая секция-->
 <section class="top">
-	<div class="h-100 container">
+	<div class="h-lg-100 container">
 	<img class="top_bg" src="<?php echo get_template_directory_uri()?>/assets/img/top_bg.png"/>
 	<div class="blobs">
 		<img class="blob1" src="<?php echo get_template_directory_uri()?>/assets/img/blob1.png"/>
@@ -15,12 +15,8 @@ get_header();
 		<img class="blob4" src="<?php echo get_template_directory_uri()?>/assets/img/blob4.png"/>
 		<img class="blob5" src="<?php echo get_template_directory_uri()?>/assets/img/blob5.png"/>
 	</div>
-	<div class="row h-100">
-			<div class="h-100 col-md-7 d-flex flex-column justify-content-center">
-				<h1>Клиника Системной Медицины</h1>
-				<p class="subtitle">Уникальная клиника в Москве, подходящая к организму человека, как к целостной живой системе</p>
-			</div>
-			<div class="offset-lg-1 col-md-4">
+	<div class="row h-lg-100">
+			<div class="offset-lg-1 order-lg-2 offset-lg-1 col-md-6 offset-md-6 col-lg-4">
 				<div class="top-card">
 					<div class="top-card__header">
 						<div class="top-card__img">
@@ -36,6 +32,11 @@ get_header();
 					</div>
 				</div>
 			</div>
+			<div class="h-lg-100 col-lg-7 d-flex order-lg-1 flex-column justify-content-center">
+				<h1>Клиника Системной Медицины</h1>
+				<p class="subtitle">Уникальная клиника в Москве, подходящая к организму человека, как к целостной живой системе</p>
+			</div>
+
 		</div>
 	</div>
 </section>
@@ -44,7 +45,7 @@ get_header();
 	<div class="container">
 		<div class="row">
 			<!--Здесь у тебя цикл с карточками-->
-			<div class="col-md-4">
+			<div class="col-lg-4">
 				<div class="about-card">
 					<div class="about-card__header">
 						<div class="about-card__img">
@@ -60,7 +61,7 @@ get_header();
 				</div>
 			</div>
 			<!--Здесь у тебя конец цикла, две нижние карточки удаляем-->
-			<div class="col-md-4">
+			<div class="col-lg-4">
 				<div class="about-card">
 					<div class="about-card__header">
 						<div class="about-card__img">
@@ -75,7 +76,7 @@ get_header();
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-lg-4">
 				<div class="about-card">
 					<div class="about-card__header">
 						<div class="about-card__img">
@@ -98,15 +99,7 @@ get_header();
 			</div>
 			<div class="about-content">
 				<div class="row">
-					<div class="col-md-6 ">
-						<h2>О нашей клинике</h2>
-						<p>Уникальное медицинское учреждение в Москве, которое подходит к организму человека как к целостной живой системе. <br>Здесь работают высококвалифицированные врачи, кандидаты и доктора наук, имеющие многолетний опыт медицинской практики.
-						</p>
-						<p>Клиника предлагает комплексное решение медицинских проблем пациента и индивидуальный подход к каждому человеку. Врачи выявляют и воздействуют на скрытые нарушения в организме, являющиеся истинной причиной всех симптомов и жалоб пациента. В клинике используются глубокое знание основ медицины и системный подход для устранения причин плохого самочувствия и приведения организма в порядок.
-						</p>
-						<a href="#" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
-					</div>
-					<div class="col-md-6 ">
+					<div class="col-lg-6 order-1 order-lg-2">
 						<!--сдайдер клиники-->
 						<div class="ms-auto me-auto carousel-wrapper">
 							 <ul class="carousel">
@@ -135,6 +128,14 @@ get_header();
 								<li class="paginate__item" data-id="4"></li>
 							</ul>
 						</div>
+					</div>
+					<div class="col-lg-6 order-2 order-lg-1 ">
+						<h2>О нашей клинике</h2>
+						<p>Уникальное медицинское учреждение в Москве, которое подходит к организму человека как к целостной живой системе. <br>Здесь работают высококвалифицированные врачи, кандидаты и доктора наук, имеющие многолетний опыт медицинской практики.
+						</p>
+						<p>Клиника предлагает комплексное решение медицинских проблем пациента и индивидуальный подход к каждому человеку. Врачи выявляют и воздействуют на скрытые нарушения в организме, являющиеся истинной причиной всех симптомов и жалоб пациента. В клинике используются глубокое знание основ медицины и системный подход для устранения причин плохого самочувствия и приведения организма в порядок.
+						</p>
+						<a href="#" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
 					</div>
 				</div>
 			</div>
@@ -472,10 +473,7 @@ get_header();
 </section>
 <section id="contacts" class="contacts">
 	<div class="container">
-	<div class="map">
-	<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0b06614e806b736acbc5e523f37c4b677c7eeb7396defa69a43605e5e5a93e00&amp;width=100%25&amp;height=539&amp;lang=ru_RU&amp;scroll=false"></script>
-	</div>
-	<div class="contacts-card">
+		<div class="contacts-card">
 		<h3>Контакты</h3>
 		<div class="contacts-card__contacts">
 			<a href="tel:8 (987) 654-32-10" class="phone">8 (987) 654-32-10</a>
@@ -493,6 +491,11 @@ get_header();
 		</div>
 		<a href="#post" data-bfmodal="#post" class="btn btn--big btn--rounded btn--primary btn-shadow">Записаться</a>
 	</div>
+	<div class="map">
+		<span class="xs-hidden"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0b06614e806b736acbc5e523f37c4b677c7eeb7396defa69a43605e5e5a93e00&amp;width=100%25&amp;height=539&amp;lang=ru_RU&amp;scroll=false"></script></span>
+		<span class="xs-visiblity"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0b06614e806b736acbc5e523f37c4b677c7eeb7396defa69a43605e5e5a93e00&amp;width=100%25&amp;height=285&amp;lang=ru_RU&amp;scroll=true"></script></span>
+	</div>
+
 	</div>
 </section>
 <?php
