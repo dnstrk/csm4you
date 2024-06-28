@@ -152,13 +152,13 @@ function landing_block() {
     $theam_meta->add_field( array(
         'name' => 'Настройки секции "Прайс-лист"',
         'type' => 'title1',
-        'id'   => 'price-list_title'
+        'id'   => 'priceList_title'
     ) );
 
     $theam_meta->add_field( array(
         'name'    => 'Прайс-лист: Заголовок',
         'default' => 'Прайс-лист',
-        'id'      => 'price-list_h3',
+        'id'      => 'priceList_h3',
         'type'    => 'text',
     ) );
 
@@ -168,20 +168,20 @@ function landing_block() {
     $theam_meta->add_field( array(
         'name' => 'Настройки секции "Онлайн запись"',
         'type' => 'title1',
-        'id'   => 'online-register_title'
+        'id'   => 'onlineRegister_title'
     ) );
 
     $theam_meta->add_field( array(
         'name'    => 'Онлайн запись: Заголовок',
         'default' => 'Онлайн запись',
-        'id'      => 'online-register_h3',
+        'id'      => 'onlineRegister_h3',
         'type'    => 'text',
     ) );
     
     $theam_meta->add_field( array(
         'name'    => 'Онлайн запись: Текст',
         'default' => 'Выберите дату или врача',
-        'id'      => 'online-register_span',
+        'id'      => 'onlineRegister_span',
         'type'    => 'text',
     ) );
 
