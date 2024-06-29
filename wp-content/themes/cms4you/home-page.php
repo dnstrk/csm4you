@@ -4,6 +4,14 @@ Template Name: Medical
 */
 get_header();
 
+//Footer data
+$num_footer1 = get_theme_mod('num_footer1');
+$num_footer2 = get_theme_mod('num_footer2');
+$mail_footer = get_theme_mod('mail_footer');
+$address_foot = get_theme_mod('address_foot');
+$working_hours_clinic = get_theme_mod('working_hours_clinic');
+$working_hours_lab = get_theme_mod('working_hours_lab');
+$copyright = get_theme_mod('copyright');
 //секция top
 $banner_h1 = get_post_meta( get_the_ID(), 'banner_h1', true );
 $banner_p = get_post_meta( get_the_ID(), 'banner_p', true );
@@ -64,11 +72,6 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 					</div>
 				</div>
 			</div>
-			<div class="h-lg-100 col-lg-7 d-flex order-lg-1 flex-column justify-content-center">
-				<h1>Клиника Системной Медицины</h1>
-				<p class="subtitle">Уникальная клиника в Москве, подходящая к организму человека, как к целостной живой системе</p>
-			</div>
-
 		</div>
 	</div>
 </section>
@@ -149,7 +152,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 	<h2><?php echo $doctors_h3 ?></h2>
 		<div class="splide splide--doctors" id="splide-doctors">
 			<div class="blobs">
-				<img class="blob6" src="http://cms4you/wp-content/themes/cms4you/assets/img/blob6.png">
+				<img class="blob6" src="<?php echo get_template_directory_uri()?>/assets/img/blob6.png">
 			</div>
             <div class="splide__track" id="banner-track">
                 <ul class="splide__list" id="banner-list">
@@ -257,6 +260,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 	</div>
 </section>
 <!--третья секция-->
+
 <section id="price" class="price">
 	<div class="container">
 		<div class="row">
@@ -332,46 +336,51 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 </section>
 <section id="review" class="review">
 	<div class="container">
-		<h2><?php echo $review_h3 ?></h2>
-	</div>
-		<div class="splide splide--reviews" id="splide-reviews">
-            <div class="splide__track" id="banner-track">
-                <ul class="splide__list" id="banner-list">
-				<!--слайд. Слайды это уже цикл-->
-					<li class="splide__slide">
-						<div class="card-review">
-							<div class="post-data">09.06.2024</div>
-							<h4>Коробейников С.В.</h4>
-							<div class="card-review__content">
-								<p>Выражаю огромную благодарность, доктору Зухре Шариповне, за успешную работу. Спасибо за профессионализм, поддержку и внимательное отношение. Когда я пришел в первый раз на прием мое состояние можно охарактеризовать следующими стихами: «А я все думаю, что горы сдвину, Поля засею, орошу долины</p>
-								<p>Выражаю огромную благодарность, доктору Зухре Шариповне, за успешную работу. Спасибо за профессионализм, поддержку и внимательное отношение. Когда я пришел в первый раз на прием мое состояние можно охарактеризовать следующими стихами: «А я все думаю, что горы сдвину, Поля засею, орошу долины</p> 
-								<a href="#">Развернуть</a>
-							 </div>
-						</div>
-					</li>
-					<li class="splide__slide">
-						<div class="card-review">
-							<div class="post-data">09.06.2024</div>
-							<h4>Насыров Р.М.</h4>
-							<div class="card-review__content">
-								<p>В нашей современной жизни и условиях важно встретить хорошего специалиста в своей области. Мне повезло – я познакомился с замечательным врачом – Зухрой Шариповной. Теперь я могу смело отправлять к ней на прием своих родственников, друзей и знакомых, зная, что им помогут с их проблемами.</p>
-								<p>В нашей современной жизни и условиях важно встретить хорошего специалиста в своей области. Мне повезло – я познакомился с замечательным врачом – Зухрой Шариповной. Теперь я могу смело отправлять к ней на прием своих родственников, друзей и знакомых, зная, что им помогут с их проблемами.</p>
-								<a href="#">Развернуть</a></div>
-						</div>
-					</li>
-					<li class="splide__slide">
-						<div class="card-review">
-							<div class="post-data">09.06.2024</div>
-							<h4>Насыров Р.М.</h4>
-							<div class="card-review__content">
-							 <p>В нашей современной жизни и условиях важно встретить хорошего специалиста в своей области. Мне повезло – я познакомился с замечательным врачом – Зухрой Шариповной. Теперь я могу смело отправлять к ней на прием своих родственников, друзей и знакомых, зная, что им помогут с их проблемами.</p>
-							 <p>В нашей современной жизни и условиях важно встретить хорошего специалиста в своей области. Мне повезло – я познакомился с замечательным врачом – Зухрой Шариповной. Теперь я могу смело отправлять к ней на прием своих родственников, друзей и знакомых, зная, что им помогут с их проблемами.</p>
-							 <a href="#">Развернуть</a></div>
-						</div>
-					</li>
-				</ul>
+		<div class="d-flex align-items-center justify-content-between mb4">
+			<h2><?php echo $review_h3 ?></h2>
+			<div class="splide__arrows">
+				<button id ="arrow-reviews--prev" class="splide__arrow splide__arrow--prev" type="button" aria-controls="banner-track" aria-label="Go to last slide">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><path d="M7.5 3.75L13.75 10L7.5 16.25"></path></svg>
+				</button>
+				<button id="arrow-reviews--next" class="splide__arrow splide__arrow--next" type="button" aria-controls="banner-track" aria-label="Next slide">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><path d="M7.5 3.75L13.75 10L7.5 16.25"></path></svg>
+				</button>
 			</div>
 		</div>
+	</div>
+
+	<div class="splide splide--reviews" id="splide-reviews">
+		<div class="splide__track" id="banner-track">
+			<ul class="splide__list" id="banner-list">
+			<?php
+			// Новый WP_Query
+			$query = new WP_Query(array(
+				'post_type' => 'review', // Кастомный тип записей
+				'posts_per_page' => -1, // Выводим все отзывы
+			));
+			if ($query->have_posts()) : ?>
+			<?php while ($query->have_posts()) : $query->the_post(); ?>
+			<!--слайд. Слайды это уже цикл-->
+				<li class="splide__slide">
+					<div class="card-review">
+						<div class="post-data"><?php the_excerpt(); ?></div>
+						<h4><?php the_title(); ?></h4>
+						<div class="card-review__content">
+							<?php the_content(); ?>
+							<a href="#">Развернуть</a>
+							</div>
+					</div>
+				</li>
+			<?php endwhile; ?>
+			<?php
+				// Восстановить глобальные данные поста
+				wp_reset_postdata();
+			else : ?>
+				<p><?php _e('No reviews found.', 'your-text-domain'); ?></p>
+			<?php endif; ?>
+			</ul>
+		</div>
+	</div>
 </section>
 <section id="news" class="news">
 	<div class="container">
@@ -444,18 +453,18 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 		<div class="contacts-card">
 		<h3>Контакты</h3>
 		<div class="contacts-card__contacts">
-			<a href="tel:8 (987) 654-32-10" class="phone">8 (987) 654-32-10</a>
-			<a href="tel:8 (499) 705-96-97" class="phone">8 (499) 705-96-97</a>
-			<a href="mailto:clinic@csm4you.ru" class="email">clinic@csm4you.ru</a>
-			<p class="adress">Москва, 2-я Фрунзенская, д. 2/36, м. Фрунзенская</a>
+			<a href="tel:8 (987) 654-32-10" class="phone"><?php echo $num_footer1 ?></a>
+			<a href="tel:8 (499) 705-96-97" class="phone"><?php echo $num_footer2 ?></a>
+			<a href="mailto:clinic@csm4you.ru" class="email"><?php echo $mail_footer ?></a>
+			<p class="adress"><?php echo $address_foot ?></a>
 		</div>
 		<div class="contacts-card__content">
 			<h5>Время работы клиники</h5>
-			<p>понедельник, четверг с 08:00 до 20:00, вторник, среда, пятница: с 08:00 до 15:00, суббота: с 09:00 до 15:00</p>
+			<p><?php echo $working_hours_clinic ?></p>
 		</div>
 		<div class="contacts-card__content">
 			<h5>Время работы лаборатории</h5>
-			<p>понедельник-пятница: с 08:00 до 15:00, суббота: с 09:00 до 15:00</p>
+			<p><?php echo $working_hours_lab ?></p>
 		</div>
 		<a href="#post" data-bfmodal="#post" class="btn btn--big btn--rounded btn--primary btn-shadow">Записаться</a>
 	</div>
