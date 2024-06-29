@@ -3,7 +3,43 @@
 Template Name: Medical
 */
 get_header();
+
+//Footer data
+$num_footer1 = get_theme_mod('num_footer1');
+$num_footer2 = get_theme_mod('num_footer2');
+$mail_footer = get_theme_mod('mail_footer');
+$address_foot = get_theme_mod('address_foot');
+$working_hours_clinic = get_theme_mod('working_hours_clinic');
+$working_hours_lab = get_theme_mod('working_hours_lab');
+$copyright = get_theme_mod('copyright');
+//секция top
+$banner_h1 = get_post_meta( get_the_ID(), 'banner_h1', true );
+$banner_p = get_post_meta( get_the_ID(), 'banner_p', true );
+
+//секция about
+$banner_cards = get_post_meta( get_the_ID(), 'banner_cards', true );
+
+
+//секция about-content
+$aboutContent_h3 = get_post_meta( get_the_ID(), 'aboutContent_h3', true );
+$aboutContent_p1 = get_post_meta( get_the_ID(), 'aboutContent_p1', true );
+$aboutContent_p2 = get_post_meta( get_the_ID(), 'aboutContent_p2', true );
+$aboutContent_file = get_post_meta( get_the_ID(), 'aboutContent_file', true );
+
+//секция doctors
+$doctors_h3 = get_post_meta( get_the_ID(), 'doctors_h3', true );
+
+//секция Price-list
+$priceList_h3 = get_post_meta( get_the_ID(), 'priceList_h3', true );
+
+//Секция Online-register
+
+//Секция Review
+$review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
+
+
 ?>
+
 <!--первая секция-->
 <section class="top">
 	<div class="h-lg-100 container">
@@ -15,8 +51,12 @@ get_header();
 		<img class="blob4" src="<?php echo get_template_directory_uri()?>/assets/img/blob4.png"/>
 		<img class="blob5" src="<?php echo get_template_directory_uri()?>/assets/img/blob5.png"/>
 	</div>
-	<div class="row h-lg-100">
-			<div class="offset-lg-1 order-lg-2 offset-lg-1 col-md-6 offset-md-6 col-lg-4">
+	<div class="row h-100">
+			<div class="h-100 col-md-7 d-flex flex-column justify-content-center">
+				<h1><?php echo $banner_h1 ?></h1>
+				<p class="subtitle"><?php echo $banner_p ?></p>
+			</div>
+			<div class="offset-lg-1 col-md-4">
 				<div class="top-card">
 					<div class="top-card__header">
 						<div class="top-card__img">
@@ -32,11 +72,6 @@ get_header();
 					</div>
 				</div>
 			</div>
-			<div class="h-lg-100 col-lg-7 d-flex order-lg-1 flex-column justify-content-center">
-				<h1>Клиника Системной Медицины</h1>
-				<p class="subtitle">Уникальная клиника в Москве, подходящая к организму человека, как к целостной живой системе</p>
-			</div>
-
 		</div>
 	</div>
 </section>
@@ -45,109 +80,76 @@ get_header();
 	<div class="container">
 		<div class="row">
 			<!--Здесь у тебя цикл с карточками-->
-			<div class="col-lg-4">
-				<div class="about-card">
-					<div class="about-card__header">
-						<div class="about-card__img">
-							<img src="<?php echo get_template_directory_uri()?>/assets/img/icon1.svg"/>
-						</div>
-						<div class="about-card__title">
-							<h4>Системный подход</h4>
-						</div>
-					</div>
-					<div class="about-card__content">
-						<p>Глубокое, фундаментальное знание основ медицины и такой системный подход позволяют выявить и воздействовать на скрытые нарушения в организме, которые и являются истинной причиной всех симптомов и жалоб пациента.</p>
-					</div>
-				</div>
-			</div>
-			<!--Здесь у тебя конец цикла, две нижние карточки удаляем-->
-			<div class="col-lg-4">
-				<div class="about-card">
-					<div class="about-card__header">
-						<div class="about-card__img">
-							<img src="<?php echo get_template_directory_uri()?>/assets/img/icon2.svg"/>
-						</div>
-						<div class="about-card__title">
-							<h4>Комплексное решение</h4>
+			<?php if($banner_cards){?>
+				<?php foreach ( (array) $banner_cards as $key => $card ) { ?>
+					<div class="col-md-4">
+						<div class="about-card">
+							<div class="about-card__header">
+								<div class="about-card__img">
+									<img src="<?php echo $card['banner_card_img'] ?>"/>
+									
+								</div>
+								<div class="about-card__title">
+									<h4><?php echo $card['banner_card_h5'] ?></h4>
+								</div>
+							</div>
+							<div class="about-card__content">
+								<p><?php echo $card['banner_card_p'] ?></p>
+							</div>
 						</div>
 					</div>
-					<div class="about-card__content">
-						<p>Ключевым принципом нашей концепции является комплексное решение медицинских проблем пациента и индивидуальный подход к каждому человеку. Для наших пациентов мы создали максимально удобный и комфортный механизм получения медицинской помощи в короткие сроки в одном месте.</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4">
-				<div class="about-card">
-					<div class="about-card__header">
-						<div class="about-card__img">
-							<img src="<?php echo get_template_directory_uri()?>/assets/img/icon3.svg"/>
-						</div>
-						<div class="about-card__title">
-							<h4>Квалифицированные врачи</h4>
-						</div>
-					</div>
-					<div class="about-card__content">
-						<p>В нашей Клинике работают высококвалифицированные врачи, ведущие специалисты своих областей, кандидаты и доктора наук, у каждого из которых за плечами имеется успешный многолетний опыт медицинской практики.</p>
-					</div>
-				</div>
-			</div>
+				<?php }?>
+			<?php } ?>
 		</div>
-		<div class="about-content__wrapper">
-			<div class="blobs">
-					<img class="blob1" src="http://cms4you/wp-content/themes/cms4you/assets/img/blob1.png">
-					<img class="blob4" src="http://cms4you/wp-content/themes/cms4you/assets/img/blob4.png" >
-			</div>
-			<div class="about-content">
-				<div class="row">
-					<div class="col-lg-6 order-1 order-lg-2">
-						<!--сдайдер клиники-->
-						<div class="ms-auto me-auto carousel-wrapper">
-							 <ul class="carousel">
-								<li class="carusel__item left-pos" id="5">
-									<img src="<?php echo get_template_directory_uri()?>/assets/img/slide5.jpg"/>
-								</li>
-								<li class="carusel__item  main-pos" id="1">
-									<img src="<?php echo get_template_directory_uri()?>/assets/img/slide1.jpg"/>
-								</li>
-								<li class="carusel__item right-pos" id="2">
-									<img src="<?php echo get_template_directory_uri()?>/assets/img/slide2.jpg"/>
-								</li>
-								<li class="carusel__item back-pos" id="3">
-									<img src="<?php echo get_template_directory_uri()?>/assets/img/slide3.jpg"/>
-								</li>
-								<li class="carusel__item back-pos" id="4">
-									<img src="<?php echo get_template_directory_uri()?>/assets/img/slide4.jpg"/>
-								</li>
-								
-							 </ul>
-							<ul class="paginate">
-								<li class="paginate__item" data-id="5"></li>
-								<li class="paginate__item active" data-id="1"></li>
-								<li class="paginate__item" data-id="2"></li>
-								<li class="paginate__item" data-id="3"></li>
-								<li class="paginate__item" data-id="4"></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-6 order-2 order-lg-1 ">
-						<h2>О нашей клинике</h2>
-						<p>Уникальное медицинское учреждение в Москве, которое подходит к организму человека как к целостной живой системе. <br>Здесь работают высококвалифицированные врачи, кандидаты и доктора наук, имеющие многолетний опыт медицинской практики.
-						</p>
-						<p>Клиника предлагает комплексное решение медицинских проблем пациента и индивидуальный подход к каждому человеку. Врачи выявляют и воздействуют на скрытые нарушения в организме, являющиеся истинной причиной всех симптомов и жалоб пациента. В клинике используются глубокое знание основ медицины и системный подход для устранения причин плохого самочувствия и приведения организма в порядок.
-						</p>
-						<a href="#" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
+		<div class="about-content">
+			<div class="row">
+				<div class="col-md-6 ">
+					<h2><?php echo $aboutContent_h3 ?></h2>
+					<p><?php echo $aboutContent_p1 ?>
+					</p>
+					<p><?php echo $aboutContent_p2 ?>
+					</p>
+					<a href="#" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
+				</div>
+				<div class="col-md-6 ">
+					<!--сдайдер клиники-->
+					<div class="ms-auto me-auto carousel-wrapper">
+						 <ul class="carousel">
+							<li class="carusel__item left-pos" id="5">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide5.jpg"/>
+							</li>
+							<li class="carusel__item  main-pos" id="1">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide1.jpg"/>
+							</li>
+							<li class="carusel__item right-pos" id="2">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide2.jpg"/>
+							</li>
+							<li class="carusel__item back-pos" id="3">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide3.jpg"/>
+							</li>
+							<li class="carusel__item back-pos" id="4">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide4.jpg"/>
+							</li>
+							
+						 </ul>
+						<ul class="paginate">
+							<li class="paginate__item" data-id="5"></li>
+							<li class="paginate__item active" data-id="1"></li>
+							<li class="paginate__item" data-id="2"></li>
+							<li class="paginate__item" data-id="3"></li>
+							<li class="paginate__item" data-id="4"></li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
 <!--третья секция-->
 <section id="doctors" class="doctors">
 <img class="bg1" src="<?php echo get_template_directory_uri()?>/assets/img/bg1.jpg"/>
 	<div class="container">
-	<h2>Врачи клиники</h2>
+	<h2><?php echo $doctors_h3 ?></h2>
 		<div class="splide splide--doctors" id="splide-doctors">
 			<div class="blobs">
 				<img class="blob6" src="<?php echo get_template_directory_uri()?>/assets/img/blob6.png">
@@ -258,74 +260,52 @@ get_header();
 	</div>
 </section>
 <!--третья секция-->
+
 <section id="price" class="price">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 card-price__wrapper">
-			<div class="blobs">
-				<img class="blob1" src="http://cms4you/wp-content/themes/cms4you/assets/img/blob1.png">
-				<img class="blob4" src="http://cms4you/wp-content/themes/cms4you/assets/img/blob4.png" >
-			</div>
-				<div class="card-price">
-					<h2>Прайс-лист</h2>
-					<!--Тип поста услуги, заголовок - категория услуг, цикл запускаем с фильтром по категории в аргументах-->
-					<div class="price-table">
-						<h3>Прием специалиста</h3>
-						<!--Цикл-->
-						<div class="d-flex price-table__row">
-							<p>Прием (осмотр, консультация) врача-эндокринолога первичный</p>
-							<h4>2 500 ₽</h4>
-							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-						</div>
-						<!--Конец Цикла, остальное можешь удалить-->
-						<div class="d-flex price-table__row">
-							<p>Прием (осмотр, консультация) врача-эндокринолога повторный</p>
-							<h4>1 500 ₽</h4>
-							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-						</div>
+			<div class="col-md-8 card-price">
+				<h2><?php echo $priceList_h3 ?></h2>
+				<div class="price-table">
+				<?php
+				$category_slugs = array('priem-speczialista', 'uzi');
+				foreach ($category_slugs as $category_slug) {
+					// Получение объекта категории по слагу
+					$category = get_term_by('slug', $category_slug, 'service_category');
+					// Проверка, что категория существует
+					if ($category) :
+						// Параметры запроса
+						$args = array(
+							'post_type' => 'service', // Кастомный тип записей
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'service_category', // Таксономия
+									'field'    => 'slug',
+									'terms'    => $category_slug, // Слаг категории
+								),
+							),
+						);
+						$query = new WP_Query( $args );
+						if ( $query->have_posts() ) :?>
+				<!--Тип поста услуги, заголовок - категория услуг, цикл запускаем с фильтром по категории в аргументах-->
+					<h3><?php echo $category->name ?></h3>
+					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+					<div class="d-flex price-table__row">
+						<p><?php the_title(); ?></p>
+						<h4><?php the_content(); ?></h4>
+						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
 					</div>
-					<!--Тип поста услуги, другая категория-->
-					<div class="price-table">
-						<h3>УЗИ</h3>
-						<!--Цикл-->
-						<div class="d-flex price-table__row">
-							<p>Ультразвуковое обследование органов эндокринной системы (надпочечники, щитовидная железа)</p>
-							<h4>2 500 ₽</h4>
-							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-						</div>
-						<div class="d-flex price-table__row">
-							<p>Ультразвуковое обследование органов малого таза</p>
-							<h4>2 500 ₽</h4>
-							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-						</div>
-						<div class="d-flex price-table__row">
-							<p>Ультразвуковое обследование молочных желез</p>
-							<h4>2 500 ₽</h4>
-							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-						</div>
-						<div class="d-flex price-table__row">
-							<p>Ультразвуковое обследование органов пищеварительного тракта</p>
-							<h4>2 500 ₽</h4>
-							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-						</div>
-						<div class="d-flex price-table__row">
-							<p>Ультразвуковое обследование печени</p>
-							<h4>2 500 ₽</h4>
-							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-						</div>
-						<div class="d-flex price-table__row">
-							<p>Ультразвуковое обследование почек</p>
-							<h4>2 500 ₽</h4>
-							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-						</div>
-						<div class="d-flex price-table__row">
-							<p>Ультразвуковое обследование брюшной полости</p>
-							<h4>2 500 ₽</h4>
-							<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-						</div>
-					</div>
-					<a href="#" class="arrow-right">Смотреть полный прайс-лист</a>
+					<?php endwhile; ?>
+					<?php
+						wp_reset_postdata();
+       			 	else : ?>
+						<p><?php _e('No services found in this category.', 'your-text-domain'); ?></p>
+        			<?php endif;
+   				else : ?>
+        			<p><?php _e('Category not found.', 'your-text-domain'); ?></p>
+ 				<?php endif;}?>
 				</div>
+				<a href="#" class="arrow-right">Смотреть полный прайс-лист</a>
 			</div>
 			<div class="offset-lg-1 col-lg-3 col-md-4">
 				<div class="hot-spot blue mb-5">
@@ -356,54 +336,51 @@ get_header();
 </section>
 <section id="review" class="review">
 	<div class="container">
-		<h2>Отзывы клиентов</h2>
-		<div class="splide__arrows">
-			<button id ="arrow-reviews--prev" class="splide__arrow splide__arrow--prev" type="button" aria-controls="banner-track" aria-label="Go to last slide">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><path d="M7.5 3.75L13.75 10L7.5 16.25"></path></svg>
-			</button>
-			<button id="arrow-reviews--next" class="splide__arrow splide__arrow--next" type="button" aria-controls="banner-track" aria-label="Next slide">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><path d="M7.5 3.75L13.75 10L7.5 16.25"></path></svg>
-			</button>
-		</div>
-	</div>
-		<div class="splide splide--reviews" id="splide-reviews">
-            <div class="splide__track" id="banner-track">
-                <ul class="splide__list" id="banner-list">
-				<!--слайд. Слайды это уже цикл-->
-					<li class="splide__slide">
-						<div class="card-review">
-							<div class="post-data">09.06.2024</div>
-							<h4>Коробейников С.В.</h4>
-							<div class="card-review__content">
-								<p>Выражаю огромную благодарность, доктору Зухре Шариповне, за успешную работу. Спасибо за профессионализм, поддержку и внимательное отношение. Когда я пришел в первый раз на прием мое состояние можно охарактеризовать следующими стихами: «А я все думаю, что горы сдвину, Поля засею, орошу долины</p>
-								<p>Выражаю огромную благодарность, доктору Зухре Шариповне, за успешную работу. Спасибо за профессионализм, поддержку и внимательное отношение. Когда я пришел в первый раз на прием мое состояние можно охарактеризовать следующими стихами: «А я все думаю, что горы сдвину, Поля засею, орошу долины</p> 
-								<a href="#">Развернуть</a>
-							 </div>
-						</div>
-					</li>
-					<li class="splide__slide">
-						<div class="card-review">
-							<div class="post-data">09.06.2024</div>
-							<h4>Насыров Р.М.</h4>
-							<div class="card-review__content">
-								<p>В нашей современной жизни и условиях важно встретить хорошего специалиста в своей области. Мне повезло – я познакомился с замечательным врачом – Зухрой Шариповной. Теперь я могу смело отправлять к ней на прием своих родственников, друзей и знакомых, зная, что им помогут с их проблемами.</p>
-								<p>В нашей современной жизни и условиях важно встретить хорошего специалиста в своей области. Мне повезло – я познакомился с замечательным врачом – Зухрой Шариповной. Теперь я могу смело отправлять к ней на прием своих родственников, друзей и знакомых, зная, что им помогут с их проблемами.</p>
-								<a href="#">Развернуть</a></div>
-						</div>
-					</li>
-					<li class="splide__slide">
-						<div class="card-review">
-							<div class="post-data">09.06.2024</div>
-							<h4>Насыров Р.М.</h4>
-							<div class="card-review__content">
-							 <p>В нашей современной жизни и условиях важно встретить хорошего специалиста в своей области. Мне повезло – я познакомился с замечательным врачом – Зухрой Шариповной. Теперь я могу смело отправлять к ней на прием своих родственников, друзей и знакомых, зная, что им помогут с их проблемами.</p>
-							 <p>В нашей современной жизни и условиях важно встретить хорошего специалиста в своей области. Мне повезло – я познакомился с замечательным врачом – Зухрой Шариповной. Теперь я могу смело отправлять к ней на прием своих родственников, друзей и знакомых, зная, что им помогут с их проблемами.</p>
-							 <a href="#">Развернуть</a></div>
-						</div>
-					</li>
-				</ul>
+		<div class="d-flex align-items-center justify-content-between mb4">
+			<h2><?php echo $review_h3 ?></h2>
+			<div class="splide__arrows">
+				<button id ="arrow-reviews--prev" class="splide__arrow splide__arrow--prev" type="button" aria-controls="banner-track" aria-label="Go to last slide">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><path d="M7.5 3.75L13.75 10L7.5 16.25"></path></svg>
+				</button>
+				<button id="arrow-reviews--next" class="splide__arrow splide__arrow--next" type="button" aria-controls="banner-track" aria-label="Next slide">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><path d="M7.5 3.75L13.75 10L7.5 16.25"></path></svg>
+				</button>
 			</div>
 		</div>
+	</div>
+
+	<div class="splide splide--reviews" id="splide-reviews">
+		<div class="splide__track" id="banner-track">
+			<ul class="splide__list" id="banner-list">
+			<?php
+			// Новый WP_Query
+			$query = new WP_Query(array(
+				'post_type' => 'review', // Кастомный тип записей
+				'posts_per_page' => -1, // Выводим все отзывы
+			));
+			if ($query->have_posts()) : ?>
+			<?php while ($query->have_posts()) : $query->the_post(); ?>
+			<!--слайд. Слайды это уже цикл-->
+				<li class="splide__slide">
+					<div class="card-review">
+						<div class="post-data"><?php the_excerpt(); ?></div>
+						<h4><?php the_title(); ?></h4>
+						<div class="card-review__content">
+							<?php the_content(); ?>
+							<a href="#">Развернуть</a>
+							</div>
+					</div>
+				</li>
+			<?php endwhile; ?>
+			<?php
+				// Восстановить глобальные данные поста
+				wp_reset_postdata();
+			else : ?>
+				<p><?php _e('No reviews found.', 'your-text-domain'); ?></p>
+			<?php endif; ?>
+			</ul>
+		</div>
+	</div>
 </section>
 <section id="news" class="news">
 	<div class="container">
@@ -476,18 +453,18 @@ get_header();
 		<div class="contacts-card">
 		<h3>Контакты</h3>
 		<div class="contacts-card__contacts">
-			<a href="tel:8 (987) 654-32-10" class="phone">8 (987) 654-32-10</a>
-			<a href="tel:8 (499) 705-96-97" class="phone">8 (499) 705-96-97</a>
-			<a href="mailto:clinic@csm4you.ru" class="email">clinic@csm4you.ru</a>
-			<p class="adress">Москва, 2-я Фрунзенская, д. 2/36, м. Фрунзенская</a>
+			<a href="tel:8 (987) 654-32-10" class="phone"><?php echo $num_footer1 ?></a>
+			<a href="tel:8 (499) 705-96-97" class="phone"><?php echo $num_footer2 ?></a>
+			<a href="mailto:clinic@csm4you.ru" class="email"><?php echo $mail_footer ?></a>
+			<p class="adress"><?php echo $address_foot ?></a>
 		</div>
 		<div class="contacts-card__content">
 			<h5>Время работы клиники</h5>
-			<p>понедельник, четверг с 08:00 до 20:00, вторник, среда, пятница: с 08:00 до 15:00, суббота: с 09:00 до 15:00</p>
+			<p><?php echo $working_hours_clinic ?></p>
 		</div>
 		<div class="contacts-card__content">
 			<h5>Время работы лаборатории</h5>
-			<p>понедельник-пятница: с 08:00 до 15:00, суббота: с 09:00 до 15:00</p>
+			<p><?php echo $working_hours_lab ?></p>
 		</div>
 		<a href="#post" data-bfmodal="#post" class="btn btn--big btn--rounded btn--primary btn-shadow">Записаться</a>
 	</div>
