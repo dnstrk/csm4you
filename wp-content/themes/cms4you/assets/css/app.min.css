@@ -113,6 +113,11 @@ a:focus, a:active{
 	color: var(--pr-active);
 	text-decoration:none;
 }
+button, input[type="submit"] {
+	display:block;
+	outline:none;
+	border:none;
+}	
 small {
     font-size: 1.2rem;
 }
@@ -212,11 +217,15 @@ color:var(--white);
 .btn-shadow{
 	box-shadow: 0 1.5rem 3rem rgba(9,141,238, 0.3);
 }
+.btn:disabled{
+	background-color:var(--b4)!important;
+	color: var(--b5)!important;
+}
 /*модалки*/
 .bfmodal__opened{position:fixed;right:0;left:0;overflow:hidden}.bfmodal__shadow{position:fixed;border:none;display:block;width:100%;top:0;bottom:0;right:0;left:0;overflow:hidden;pointer-events:none;z-index:98;opacity:0;transition:opacity 1s ease;background-color:rgba(195,195,195,0.5);}
 .bfmodal__shadow--show{pointer-events:auto;opacity:1}
 .bfmodal{position:fixed;top:0;bottom:0;right:0;left:0;overflow:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;opacity:1;pointer-events:none;display:flex;flex-flow:column nowrap;justify-content:flex-start;z-index:99;visibility:hidden}
-.bfmodal h4{color:#27a4b0;text-align:center}
+.bfmodal h4{color:var(--b9);text-align:center}
 .bfmodal form{margin-top:32px}
 .bfmodal--active{opacity:1}
 .bfmodal--active,.bfmodal--moved{pointer-events:auto;visibility:visible}
@@ -1018,7 +1027,95 @@ footer {
 }
 .xs-visiblity{
 		display:none;
-	}
+}
+.input-wrapper{
+	position:relative;
+}
+.input-wrapper span {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	padding: 1.2rem;
+	color:var(--b6);
+}
+.input-wrapper span.focus {
+	font-size:0.8rem;
+	text-transform:uppercase;
+	padding:0 1.2rem;
+}
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"], textarea{
+	padding:1.2rem;
+	border:1px solid var(--b4);
+	border-radius:1.5rem;
+	outline:none;
+	width:100%;
+}
+input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover, input[type="tel"]:hover,textarea:hover{
+	border:1px solid var(--b5);	
+	outline:none;
+}
+input[type="text"]:active, input[type="email"]:active, input[type="password"]:active, input[type="tel"]:active,textarea:active, input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="tel"]:focus,textarea:focus{
+	border:1px solid var(--pr);	
+	outline:none;
+}
+::placeholder{
+	color:var(--b5);
+}
+.checkbox-wrapper{
+	white-space: nowrap;
+    position: relative;
+}
+.checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+.checkbox-wrapper label {
+    padding-left: 0.8rem;
+}
+.checkbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid var(--b5);
+    border-radius: 0.2rem;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+.checkbox:checked+label::before {
+    border-color: var(--pr);
+    background-color: var(--pr);
+     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 1.6004L5.32597 6.4L3.76797 8L2.20996 6.4L2.21861 6.39113L0 4.08813L1.55842 2.48813L3.77662 4.79153L8.44199 0L10 1.6004Z' fill='%23ffffff'/%3E%3C/svg%3E");
+}
+.bfmodal__content form.lg{
+	margin:6.4rem auto;
+	width:400px;
+}
+.bfmodal__content form.lg .checkbox-wrapper{
+	margin-top:6.4rem;
+	margin-bottom:3.2rem;
+	    text-align: center;
+}
+.verifycation{
+	visibility:hidden;
+	position:absolute;
+}
 @media(max-width:930px){
 	body, html{
 		overflow-x:hidden;

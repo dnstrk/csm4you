@@ -52,11 +52,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 		<img class="blob5" src="<?php echo get_template_directory_uri()?>/assets/img/blob5.png"/>
 	</div>
 	<div class="row h-100">
-			<div class="h-100 col-md-7 d-flex flex-column justify-content-center">
-				<h1><?php echo $banner_h1 ?></h1>
-				<p class="subtitle"><?php echo $banner_p ?></p>
-			</div>
-			<div class="offset-lg-1 col-md-4">
+		<div class="offset-lg-1 order-lg-2 offset-lg-1 col-md-6 offset-md-6 col-lg-4">
 				<div class="top-card">
 					<div class="top-card__header">
 						<div class="top-card__img">
@@ -71,6 +67,10 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 						<p>Мы устраняем не диагнозы-следствия, а приводим в порядок весь организм путем излечения причины плохого самочувствия, что делает практику эффективной.</p>
 					</div>
 				</div>
+		</div>
+		<div class="h-lg-100 col-lg-7 d-flex order-lg-1 flex-column justify-content-center">
+				<h1><?php echo $banner_h1 ?></h1>
+				<p class="subtitle"><?php echo $banner_p ?></p>
 			</div>
 		</div>
 	</div>
@@ -82,7 +82,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 			<!--Здесь у тебя цикл с карточками-->
 			<?php if($banner_cards){?>
 				<?php foreach ( (array) $banner_cards as $key => $card ) { ?>
-					<div class="col-md-4">
+					<div class="col-lg-4">
 						<div class="about-card">
 							<div class="about-card__header">
 								<div class="about-card__img">
@@ -103,15 +103,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 		</div>
 		<div class="about-content">
 			<div class="row">
-				<div class="col-md-6 ">
-					<h2><?php echo $aboutContent_h3 ?></h2>
-					<p><?php echo $aboutContent_p1 ?>
-					</p>
-					<p><?php echo $aboutContent_p2 ?>
-					</p>
-					<a href="#" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
-				</div>
-				<div class="col-md-6 ">
+				<div class="col-lg-6 order-1 order-lg-2">
 					<!--сдайдер клиники-->
 					<div class="ms-auto me-auto carousel-wrapper">
 						 <ul class="carousel">
@@ -141,6 +133,15 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 						</ul>
 					</div>
 				</div>
+				<div class="col-lg-6 order-2 order-lg-1">
+					<h2><?php echo $aboutContent_h3 ?></h2>
+					<p><?php echo $aboutContent_p1 ?>
+					</p>
+					<p><?php echo $aboutContent_p2 ?>
+					</p>
+					<a href="#" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
+				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -264,7 +265,12 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 <section id="price" class="price">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 card-price">
+			<div class="col-md-8 card-price__wrapper">
+			<div class="blobs">
+				<img class="blob1" src="http://csm4you/wp-content/themes/cms4you/assets/img/blob1.png">
+				<img class="blob4" src="http://csm4you/wp-content/themes/cms4you/assets/img/blob4.png" >
+			</div>
+			<div class="card-price">
 				<h2><?php echo $priceList_h3 ?></h2>
 				<div class="price-table">
 				<?php
@@ -307,6 +313,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 				</div>
 				<a href="#" class="arrow-right">Смотреть полный прайс-лист</a>
 			</div>
+			</div>
 			<div class="offset-lg-1 col-lg-3 col-md-4">
 				<div class="hot-spot blue mb-5">
 					<img src="<?php echo get_template_directory_uri()?>/assets/img/hotspotblue.png"/>
@@ -336,7 +343,6 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 </section>
 <section id="review" class="review">
 	<div class="container">
-		<div class="d-flex align-items-center justify-content-between mb4">
 			<h2><?php echo $review_h3 ?></h2>
 			<div class="splide__arrows">
 				<button id ="arrow-reviews--prev" class="splide__arrow splide__arrow--prev" type="button" aria-controls="banner-track" aria-label="Go to last slide">
@@ -346,7 +352,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><path d="M7.5 3.75L13.75 10L7.5 16.25"></path></svg>
 				</button>
 			</div>
-		</div>
+
 	</div>
 
 	<div class="splide splide--reviews" id="splide-reviews">

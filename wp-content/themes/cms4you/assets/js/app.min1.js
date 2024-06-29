@@ -408,7 +408,7 @@ if(document.getElementById("splide-doctors")) {
 }
 if(document.getElementById("splide-news")) {
     var banner =  document.getElementById('splide-news') 
-    var splide1 = new Splide( banner, {
+    var splide = new Splide( banner, {
       type   : 'loop',
       perPage: 3,
       perMove: 1,
@@ -426,22 +426,22 @@ if(document.getElementById("splide-news")) {
 		},
 	   }
     }); 
-  splide1.on( 'mounted', function() {
+  splide.on( 'mounted', function() {
         // if fewer slides than provided in options, set option to the number of slides
-        if ( splide1.length <= splide1.options.perPage ) {
-            splide1.options.perPage = splide1.length;
+        if ( splide.length <= splide.options.perPage ) {
+            splide.options.perPage = splide.length;
            
         }
     }); 
-    splide1.mount();
+    splide.mount();
 	var btnNext =  document.getElementById('arrow-news--next')  
 	var btnPrev =  document.getElementById('arrow-news--prev')   	
   btnNext.addEventListener('click', e => {
-    splide1.go('+1')
+    splide.go('+1')
   })
 
   btnPrev.addEventListener('click', e => {
-    splide1.go('-1')
+    splide.go('-1')
   })
 }
 if(document.getElementById("splide-reviews")) {
@@ -491,44 +491,12 @@ if(document.getElementById("splide-reviews")) {
   })
 }
 
-// jQuery(".card-review a").on("click", function(){
-//   var button = jQuery(this);
-//   var full = button.prev('.full-cardReview__content_full');
-//   var cut = full.prev('.cardReview__content_cut');
-//   if (full.is(':hidden')) {
-//     full.show();
-//     cut.hide();
-//     button.text("Свернуть");
-// }
-//   // if (jQuery(this).text() == "Развернуть")
-//   //      jQuery(this).text("Свернуть")
-//   //   else
-//   //      jQuery(this).text("Развернуть");
+jQuery(".card-review__content a").on("click", function(){
+ jQuery(this).siblings('p').toggleClass('active');
+ if (jQuery(this).text() == "Развернуть")
+       jQuery(this).text("Свернуть")
+    else
+       jQuery(this).text("Развернуть");
 
-//  return false;
-// })
-
-jQuery(document).ready(function($) {
-  $('.card-review a').on('click', function() {
-      
-     return false;
-
-  });
-
-	$(".input-wrapper").on("click", function(){
-		$(this).find("span").addClass("focus");
-		$(this).find("input").focus()
-	})
-	$("input").on("blur", function(){
-		if(!$(this).val() ) {
-		$(this).siblings("span").removeClass("focus");
-		}
-	})
-	$("#ch1").on("click", function(){
-		if($(this).is(":checked")){
-			$(this).parents("form").find(".btn").attr("disabled", false);
-		}else {
-			$(this).parents("form").find(".btn").attr("disabled", true);
-		}
-	});
-	});
+ return false;
+})
