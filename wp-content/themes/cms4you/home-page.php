@@ -150,7 +150,7 @@ get_header();
 	<h2>Врачи клиники</h2>
 		<div class="splide splide--doctors" id="splide-doctors">
 			<div class="blobs">
-				<img class="blob6" src="http://cms4you/wp-content/themes/cms4you/assets/img/blob6.png">
+				<img class="blob6" src="<?php echo get_template_directory_uri()?>/assets/img/blob6.png">
 			</div>
             <div class="splide__track" id="banner-track">
                 <ul class="splide__list" id="banner-list">
