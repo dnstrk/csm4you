@@ -260,7 +260,6 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 				foreach ($category_slugs as $category_slug) {
 					// Получение объекта категории по слагу
 					$category = get_term_by('slug', $category_slug, 'service_category');
-				
 					// Проверка, что категория существует
 					if ($category) :
 						// Параметры запроса
@@ -275,7 +274,6 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 							),
 						);
 						$query = new WP_Query( $args );
-				
 						if ( $query->have_posts() ) :?>
 				<!--Тип поста услуги, заголовок - категория услуг, цикл запускаем с фильтром по категории в аргументах-->
 					<h3><?php echo $category->name ?></h3>
