@@ -279,6 +279,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 </section>
 <section id="review" class="review">
 	<div class="container">
+		<div class="d-flex align-items-center justify-content-between">
 			<h2><?php echo $review_h3 ?></h2>
 			<div class="splide__arrows">
 				<button id ="arrow-reviews--prev" class="splide__arrow splide__arrow--prev" type="button" aria-controls="banner-track" aria-label="Go to last slide">
@@ -308,7 +309,9 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 						<div class="post-data"><?php the_excerpt(); ?></div>
 						<h4><?php the_title(); ?></h4>
 						<div class="cardReview__content">
-							<?php the_content(); ?>
+							<?php $content = get_the_content(); ?>
+							<p class="cardReview__content cardReview__content_cut"><?php echo wp_trim_words($content, 20, '...'); ?></p>
+							<p class="cardReview__content cardReview__content_full review__content_hidden"><?php echo $content ?></p>
 							<a href="#">Развернуть</a>
 						</div>
 					</div>
@@ -342,49 +345,37 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 		</div>
 		<div class="splide splide--news" id="splide-news">
             <div class="splide__track" id="banner-track">
+				<?php
+				// Новый WP_Query
+				$query = new WP_Query(array(
+					'post_type' => 'post', // Кастомный тип записей
+					'posts_per_page' => -1, // Выводим все отзывы
+				));
+				if ($query->have_posts()) : ?>
                 <ul class="splide__list" id="banner-list">
+				<?php while ($query->have_posts()) : $query->the_post(); ?>
+				<?php $news_date = get_post_meta(get_the_ID(), 'news_date', true); ?>
 				<!--слайд. Слайды это уже цикл-->
 					<li class="splide__slide">
 					<!--карточка новости-->
 						<a href="#" class="card news-card">
 							<div class="news-card__img">
-								<img src="<?php echo get_template_directory_uri()?>/assets/img/new1.png"/>
+								<?php the_post_thumbnail() ?>
 							</div>
 							<div class="news-card__content">
-								<div class="post-data">09.06.2024</div>
-								<h4>График работы клиники в праздники</h4>
-								<p>Уважаемые клиенты, клиника начала работать в праздничном режиме! Ознакомьтесь...</p>
+								<div class="post-data"><?php echo $news_date ?></div>
+								<h4><?php the_title() ?></h4>
+								<p><?php echo esc_attr(get_the_excerpt()) ?></p>
 							</div>
 						</a>
 					</li>
-					<!--конец цикла все li что ниже можно удалять-->
-					<li class="splide__slide">
-					<!--карточка новости-->
-						<a href="#" class="card news-card">
-							<div class="news-card__img">
-								<img src="<?php echo get_template_directory_uri()?>/assets/img/new2.png"/>
-							</div>
-							<div class="news-card__content">
-								<div class="post-data">09.06.2024</div>
-								<h4>Инновационная диагностика «ImmunoHealth»</h4>
-								<p>Метод «ImmunoHealth» определяет вашу индивидуальную пищевую непереносимость по биологическим маркерам, находящимся...</p>
-							</div>
-						</a>
-					</li>
-					<li class="splide__slide">
-					<!--карточка новости-->
-						<a href="#" class="card news-card">
-							<div class="news-card__img">
-								<img src="<?php echo get_template_directory_uri()?>/assets/img/new3.png"/>
-							</div>
-							<div class="news-card__content">
-								<div class="post-data">09.06.2024</div>
-								<h4>Клиника на карантине</h4>
-								<p>Уважаемые клиенты, клиника начала работать в праздничном режиме! Ознакомьтесь...</p>
-							</div>
-						</a>
-					</li>
-
+					<?php endwhile; ?>
+					<?php
+						// Восстановить глобальные данные поста
+						wp_reset_postdata();
+					else : ?>
+						<p><?php _e('No reviews found.', 'your-text-domain'); ?></p>
+					<?php endif; ?>
 				</ul>
 			</div>
 		</div>
