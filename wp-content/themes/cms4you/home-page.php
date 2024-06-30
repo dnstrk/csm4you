@@ -42,109 +42,108 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 
 <!--первая секция-->
 <section class="top">
-  <div class="h-lg-100 container">
-  <img class="top_bg" src="<?php echo get_template_directory_uri()?>/assets/img/top_bg.png"/>
-  <div class="blobs">
-    <img class="blob1" src="<?php echo get_template_directory_uri()?>/assets/img/blob1.png"/>
-    <img class="blob2" src="<?php echo get_template_directory_uri()?>/assets/img/blob2.png"/>
-    <img class="blob3" src="<?php echo get_template_directory_uri()?>/assets/img/blob3.png"/>
-    <img class="blob4" src="<?php echo get_template_directory_uri()?>/assets/img/blob4.png"/>
-    <img class="blob5" src="<?php echo get_template_directory_uri()?>/assets/img/blob5.png"/>
-  </div>
-  <div class="row h-100">
-    <div class="offset-lg-1 order-lg-2 offset-lg-1 col-md-6 offset-md-6 col-lg-4">
-        <div class="top-card">
-          <div class="top-card__header">
-            <div class="top-card__img">
-              <img src="<?php echo get_template_directory_uri()?>/assets/img/pavlova.png"/>
-            </div>
-            <div class="top-card__title">
-              <p>Павлова З.Ш.</p>
-              <span>Эндокринолог-андролог</span>
-            </div>
-          </div>
-          <div class="top-card__content">
-            <p>Мы устраняем не диагнозы-следствия, а приводим в порядок весь организм путем излечения причины плохого самочувствия, что делает практику эффективной.</p>
-          </div>
-        </div>
-    </div>
-    <div class="h-lg-100 col-lg-7 d-flex order-lg-1 flex-column justify-content-center">
-        <h1><?php echo $banner_h1 ?></h1>
-        <p class="subtitle"><?php echo $banner_p ?></p>
-      </div>
-    </div>
-  </div>
+	<div class="h-lg-100 container">
+	<img class="top_bg" src="<?php echo get_template_directory_uri()?>/assets/img/top_bg.png"/>
+	<div class="blobs">
+		<img class="blob1" src="<?php echo get_template_directory_uri()?>/assets/img/blob1.png"/>
+		<img class="blob2" src="<?php echo get_template_directory_uri()?>/assets/img/blob2.png"/>
+		<img class="blob3" src="<?php echo get_template_directory_uri()?>/assets/img/blob3.png"/>
+		<img class="blob4" src="<?php echo get_template_directory_uri()?>/assets/img/blob4.png"/>
+		<img class="blob5" src="<?php echo get_template_directory_uri()?>/assets/img/blob5.png"/>
+	</div>
+	<div class="row h-100">
+			<div class="h-100 col-md-7 d-flex flex-column justify-content-center">
+				<h1><?php echo $banner_h1 ?></h1>
+				<p class="subtitle"><?php echo $banner_p ?></p>
+			</div>
+			<div class="offset-lg-1 col-md-4">
+				<div class="top-card">
+					<div class="top-card__header">
+						<div class="top-card__img">
+							<img src="<?php echo get_template_directory_uri()?>/assets/img/pavlova.png"/>
+						</div>
+						<div class="top-card__title">
+							<p>Павлова З.Ш.</p>
+							<span>Эндокринолог-андролог</span>
+						</div>
+					</div>
+					<div class="top-card__content">
+						<p>Мы устраняем не диагнозы-следствия, а приводим в порядок весь организм путем излечения причины плохого самочувствия, что делает практику эффективной.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 <!--вторая секция-->
 <section id="about" class="about">
-  <div class="container">
-    <div class="row">
-      <!--Здесь у тебя цикл с карточками-->
-      <?php if($banner_cards){?>
-        <?php foreach ( (array) $banner_cards as $key => $card ) { ?>
-          <div class="col-lg-4">
-            <div class="about-card">
-              <div class="about-card__header">
-                <div class="about-card__img">
-                  <img src="<?php echo $card['banner_card_img'] ?>"/>
-                  
-                </div>
-                <div class="about-card__title">
-                  <h4><?php echo $card['banner_card_h5'] ?></h4>
-                </div>
-              </div>
-              <div class="about-card__content">
-                <p><?php echo $card['banner_card_p'] ?></p>
-              </div>
-            </div>
-          </div>
-        <?php }?>
-      <?php } ?>
-    </div>
-    <div class="about-content">
-      <div class="row">
-        <div class="col-lg-6 order-1 order-lg-2">
-          <!--сдайдер клиники-->
-          <div class="ms-auto me-auto carousel-wrapper">
-             <ul class="carousel">
-              <li class="carusel__item left-pos" id="5">
-                <img src="<?php echo get_template_directory_uri()?>/assets/img/slide5.jpg"/>
-              </li>
-              <li class="carusel__item  main-pos" id="1">
-                <img src="<?php echo get_template_directory_uri()?>/assets/img/slide1.jpg"/>
-              </li>
-              <li class="carusel__item right-pos" id="2">
-                <img src="<?php echo get_template_directory_uri()?>/assets/img/slide2.jpg"/>
-              </li>
-              <li class="carusel__item back-pos" id="3">
-                <img src="<?php echo get_template_directory_uri()?>/assets/img/slide3.jpg"/>
-              </li>
-              <li class="carusel__item back-pos" id="4">
-                <img src="<?php echo get_template_directory_uri()?>/assets/img/slide4.jpg"/>
-              </li>
-              
-             </ul>
-            <ul class="paginate">
-              <li class="paginate__item" data-id="5"></li>
-              <li class="paginate__item active" data-id="1"></li>
-              <li class="paginate__item" data-id="2"></li>
-              <li class="paginate__item" data-id="3"></li>
-              <li class="paginate__item" data-id="4"></li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-lg-6 order-2 order-lg-1">
-          <h2><?php echo $aboutContent_h3 ?></h2>
-          <p><?php echo $aboutContent_p1 ?>
-          </p>
-          <p><?php echo $aboutContent_p2 ?>
-          </p>
-          <a href="#" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
-        </div>
-        
-      </div>
-    </div>
-  </div>
+	<div class="container">
+		<div class="row">
+			<!--Здесь у тебя цикл с карточками-->
+			<?php if($banner_cards){?>
+				<?php foreach ( (array) $banner_cards as $key => $card ) { ?>
+					<div class="col-md-4">
+						<div class="about-card">
+							<div class="about-card__header">
+								<div class="about-card__img">
+									<img src="<?php echo $card['banner_card_img'] ?>"/>
+									
+								</div>
+								<div class="about-card__title">
+									<h4><?php echo $card['banner_card_h5'] ?></h4>
+								</div>
+							</div>
+							<div class="about-card__content">
+								<p><?php echo $card['banner_card_p'] ?></p>
+							</div>
+						</div>
+					</div>
+				<?php }?>
+			<?php } ?>
+		</div>
+		<div class="about-content">
+			<div class="row">
+				<div class="col-md-6 ">
+					<h2><?php echo $aboutContent_h3 ?></h2>
+					<p><?php echo $aboutContent_p1 ?>
+					</p>
+					<p><?php echo $aboutContent_p2 ?>
+					</p>
+					<a href="#" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
+				</div>
+				<div class="col-md-6 ">
+					<!--сдайдер клиники-->
+					<div class="ms-auto me-auto carousel-wrapper">
+						 <ul class="carousel">
+							<li class="carusel__item left-pos" id="5">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide5.jpg"/>
+							</li>
+							<li class="carusel__item  main-pos" id="1">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide1.jpg"/>
+							</li>
+							<li class="carusel__item right-pos" id="2">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide2.jpg"/>
+							</li>
+							<li class="carusel__item back-pos" id="3">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide3.jpg"/>
+							</li>
+							<li class="carusel__item back-pos" id="4">
+								<img src="<?php echo get_template_directory_uri()?>/assets/img/slide4.jpg"/>
+							</li>
+							
+						 </ul>
+						<ul class="paginate">
+							<li class="paginate__item" data-id="5"></li>
+							<li class="paginate__item active" data-id="1"></li>
+							<li class="paginate__item" data-id="2"></li>
+							<li class="paginate__item" data-id="3"></li>
+							<li class="paginate__item" data-id="4"></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
 <!--третья секция-->
 <section id="doctors" class="doctors">
@@ -206,83 +205,77 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 <!--третья секция-->
 
 <section id="price" class="price">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-8 card-price__wrapper">
-      <div class="blobs">
-        <img class="blob1" src="<?php echo get_template_directory_uri()?>/assets/img/blob1.png">
-        <img class="blob4" src="<?php echo get_template_directory_uri()?>/assets/img/blob4.png" >
-      </div>
-      <div class="card-price">
-        <h2><?php echo $priceList_h3 ?></h2>
-        <div class="price-table">
-        <?php
-        $category_slugs = array('priem-speczialista', 'uzi');
-        foreach ($category_slugs as $category_slug) {
-          // Получение объекта категории по слагу
-          $category = get_term_by('slug', $category_slug, 'service_category');
-          // Проверка, что категория существует
-          if ($category) :
-            // Параметры запроса
-            $args = array(
-              'post_type' => 'service', // Кастомный тип записей
-              'tax_query' => array(
-                array(
-                  'taxonomy' => 'service_category', // Таксономия
-                  'field'    => 'slug',
-                  'terms'    => $category_slug, // Слаг категории
-                ),
-              ),
-            );
-            $query = new WP_Query( $args );
-            if ( $query->have_posts() ) :?>
-        <!--Тип поста услуги, заголовок - категория услуг, цикл запускаем с фильтром по категории в аргументах-->
-          <h3><?php echo $category->name ?></h3>
-          <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-          <div class="d-flex price-table__row">
-            <p><?php the_title(); ?></p>
-            <h4><?php the_content(); ?></h4>
-            <a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
-          </div>
-          <?php endwhile; ?>
-          <?php
-            wp_reset_postdata();
-                else : ?>
-            <p><?php _e('No services found in this category.', 'your-text-domain'); ?></p>
-              <?php endif;
-           else : ?>
-              <p><?php _e('Category not found.', 'your-text-domain'); ?></p>
-         <?php endif;}?>
-        </div>
-        <a href="#" class="arrow-right">Смотреть полный прайс-лист</a>
-      </div>
-      </div>
-      <div class="offset-lg-1 col-lg-3 col-md-4">
-        <div class="hot-spot blue mb-5">
-          <img src="<?php echo get_template_directory_uri()?>/assets/img/hotspotblue.png"/>
-          <div class="hot-spot__content">
-          <h3>Доктор знает</h3>
-          <p>Блог доктора и ученого Павловой. Полезные советы, разоблачение мифов и многое другое</p>
-          <ul class="sotials">
-            <li><a href="#" class="ok" ></a></li>
-            <li><a href="#" class="tg" ></a></li>
-            <li><a href="#" class="wk" ></a></li>
-          </ul>
-          </div>
-        </div>
-        <div class="hot-spot green">
-          <img src="<?php echo get_template_directory_uri()?>/assets/img/hotspotgreen.png"/>
-          <div class="hot-spot__content">
-            <h3>Запишитесь <a href="#" data-bfmodal="#post" >онлайн</a></h3>
-            <p>Выберите услугу/врача, дату и свободное время.</p>
-            <a href="#post" class="btn btn--big btn--rounded btn--primary" data-bfmodal="#post">Записаться</a>
-            <p><small>Подавая заявку вы даёте <a href="#">согласие на обработку данных</a></small></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 card-price">
+				<h2><?php echo $priceList_h3 ?></h2>
+				<div class="price-table">
+				<?php
+				$category_slugs = array('priem-speczialista', 'uzi');
+				foreach ($category_slugs as $category_slug) {
+					// Получение объекта категории по слагу
+					$category = get_term_by('slug', $category_slug, 'service_category');
+					// Проверка, что категория существует
+					if ($category) :
+						// Параметры запроса
+						$args = array(
+							'post_type' => 'service', // Кастомный тип записей
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'service_category', // Таксономия
+									'field'    => 'slug',
+									'terms'    => $category_slug, // Слаг категории
+								),
+							),
+						);
+						$query = new WP_Query( $args );
+						if ( $query->have_posts() ) :?>
+				<!--Тип поста услуги, заголовок - категория услуг, цикл запускаем с фильтром по категории в аргументах-->
+					<h3><?php echo $category->name ?></h3>
+					<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+					<div class="d-flex price-table__row">
+						<p><?php the_title(); ?></p>
+						<h4><?php the_content(); ?></h4>
+						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
+					</div>
+					<?php endwhile; ?>
+					<?php
+						wp_reset_postdata();
+       			 	else : ?>
+						<p><?php _e('No services found in this category.', 'your-text-domain'); ?></p>
+        			<?php endif;
+   				else : ?>
+        			<p><?php _e('Category not found.', 'your-text-domain'); ?></p>
+ 				<?php endif;}?>
+				</div>
+				<a href="#" class="arrow-right">Смотреть полный прайс-лист</a>
+			</div>
+			<div class="offset-lg-1 col-lg-3 col-md-4">
+				<div class="hot-spot blue mb-5">
+					<img src="<?php echo get_template_directory_uri()?>/assets/img/hotspotblue.png"/>
+					<div class="hot-spot__content">
+					<h3>Доктор знает</h3>
+					<p>Блог доктора и ученого Павловой. Полезные советы, разоблачение мифов и многое другое</p>
+					<ul class="sotials">
+						<li><a href="#" class="ok" ></a></li>
+						<li><a href="#" class="tg" ></a></li>
+						<li><a href="#" class="wk" ></a></li>
+					</ul>
+					</div>
+				</div>
+				<div class="hot-spot green">
+					<img src="<?php echo get_template_directory_uri()?>/assets/img/hotspotgreen.png"/>
+					<div class="hot-spot__content">
+						<h3>Запишитесь <a href="#" data-bfmodal="#post" >онлайн</a></h3>
+						<p>Выберите услугу/врача, дату и свободное время.</p>
+						<a href="#post" class="btn btn--big btn--rounded btn--primary" data-bfmodal="#post">Записаться</a>
+						<p><small>Подавая заявку вы даёте <a href="#">согласие на обработку данных</a></small></p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
 </section>
 <section id="review" class="review">
 	<div class="container">

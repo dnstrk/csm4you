@@ -97,7 +97,32 @@
 <div class="bfmodal" id="lk" aria-hidden="true">
 	<div class="bfmodal__wrap">
 		<div class="bfmodal__window " role="dialog" aria-modal="true">
-		<button class="bfmodal__close" data-hystclose="">Закрыть</button>
+		<div class="bfmodal__header">
+		<div class="w-100 d-flex">
+			<h3>Вход в личный кабинет</h3>
+			<button class="bfmodal__close" data-hystclose="">Закрыть</button>
+		</div>
+		</div>
+		<div class="bfmodal__content bfmodal__content--alt">
+			<h4>Введите свой номер телефона</h4>
+				<form id="loginForm" class="lg" action="wp-content/themes/cms4you/configure/login.php" target="ifr">
+					<div class="input-wrapper">
+						<input type="tel" id="register_phone" name="register_phone" required>
+						<span>Номер телефона</span>
+					</div>
+					<div class="checkbox-wrapper">
+						<input type="checkbox" class="checkbox noempty-input" name="ch1" id="ch1">
+						<label for="ch1">Даю&nbsp;   <a href="#">согласие на обработку данных</a></label>
+					</div>
+					<input type="submit" name="sendsms" class="w-100 btn btn--defoult btn--primary btn--rounded" value="Далее" disabled>
+					<div id="verifycation" class="verifycation">
+						<input type="text" name="code" size="6">
+						<input type="submit" name="ok" class="w-100 btn btn--defoult btn--primary btn--rounded" value="Далее">
+						<span id="_out"></span>
+					</div>
+				</form>
+			</div>
+			</div>
 		</div>
 	</div>
 </div>
