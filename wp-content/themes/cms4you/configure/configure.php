@@ -433,5 +433,42 @@ function load_posts() {
   wp_reset_postdata();
   die($html);
 }
+function ajax_login() {
+    check_ajax_referer('ajax-nonce', 'security');
+
+    $info = array();
+    $info['user_login'] = $_POST['username'];
+    $info['user_password'] = $_POST['password'];
+    $info['remember'] = true;
+
+    $user_signon = wp_signon($info, false);
+    if (is_wp_error($user_signon)) {
+        echo json_encode(array('success' => false, 'message' => __('Login failed, please check your username and password.', 'textdomain')));
+    } else {
+        echo json_encode(array('success' => true, 'message' => __('Login successful, redirecting...', 'textdomain')));
+    }
+    wp_die();
+}
+add_action('wp_ajax_nopriv_ajax_login', 'ajax_login');
+
+function ajax_register() {
+    check_ajax_referer('ajax-nonce', 'security');
+
+    $userdata = array(
+        'user_login' => $_POST['username'],
+        'user_email' => $_POST['email'],
+        'user_pass' => $_POST['password'],
+    );
+
+    $user_id = wp_insert_user($userdata);
+
+    if (is_wp_error($user_id)) {
+        echo json_encode(array('success' => false, 'message' => $user_id->get_error_message()));
+    } else {
+        echo json_encode(array('success' => true, 'message' => __('Registration successful, you can now log in.', 'textdomain')));
+    }
+    wp_die();
+}
+add_action('wp_ajax_nopriv_ajax_register', 'ajax_register');
 
 ?>

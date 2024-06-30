@@ -224,12 +224,12 @@ class bfmodal {
     closeOnEsc: true,
     backscroll: true,
     beforeOpen: function (modal) {
-      // console.log('Message before opening the modal');
-      // console.log(modal);
+      console.log('Message before opening the modal');
+      console.log(modal);
     },
     afterClose: function (modal) {
-      // console.log('Message after modal has closed');
-      // console.log(modal);
+      console.log('Message after modal has closed');
+      console.log(modal);
   
       let videoframe = modal.openedWindow.querySelector('iframe');
       if (videoframe) {
@@ -408,7 +408,7 @@ if(document.getElementById("splide-doctors")) {
 }
 if(document.getElementById("splide-news")) {
     var banner =  document.getElementById('splide-news') 
-    var splide1 = new Splide( banner, {
+    var splide = new Splide( banner, {
       type   : 'loop',
       perPage: 3,
       perMove: 1,
@@ -426,22 +426,22 @@ if(document.getElementById("splide-news")) {
 		},
 	   }
     }); 
-  splide1.on( 'mounted', function() {
+  splide.on( 'mounted', function() {
         // if fewer slides than provided in options, set option to the number of slides
-        if ( splide1.length <= splide1.options.perPage ) {
-            splide1.options.perPage = splide1.length;
+        if ( splide.length <= splide.options.perPage ) {
+            splide.options.perPage = splide.length;
            
         }
     }); 
-    splide1.mount();
+    splide.mount();
 	var btnNext =  document.getElementById('arrow-news--next')  
 	var btnPrev =  document.getElementById('arrow-news--prev')   	
   btnNext.addEventListener('click', e => {
-    splide1.go('+1')
+    splide.go('+1')
   })
 
   btnPrev.addEventListener('click', e => {
-    splide1.go('-1')
+    splide.go('-1')
   })
 }
 if(document.getElementById("splide-reviews")) {
