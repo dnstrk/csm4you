@@ -11,7 +11,7 @@
 				 <p>© 2018-2024. Клиника системной медицины.<br> Лицензия №ЛО-77-01-010748 от 11.08.2015 </p>
 				 
 				</div>
-				<a href="#">Соглашение по обработке персональных данных</a>
+				<a href="/soglashenie-po-obrabotke-personalnyh-dannyh/">Соглашение по обработке персональных данных</a>
 			</div>
 			<div class="footer__right-part">
 				<ul class="footer-menu d-flex align-items-center">
@@ -136,7 +136,7 @@
 					</div>
 					<div class="checkbox-wrapper">
 						<input type="checkbox" class="checkbox noempty-input" name="ch1" id="ch1">
-						<label for="ch1">Даю&nbsp;   <a href="#">согласие на обработку данных</a></label>
+						<label for="ch1">Даю&nbsp;   <a href="/soglashenie-po-obrabotke-personalnyh-dannyh/">согласие на обработку данных</a></label>
 					</div>
 					<input type="submit" name="sendsms" class="w-100 btn btn--defoult btn--primary btn--rounded" value="Далее" disabled>
 					<div id="verifycation" class="verifycation">

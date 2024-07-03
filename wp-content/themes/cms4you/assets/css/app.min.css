@@ -74,11 +74,12 @@ display: flex;
 flex-direction: column;
 min-height:100vh;
 background-size: cover;
-background-image:url("../img/bg.jpg");
 background-repeat:no-repeat;
 background-position:top right;
 }
-
+body.home-page{
+background-image:url("../img/bg.jpg");	
+}
 @media(max-width:1366px){
 body { 
    font-size:1.4rem;
@@ -100,6 +101,12 @@ padding-right:15px
 .container{
 	max-width: 1200px;
 }
+}
+main {
+	flex-grow:1
+}
+article{
+	margin:6rem 0;
 }
 a{
 	color: var(--pr);
@@ -146,7 +153,9 @@ font-size: 1.6rem;
 line-height:1.6rem;
 font-family: 'Gilroy', sans-serif;	
 }
-
+article h2{
+	margin-bottom: 3.2rem;
+}
 @media(max-width:768px){
 h1{
 font-size: 3rem;
@@ -1116,6 +1125,35 @@ input[type="text"]:active, input[type="email"]:active, input[type="password"]:ac
 	visibility:hidden;
 	position:absolute;
 }
+.post-img{
+	margin-bottom:1.2rem;
+	border-radius:2.4rem;
+}
+.post-img ~ h4 {
+	margin-top:3.2rem
+}
+article p {
+	color: var(--b6)
+}
+.bottom-block{
+	margin:6.4rem 0;
+}
+.bottom-block h3 {
+	margin-bottom:2rem;
+}
+.bottom-block .news-card {
+	margin-left:0;
+}
+@media (min-width: 1024px){
+.stkey-parent {
+    position: relative;
+    align-items: flex-start;
+}
+.sticky {
+    position: sticky;
+    top: 7rem;
+}
+}
 @media(max-width:930px){
 	body, html{
 		overflow-x:hidden;
@@ -1172,6 +1210,7 @@ input[type="text"]:active, input[type="email"]:active, input[type="password"]:ac
     height: 4rem;
     margin-right: 1.2rem;
 	}
+	
 	h4 {
 		font-size:1.6rem
 	}
@@ -1201,7 +1240,6 @@ input[type="text"]:active, input[type="email"]:active, input[type="password"]:ac
 		margin-top:1.6rem;
 	}
 
-}
 @media(max-width:600px){
 	.header__bottom-block{
 		padding:1.2rem 0;
