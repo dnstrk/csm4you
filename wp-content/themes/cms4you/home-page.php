@@ -109,7 +109,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 					</p>
 					<p><?php echo $aboutContent_p2 ?>
 					</p>
-					<a href="#" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
+					<a target="_blank" href="<?php echo $aboutContent_file ?>" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
 				</div>
 				<div class="col-md-6 ">
 					<!--сдайдер клиники-->
@@ -248,7 +248,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
         			<p><?php _e('Category not found.', 'your-text-domain'); ?></p>
  				<?php endif;}?>
 				</div>
-				<a href="#" class="arrow-right">Смотреть полный прайс-лист</a>
+				<a href="/price-list" class="arrow-right">Смотреть полный прайс-лист</a>
 			</div>
 			<div class="offset-lg-1 col-lg-3 col-md-4">
 				<div class="hot-spot blue mb-5">
@@ -311,7 +311,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 						<div class="cardReview__content">
 							<?php $content = get_the_content(); ?>
 							<p class="cardReview__content cardReview__content_cut"><?php echo wp_trim_words($content, 20, '...'); ?></p>
-							<p class="cardReview__content cardReview__content_full review__content_hidden"><?php echo $content ?></p>
+							<p class="cardReview__content cardReview__content_full review__content_hidden"><?php echo esc_attr($content) ?></p>
 							<a href="#">Развернуть</a>
 						</div>
 					</div>
@@ -358,7 +358,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 				<!--слайд. Слайды это уже цикл-->
 					<li class="splide__slide">
 					<!--карточка новости-->
-						<a href="#" class="card news-card">
+						<a href="<?php the_permalink() ?>" class="card news-card">
 							<div class="news-card__img">
 								<?php the_post_thumbnail() ?>
 							</div>
@@ -384,21 +384,21 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 <section id="contacts" class="contacts">
 	<div class="container">
 		<div class="contacts-card">
-		<h3>Контакты</h3>
-		<div class="contacts-card__contacts">
-			<a href="tel:<?php echo $num_footer1 ?>" class="phone"><?php echo $num_footer1 ?></a>
-			<a href="tel:<?php echo $num_footer2 ?>" class="phone"><?php echo $num_footer2 ?></a>
-			<a href="mailto:<?php echo $mail_footer ?>" class="email"><?php echo $mail_footer ?></a>
-			<p class="adress"><?php echo $address_foot ?></a>
-		</div>
-		<div class="contacts-card__content">
-			<h5>Время работы клиники</h5>
-			<p><?php echo $working_hours_clinic ?></p>
-		</div>
-		<div class="contacts-card__content">
-			<h5>Время работы лаборатории</h5>
-			<p><?php echo $working_hours_lab ?></p>
-		</div>
+			<h3>Контакты</h3>
+			<div class="contacts-card__contacts">
+				<a href="tel:<?php echo $num_footer1 ?>" class="phone"><?php echo $num_footer1 ?></a>
+				<a href="tel:<?php echo $num_footer2 ?>" class="phone"><?php echo $num_footer2 ?></a>
+				<a href="mailto:<?php echo $mail_footer ?>" class="email"><?php echo $mail_footer ?></a>
+				<p class="adress"><?php echo $address_foot ?></a>
+			</div>
+			<div class="contacts-card__content">
+				<h5>Время работы клиники</h5>
+				<p><?php echo $working_hours_clinic ?></p>
+			</div>
+			<div class="contacts-card__content">
+				<h5>Время работы лаборатории</h5>
+				<p><?php echo $working_hours_lab ?></p>
+			</div>
 		<a href="#post" data-bfmodal="#post" class="btn btn--big btn--rounded btn--primary btn-shadow">Записаться</a>
 	</div>
 	<div class="map">

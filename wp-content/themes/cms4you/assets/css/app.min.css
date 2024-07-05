@@ -861,6 +861,7 @@ background: -webkit-linear-gradient(#75FF83, #13D126);
 	margin:3.2rem 0;
 }
 .price-table h3{
+	margin-top:1.6rem;
 	margin-bottom:1.6rem;
 	color:var(--b7);
 }
@@ -927,6 +928,16 @@ section.news{
 	padding-top:9rem;
 	margin-bottom:10rem;
 }
+
+.news__list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	row-gap: 24px;
+	width: 100%;
+}
+
 .news-card{
 	display:block;
 	overflow:hidden;
@@ -982,6 +993,7 @@ section.contacts {
 .contacts-card__contacts{
 	padding:1.2rem 0;
 }
+
 .contacts-card__contacts a, .contacts-card__contacts p{
 	padding: 1.2rem 1.2rem 1.2rem 2.4rem;
     background-repeat: no-repeat;
@@ -995,6 +1007,9 @@ section.contacts {
 .contacts-card__content p {
 	color:var(--b6);
 	margin:0.5rem 0;
+}
+.contacts-card__content_page {
+	max-width: 35%;
 }
 .contacts-card .btn{
 	display:block;
@@ -1135,6 +1150,27 @@ input[type="text"]:active, input[type="email"]:active, input[type="password"]:ac
 article p {
 	color: var(--b6)
 }
+
+article .news__list {
+	margin-bottom: 4rem;
+}
+
+article .more {
+	align-self: center;
+	width: fit-content;
+	border: 1px var(--pr) solid;
+	border-radius: 20px;
+	padding: 18px 16px;
+	&:hover {
+		border-color: var(--pr-hover);
+		columns: var(--pr-hover);
+	}
+	&:active {
+		border-color: var(--pr-active);
+		columns: var(--pr-active);
+	}
+}
+
 .bottom-block{
 	margin:6.4rem 0;
 }
@@ -1501,9 +1537,9 @@ article p {
 		min-height:285px;
 	}
 	.contacts-card {
-    background-color: transparent;
-    border: 0;
-    padding: 0;
+		background-color: transparent;
+		border: 0;
+		padding: 0;
 	}
 	footer{
 		padding: 3.2rem 0 4.5rem;
@@ -1536,4 +1572,5 @@ article p {
 	.xs-visiblity{
 		display:block;
 	}
+}
 }
