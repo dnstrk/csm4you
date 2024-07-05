@@ -13,7 +13,7 @@ $mail = get_theme_mod('mail');
 $address_head = get_theme_mod('address_head');
 ?>
 
-<body style="min-height:5000px" class="<?php if(is_front_page()){echo "home-page";} ?>">
+<body class="<?php if(is_front_page()){echo "home-page";} ?>">
 	<header id="header" class="header">
 		<div class="header__top-block">
 			<div class="container">
@@ -35,14 +35,33 @@ $address_head = get_theme_mod('address_head');
 						<img class="header__img--fixed" src="<?php echo get_template_directory_uri()?>/assets/img/logo-fixed.svg">
 					</a>
 					<nav>
-						<ul class="header-menu d-flex flex-column flex-md-row align-items-center">
+						<?php 
+						wp_nav_menu( [
+								'theme_location'  => 'main-menu',
+								'menu'            => '',
+								'container'       => 'ul',
+								'container_class' => '',
+								'container_id'    => '',
+								'menu_class'      => 'nav nav-ul main-nav__list',
+								'menu_id'         => '',
+								'echo'            => true,
+								'fallback_cb'     => 'wp_page_menu',
+								'before'          => '',
+								'after'           => '',
+								'link_before'     => '',
+								'link_after'      => '',
+								'items_wrap'      => '<ul id="%1$s" class="header-menu d-flex flex-column flex-md-row align-items-center">%3$s </ul>',
+								'depth'           => 0,
+							] );
+						?>
+						<!-- <ul class="header-menu d-flex flex-column flex-md-row align-items-center">
 							<li><a class="" href="#">О клинике</a></li>
 							<li><a class="" href="#">Врачи</a></li>
 							<li><a class="" href="#">Прайс-лист</a></li>
 							<li><a class="" href="#">Отзывы</a></li>
 							<li><a class="" href="#">Новости</a></li>
 							<li><a class="" href="#">Контакты</a></li>
-						</ul>
+						</ul> -->
 						<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
 						<a href="#lk" data-bfmodal="#lk" class="btn circle--btn  user"></a>
 					</nav>
