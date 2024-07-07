@@ -5,10 +5,10 @@ Template Name: News
 get_header();
 ?>
 <div class="container">
-    <article class="d-flex flex-column">
+    <article class="row">
         <h2><?php the_title() ?></h2>
 
-        <ul class="news__list col-md-12">
+        <div class="news__list col-md-12">
 
         <?php
             // Новый WP_Query
@@ -20,7 +20,7 @@ get_header();
             <?php while ($query->have_posts()) : $query->the_post(); ?>
             <?php $news_date = get_post_meta(get_the_ID(), 'news_date', true); ?>
             <!--слайд. Слайды это уже цикл-->
-                <li class="splide__slide">
+                <div class="splide__slide">
                 <!--карточка новости-->
                     <a href="<?php the_permalink() ?>" class="card news-card">
                         <div class="news-card__img">
@@ -32,7 +32,7 @@ get_header();
                             <p><?php echo esc_attr(get_the_excerpt()) ?></p>
                         </div>
                     </a>
-                </li>
+                </div>
             <?php endwhile; ?>
             <?php
                 // Восстановить глобальные данные поста
@@ -40,7 +40,7 @@ get_header();
             else : ?>
                 <p><?php _e('No reviews found.', 'your-text-domain'); ?></p>
             <?php endif; ?>
-        </ul>
+        </div>
         <a class='more' href="#">Показать еще</a>
     </article>
 </div>
