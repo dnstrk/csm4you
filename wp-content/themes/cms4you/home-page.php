@@ -344,7 +344,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 			</div>
 		</div>
 		<div class="splide splide--news" id="splide-news">
-            <div class="splide__track" id="banner-track">
+      <div class="splide__track" id="banner-track">
 				<?php
 				// Новый WP_Query
 				$query = new WP_Query(array(
@@ -352,7 +352,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 					'posts_per_page' => -1, // Выводим все отзывы
 				));
 				if ($query->have_posts()) : ?>
-                <ul class="splide__list" id="banner-list">
+        <ul class="splide__list" id="banner-list">
 				<?php while ($query->have_posts()) : $query->the_post(); ?>
 				<?php $news_date = get_post_meta(get_the_ID(), 'news_date', true); ?>
 				<!--слайд. Слайды это уже цикл-->

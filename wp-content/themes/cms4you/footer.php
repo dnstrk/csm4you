@@ -1,5 +1,7 @@
 
 </main>
+<?php if(!is_page('91')) { ?>
+
 <footer>
 	<div class="container">
 		<div class="d-flex flex-column flex-lg-row align-items-center justify-content-between">
@@ -27,6 +29,7 @@
 		</div>
 	</div>
 </footer>
+<?php } ?>
 <div class="bfmodal" id="post" aria-hidden="true">
 	<div class="bfmodal__wrap">
 		<div class="bfmodal__window bfmodal__window--post" role="dialog" aria-modal="true">
