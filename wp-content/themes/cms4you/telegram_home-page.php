@@ -16,7 +16,7 @@ get_header();
                         <span class="card_infoName par12">Имя Фамилия</span>
                         <span class="card_infoNumber head5">+7 987 654 32 10</span>
                     </div>
-                    <a href="#">
+                    <a href="/tg-profile">
                         <img class="user-data__card_edit" src="<?php echo get_template_directory_uri()?>/assets/img/Pencil.png" alt="">
                     </a>
                 </div>
