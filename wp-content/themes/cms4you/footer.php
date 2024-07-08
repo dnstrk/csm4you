@@ -1,6 +1,6 @@
 
 </main>
-<?php if(!is_page('91')) { ?>
+<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')) { ?>
 
 <footer>
 	<div class="container">
