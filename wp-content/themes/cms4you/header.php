@@ -14,7 +14,7 @@ $address_head = get_theme_mod('address_head');
 ?>
 
 <body class="<?php if(is_front_page()){echo "home-page";} ?>">
-<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')) { ?>
+<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_records.php')&&!is_page_template('telegram_specialists.php')) { ?>
 <header id="header" class="header">
 	<div class="header__top-block">
 		<div class="container">

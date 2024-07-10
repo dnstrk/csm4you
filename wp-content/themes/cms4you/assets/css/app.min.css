@@ -32,6 +32,13 @@
     font-style: normal;
     font-display: swap;
 }
+@font-face {
+    font-family: "Regular";
+    src: url("./fonts/Inter-Medium.woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
     --white: #ffffff;
@@ -1408,6 +1415,7 @@ article .more {
         margin-right: 1.2rem;
     }
 
+    
     h4 {
         font-size: 1.6rem;
     }
@@ -1862,6 +1870,40 @@ article .more {
     border-radius: 20px;
 }
 
+.splitter {
+	border: 1px var(--b3) solid;
+}
+
+.record__posts {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.record__post {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.record__post_timing {
+	display: flex;
+	flex-direction: column;
+}
+
+.record__post_timing p {
+	font-weight: 600;
+}
+
+.record__post_doctor {
+	display: flex;
+	flex-direction: row;
+	gap: 6px;
+	align-items: center;
+}
+
+
 /* Специалисты и О Клинике */
 
 .clinic-info {
@@ -2165,89 +2207,232 @@ article .more {
 .form {
 	display: block;
   }
-  .form__group {
-	margin: 10px 0 0;
-  }
-  .form__group--error.form__pincode > input {
-	background-color: #eb3b3b;
-  }
-  .form__group--error.form__pincode > input[disabled] {
-	background-color: #eb3b3b;
-	color: #fff;
-	opacity: 1;
-  }
-  .form__group--success.form__pincode > input {
-	background-color: #32c832;
-  }
-  .form__group--success.form__pincode > input[disabled] {
-	background-color: #32c832;
-	color: #fff;
-	opacity: 1;
-  }
-  .form__pincode {
-	display: block;
+.form__group {
+margin: 10px 0 0;
+}
+.form__group--error.form__pincode > input {
+background-color: #eb3b3b;
+}
+.form__group--error.form__pincode > input[disabled] {
+background-color: #eb3b3b;
+color: #fff;
+opacity: 1;
+}
+.form__group--success.form__pincode > input {
+background-color: #32c832;
+}
+.form__group--success.form__pincode > input[disabled] {
+background-color: #32c832;
+color: #fff;
+opacity: 1;
+}
+.form__pincode {
+display: block;
+width: 100%;
+margin: 10px auto 20px;
+padding: 0;
+}
+.form__pincode:before,
+.form__pincode:after {
+display: table;
+content: '';
+}
+.form__pincode:after {
+clear: both;
+}
+.form__pincode > label {
+display: block;
+text-align: center;
+margin: 10px 0;
+}
+.form__pincode > input[type="number"] {
+-moz-appearance: none;
+-webkit-appearance: none;
+appearance: none;
+}
+.form__pincode > input {
+display: inline-block;
+float: left;
+width: 15%;
+height: 50px;
+line-height: 48px;
+text-align: center;
+font-size: 2em;
+color: #181819;
+border: 0;
+border-bottom: 2px solid rgba(0,0,0,0.3);
+border-radius: 2px 2px 0 0;
+transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+cursor: default;
+user-select: none;
+margin: 0;
+margin-top: 10px;
+margin-right: 2%;
+padding: 0;
+}
+.form__pincode > input:focus {
+outline: 0;
+box-shadow: none;
+border-color: #1486f0;
+animation: border-pulsate 1.5s infinite;
+-webkit-tap-highlight-color: transparent;
+}
+.form__pincode > input:last-child {
+margin-right: 0;
+}
+.form__pincode > input[disabled] {
+background: #eee;
+opacity: 1;
+}
+
+/* Страница Записей */
+
+.tg-page_records {
+    padding: 20px 0;
+}
+
+.tg-page_records-wrap {
+	text-align: center;
+	min-height: 680px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.records-wrap__active-records {
 	width: 100%;
-	margin: 10px auto 20px;
-	padding: 0;
-  }
-  .form__pincode:before,
-  .form__pincode:after {
-	display: table;
-	content: '';
-  }
-  .form__pincode:after {
-	clear: both;
-  }
-  .form__pincode > label {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	border-bottom: 1px var(--b4) solid;
+	padding-bottom: 16px;
+}
+
+.records-wrap__active-records h5 {
+	align-self: flex-start;
+}
+
+.active-records__list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.active-records__list-item {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.active-records__post_timing {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+}
+
+.active-records__post_doctor {
+	display: flex;
+	flex-direction: row;
+	gap: 6px;
+	align-items: center;
+}
+
+
+.records-wrap__inactive-records {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	border-bottom: 1px var(--b4) solid;
+	padding-bottom: 16px;
+
+}
+
+.records-wrap__inactive-records h5 {
+	align-self: flex-start;
+}
+
+.inactive-records__list {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.inactive-records__list-item {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.inactive-records__post_timing {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+}
+
+.inactive-records__post_timing p {
+	color: var(--b6);
+}
+
+
+
+.inactive-records__post_doctor {
+	display: flex;
+	flex-direction: row;
+	gap: 6px;
+	align-items: center;
+}
+
+
+/* Страница Специалистов */
+
+.tg-page_specialists {
+    padding: 20px 0;
+}
+
+.tg-page_specialists-wrap {
 	text-align: center;
-	margin: 10px 0;
-  }
-  .form__pincode > input[type="number"] {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	appearance: none;
-  }
-  .form__pincode > input {
-	display: inline-block;
-	float: left;
-	width: 15%;
-	height: 50px;
-	line-height: 48px;
-	text-align: center;
-	font-size: 2em;
-	color: #181819;
-	border: 0;
-	border-bottom: 2px solid rgba(0,0,0,0.3);
-	border-radius: 2px 2px 0 0;
-	transition: background-color 0.3s, color 0.3s, opacity 0.3s;
-	cursor: default;
-	user-select: none;
-	margin: 0;
-	margin-top: 10px;
-	margin-right: 2%;
-	padding: 0;
-  }
-  .form__pincode > input:focus {
-	outline: 0;
-	box-shadow: none;
-	border-color: #1486f0;
-	animation: border-pulsate 1.5s infinite;
-	-webkit-tap-highlight-color: transparent;
-  }
-  .form__pincode > input:last-child {
-	margin-right: 0;
-  }
-  .form__pincode > input[disabled] {
-	background: #eee;
-	opacity: 1;
-  }
+	min-height: 680px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
 
+.tg-page_specialists-wrap h4 {
+	font-size: 20px;
+	align-self: self-start;
+}
 
+.specialists-wrap__list {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
 
+.specialists-wrap__list-item {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
 
+.specialists-wrap__list-item img {
+	border-radius: 10px;
+	max-width: 44px;
+	max-height: 44px;
+}
 
+.specialists-wrap__list-item__info {
+	text-align: start;
+	margin-right: auto;
+	margin-left: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
 
+.specialists-wrap__list-item__info p {
+	color: var(--b5);
+}
 
 
 
@@ -2275,6 +2460,7 @@ article .more {
 }
 .par14 {
     font-size: 14px;
+	font-weight: 500;
     font-family: "Regular", sans-serif;
 }
 

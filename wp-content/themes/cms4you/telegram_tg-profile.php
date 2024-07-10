@@ -1,7 +1,7 @@
 
 <?php
 /*
-Template Name: Telegram Profile
+Template Name: Telegram Профиль
 */
 get_header();
 ?>
