@@ -1,7 +1,7 @@
 
 <?php
 /*
-Template Name: Telegram Confirm
+Template Name: Telegram Подтверждение
 */
 get_header();
 ?>

@@ -1,7 +1,7 @@
 
 <?php
 /*
-Template Name: Telegram Authentication
+Template Name: Telegram Аутентификация
 */
 get_header();
 ?>

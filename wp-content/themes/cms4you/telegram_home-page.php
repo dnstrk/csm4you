@@ -1,7 +1,7 @@
 
 <?php
 /*
-Template Name: Telegram Medical
+Template Name: Telegram Главная
 */
 get_header();
 ?>
@@ -25,11 +25,37 @@ get_header();
                         <img src="<?php echo get_template_directory_uri()?>/assets/img/aboutCard2.png" alt="">
                         <div class="user-data__record_headInfo">
                             <h5 class="user-data__record_headInfo_title head5">Мои записи</h5>
-                            <span class="user-data__record_headInfo_text par14">нет активных</span>
+                            <!-- <span class="user-data__record_headInfo_text par14">нет активных</span> -->
+                            <span class="user-data__record_headInfo_text par14">У вас 2 активные записи</span>
                         </div>
                         <a class href="#">Все</a>
                     </div>
                     <a class="user-data__record_btn" href="#">Записаться</a>
+                    <div class="splitter"></div>
+                    <!-- список активных записей -->
+                    <ul class="record__posts">
+                        <!-- запись -->
+                        <li class='record__post'>
+                            <div class="record__post_timing">
+                                <p class="record__post_timing-date">12.12.2024</p>
+                                <p class="record__post_timing-time">09:00-10:00</p>
+                            </div>
+                            <div class="record__post_doctor">
+                                <img src="<?php echo get_template_directory_uri()?>/assets/img/pavlova-min.png" alt="">
+                                <p class="par14">Павлова З.Ш.</p>
+                            </div>
+                        </li>
+                        <li class='record__post'>
+                            <div class="record__post_timing">
+                                <p class="record__post_timing-date">12.12.2024</p>
+                                <p class="record__post_timing-time">09:00-10:00</p>
+                            </div>
+                            <div class="record__post_doctor">
+                                <img src="<?php echo get_template_directory_uri()?>/assets/img/pavlova-min.png" alt="">
+                                <p class="par14">Павлова З.Ш.</p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="clinic-info">
@@ -71,6 +97,7 @@ get_header();
                         </button>
 			        </div>
                 </div>
+                <!-- список новостей -->
                 <div class="splide splide--news-tg" id="splide-tg-news">
                     <div class="splide__track" id="banner-track">
                     <?php
@@ -80,22 +107,22 @@ get_header();
                         'posts_per_page' => -1, // Выводим все отзывы
                     ));
                     if ($query->have_posts()) : ?>
-                        <ul class="splide__list" id="banner-list">
+                    <ul class="splide__list" id="banner-list">
                     <?php while ($query->have_posts()) : $query->the_post(); ?>
                     <?php $news_date = get_post_meta(get_the_ID(), 'news_date', true); ?>
-					<li class="splide__slide">
-					<!--карточка новости-->
-						<a href="<?php the_permalink() ?>" class="card news-card-tg">
-							<div class="news-card-tg__img">
-								<?php the_post_thumbnail() ?>
-							</div>
-							<div class="news-card-tg__content">
-								<div class="post-data"><?php echo $news_date ?></div>
-								<h4><?php the_title() ?></h4>
-								<p><?php echo wp_trim_words(esc_attr(get_the_excerpt()), 5, '...') ?></p>
-							</div>
-						</a>
-					</li>
+                        <li class="splide__slide">
+                        <!--карточка новости-->
+                            <a href="<?php the_permalink() ?>" class="card news-card-tg">
+                                <div class="news-card-tg__img">
+                                    <?php the_post_thumbnail() ?>
+                                </div>
+                                <div class="news-card-tg__content">
+                                    <div class="post-data"><?php echo $news_date ?></div>
+                                    <h4><?php the_title() ?></h4>
+                                    <p><?php echo wp_trim_words(esc_attr(get_the_excerpt()), 5, '...') ?></p>
+                                </div>
+                            </a>
+                        </li>
 					<?php endwhile; ?>
 					<?php
 						// Восстановить глобальные данные поста
