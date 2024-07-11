@@ -1,7 +1,14 @@
 
 </main>
-<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_records.php')&&!is_page_template('telegram_specialists.php')) { ?>
-
+<?php 
+$home = is_page_template('telegram_home-page.php');
+$profile = is_page_template('telegram_tg-profile.php');
+$auth = is_page_template('telegram_tg-auth.php');
+$confirm = is_page_template('telegram_tg-confirm.php');
+$specialists = is_page_template('telegram_specialists.php');
+$specialist = is_page_template('telegram_specialist.php');
+?>
+<?php if($home&&$profile&&$auth&&$confirm&&$specialists&&$specialist == 1) { ?>
 <footer>
 	<div class="container">
 		<div class="d-flex flex-column flex-lg-row align-items-center justify-content-between">
