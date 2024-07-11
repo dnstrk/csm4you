@@ -11,10 +11,21 @@ $num_wa = get_theme_mod('num_wa');
 $num_mobile = get_theme_mod('num_mobile');
 $mail = get_theme_mod('mail');
 $address_head = get_theme_mod('address_head');
+
+
+
+// Переменные для определения шаблона и скрытия хедера если шаблоны ТГ
+$home = is_page_template('telegram_home-page.php');
+$profile = is_page_template('telegram_tg-profile.php');
+$auth = is_page_template('telegram_tg-auth.php');
+$confirm = is_page_template('telegram_tg-confirm.php');
+$specialists = is_page_template('telegram_tg-specialists.php');
+$specialist = is_page_template('telegram_tg-specialist.php');
+$specialist = is_page_template('telegram_tg-specialist.php');
 ?>
 
 <body class="<?php if(is_front_page()){echo "home-page";} ?>">
-<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_records.php')&&!is_page_template('telegram_specialists.php')) { ?>
+<?php if($home&&$profile&&$auth&&$confirm&&$specialists&&$specialist == 1) { ?>
 <header id="header" class="header">
 	<div class="header__top-block">
 		<div class="container">
@@ -71,4 +82,4 @@ $address_head = get_theme_mod('address_head');
 	</div>
 </header>
 <?php } ?>
-	<main>
+<main>

@@ -1916,6 +1916,7 @@ article .more {
 
 .clinic-info__spec,
 .clinic-info__about {
+	color: var(--b9);
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -2434,6 +2435,112 @@ opacity: 1;
 	color: var(--b5);
 }
 
+/* Страница Специалиста */
+
+.tg-page_specialist {
+    padding: 20px 0;
+}
+
+.tg-page_specialist-wrap {
+	min-height: 680px;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 80px;
+}
+
+.tg-page_specialist__btn {
+	position: fixed;
+	bottom: 22px;
+	left: 18px;
+	width: 90% !important;
+}
+
+.specialist-wrap__head {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 24px;
+	border-bottom: 1px var(--b4) solid;
+}
+
+.specialist-wrap__head img {
+	max-width: 74px;
+	border-radius: 10px;
+	margin-bottom: 24px;
+}
+.specialist-wrap__head h3 {
+	font-size: 24px;
+	margin-bottom: 8px;
+}
+.specialist-wrap__head p {
+	color: var(--b6);
+}
+
+
+.specialist-wrap__bottom {
+	margin-top: 24px;
+	/* text-align: justify; */
+}
+
+
+/* Страница Успешной записи */
+
+.tg-page_success {
+    padding: 20px 0;
+}
+
+.tg-page_success-wrap {
+	text-align: center;
+	min-height: 680px;
+	max-height: 680px;
+	display: flex;
+	flex-direction: column;
+}
+
+.tg-page_success-wrap img{
+	margin-bottom: 24px;
+}
+.tg-page_success-wrap h3{
+	margin-bottom: 16px;
+	font-size: 24px;
+}
+.tg-page_success-wrap span{
+	margin-bottom: 24px;
+	color: var(--b4);
+}
+
+.success-wrap__specialist {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 16px;
+	width: 100%;
+	background-color: var(--b2);
+	border-radius: 20px;
+}
+.success-wrap__specialist img{
+	margin-bottom: 8px;
+}
+
+.success-wrap__specialist_spec {
+	color: var(--b4);
+}
+
+.success-wrap__specialist-timing {
+	margin-top: 16px;
+	display: flex;
+	flex-direction: row;
+	gap: 12px;
+}
+
+.success-wrap_btn {
+	margin-top: 24px;
+}
+
+
+
+
+
+
 
 
 
@@ -2460,6 +2567,10 @@ opacity: 1;
 }
 .par14 {
     font-size: 14px;
+    font-family: "Regular", sans-serif;
+}
+.par16 {
+    font-size: 16px;
 	font-weight: 500;
     font-family: "Regular", sans-serif;
 }

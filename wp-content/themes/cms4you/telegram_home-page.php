@@ -28,7 +28,7 @@ get_header();
                             <!-- <span class="user-data__record_headInfo_text par14">нет активных</span> -->
                             <span class="user-data__record_headInfo_text par14">У вас 2 активные записи</span>
                         </div>
-                        <a class href="#">Все</a>
+                        <a class href="/tg-records">Все</a>
                     </div>
                     <a class="user-data__record_btn" href="#">Записаться</a>
                     <div class="splitter"></div>
@@ -59,7 +59,7 @@ get_header();
                 </div>
             </div>
             <div class="clinic-info">
-                <div class="clinic-info__spec">
+                <a href="/tg-specialists" class="clinic-info__spec">
                     <img src="<?php echo get_template_directory_uri()?>/assets/img/aboutCard3.png" alt="">
                     <h5>Специалисты</h5>
                     <div class="clinic-info__spec_doctorsImg">
@@ -69,7 +69,7 @@ get_header();
                         <img class="doctorsImgAbs doctorsImg4" src="<?php echo get_template_directory_uri()?>/assets/img/dolgushin-min.png" alt="">
                         <img class="doctorsImgAbs doctorsImg5" src="<?php echo get_template_directory_uri()?>/assets/img/tishuk-min.png" alt="">
                     </div>
-                </div>
+                </a>
                 <div class="clinic-info__about">
                     <img src="<?php echo get_template_directory_uri()?>/assets/img/aboutCard4.png" alt="">
                     <h5>О клинике</h5>
