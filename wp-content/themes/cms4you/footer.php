@@ -8,7 +8,7 @@ $confirm = is_page_template('telegram_tg-confirm.php');
 $specialists = is_page_template('telegram_specialists.php');
 $specialist = is_page_template('telegram_specialist.php');
 ?>
-<?php if($home&&$profile&&$auth&&$confirm&&$specialists&&$specialist == 1) { ?>
+<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_tg-records.php')&&!is_page_template('telegram_tg-specialists.php')&&!is_page_template('telegram_tg-specialist.php')&&!is_singular('doctor')) { ?>
 <footer>
 	<div class="container">
 		<div class="d-flex flex-column flex-lg-row align-items-center justify-content-between">
@@ -23,14 +23,33 @@ $specialist = is_page_template('telegram_specialist.php');
 				<a href="/soglashenie-po-obrabotke-personalnyh-dannyh/">Соглашение по обработке персональных данных</a>
 			</div>
 			<div class="footer__right-part">
-				<ul class="footer-menu d-flex align-items-center">
+			<?php 
+			wp_nav_menu( [
+					'theme_location'  => 'main-menu',
+					'menu'            => '',
+					'container'       => 'ul',
+					'container_class' => '',
+					'container_id'    => '',
+					'menu_class'      => 'nav nav-ul main-nav__list',
+					'menu_id'         => '',
+					'echo'            => true,
+					'fallback_cb'     => 'wp_page_menu',
+					'before'          => '',
+					'after'           => '',
+					'link_before'     => '',
+					'link_after'      => '',
+					'items_wrap'      => '<ul id="%1$s" class="footer-menu d-flex align-items-center">%3$s </ul>',
+					'depth'           => 0,
+				] );
+			?>
+				<!-- <ul class="footer-menu d-flex align-items-center">
 							<li><a class="" href="#">О клинике</a></li>
 							<li><a class="" href="#">Врачи</a></li>
 							<li><a class="" href="#">Прайс-лист</a></li>
 							<li><a class="" href="#">Отзывы</a></li>
 							<li><a class="" href="#">Новости</a></li>
 							<li><a class="" href="#">Контакты</a></li>
-				</ul>
+				</ul> -->
 			</div>
 		
 		</div>
