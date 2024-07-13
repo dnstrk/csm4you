@@ -25,7 +25,7 @@ $specialist = is_page_template('telegram_tg-specialist.php');
 ?>
 
 <body class="<?php if(is_front_page()){echo "home-page";} ?>">
-<?php if($home&&$profile&&$auth&&$confirm&&$specialists&&$specialist == 1) { ?>
+<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_tg-records.php')&&!is_page_template('telegram_tg-specialists.php')&&!is_page_template('telegram_tg-specialist.php')&&!is_singular('doctor')) { ?>
 <header id="header" class="header">
 	<div class="header__top-block">
 		<div class="container">
@@ -66,14 +66,6 @@ $specialist = is_page_template('telegram_tg-specialist.php');
 							'depth'           => 0,
 						] );
 					?>
-					<!-- <ul class="header-menu d-flex flex-column flex-md-row align-items-center">
-						<li><a class="" href="#">О клинике</a></li>
-						<li><a class="" href="#">Врачи</a></li>
-						<li><a class="" href="#">Прайс-лист</a></li>
-						<li><a class="" href="#">Отзывы</a></li>
-						<li><a class="" href="#">Новости</a></li>
-						<li><a class="" href="#">Контакты</a></li>
-					</ul> -->
 					<a href="#post" data-bfmodal="#post" class="btn btn--defoult btn--rounded btn--primary">Записаться</a>
 					<a href="#lk" data-bfmodal="#lk" class="btn circle--btn  user"></a>
 				</nav>

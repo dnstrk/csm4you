@@ -17,7 +17,7 @@ get_header();
 				<?php the_content() ?>
 			</div>
 			<div class="offset-xl-1 col-md-3 sticky">
-				<aside>
+			<aside>
 				<div class="hot-spot blue mb-5">
 					<img src="<?php echo get_template_directory_uri()?>/assets/img/hotspotblue.png"/>
 					<div class="hot-spot__content">
@@ -39,7 +39,7 @@ get_header();
 						<p><small>Подавая заявку вы даёте <a href="#">согласие на обработку данных</a></small></p>
 					</div>
 				</div>
-				</aside>
+			</aside>
 			</div>
 		</div>
 	</article>
