@@ -277,6 +277,200 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 		
 	</div>
 </section>
+<div class="home-bg">
+<section id="home-form" class="home-form">
+	<div class="container">
+		<form class="online-form">
+			<div class="row">
+				<div class="col-12">
+					<h2>Онлайн запись</h2>
+					<p>Выберите дату или врача</p>
+				</div>
+				<div class="col-12">
+					<ul class="page-cards-list">
+						<li class="bfmodal-cards-list__item">
+						<?php
+						$query = new WP_Query(array(
+						'post_type' => 'doctor', // Кастомный тип записей
+						'posts_per_page' => -1, // Выводим все отзывы
+						)); ?>
+						<?php while ($query->have_posts()) : $query->the_post(); ?>
+							<!--карточка врача-->
+							<div class="card-mobile card-mobile--big active selected">
+								<div class="card-mobile__img">
+									<img src="<?php echo get_template_directory_uri()?>/assets/img/pavlova.png"/>
+								</div>
+								<div class="card-mobile__content">
+									<p class="card-mobile__title"><?php the_title(); ?></p>
+									<span class="card-mobile__position">Эндокринолог-андролог</span>
+								</div>
+							</div>
+						</li>
+						<?php endwhile; ?>
+						<li class="bfmodal-cards-list__item">
+							<!--карточка врача-->
+							<div class="card-mobile card-mobile--big active">
+								<div class="card-mobile__img">
+									<img src="<?php echo get_template_directory_uri()?>/assets/img/terehova.png"/>
+								</div>
+								<div class="card-mobile__content">
+									<p class="card-mobile__title">Терехова А.Л..</p>
+									<span class="card-mobile__position">Эндокринолог</span>
+								</div>
+							</div>
+						</li>
+						<li class="bfmodal-cards-list__item">
+							<!--карточка врача-->
+							<div class="card-mobile card-mobile--big">
+								<div class="card-mobile__img">
+									<img src="<?php echo get_template_directory_uri()?>/assets/img/ryabseva.png"/>
+								</div>
+								<div class="card-mobile__content">
+									<p class="card-mobile__title">Рябцева О.Ю.</p>
+									<span class="card-mobile__position">Эндокринолог</span>
+								</div>
+							</div>
+						</li>
+						<li class="bfmodal-cards-list__item">
+							<!--карточка врача-->
+							<div class="card-mobile card-mobile--big">
+								<div class="card-mobile__img">
+									<img src="<?php echo get_template_directory_uri()?>/assets/img/dolgushin.png"/>
+								</div>
+								<div class="card-mobile__content">
+									<p class="card-mobile__title">Долгушин Г.О.</p>
+									<span class="card-mobile__position">Эндокринолог</span>
+								</div>
+							</div>
+						</li>
+						<li class="bfmodal-cards-list__item">
+							<!--карточка врача-->
+							<div class="card-mobile card-mobile--big active">
+								<div class="card-mobile__img">
+									<img src="<?php echo get_template_directory_uri()?>/assets/img/tishuk.png"/>
+								</div>
+								<div class="card-mobile__content">
+									<p class="card-mobile__title">Тишук А.В.</p>
+									<span class="card-mobile__position">Врач УЗИ</span>
+								</div>
+							</div>
+						</li>
+						<li class="bfmodal-cards-list__item">
+							<!--карточка врача-->
+							<div class="card-mobile card-mobile--big">
+								<div class="card-mobile__img">
+									<img src="<?php echo get_template_directory_uri()?>/assets/img/gorbunov.png"/>
+								</div>
+								<div class="card-mobile__content">
+									<p class="card-mobile__title">Горбунов Р.М.</p>
+									<span class="card-mobile__position">Врач УЗИ</span>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="row gx-5">
+				<div class="col-md-6 p-5">
+                     <div class="calendar__wrapper">
+                        <div id="order">
+
+						</div>
+						<input type="hidden" id="orderInput"/>
+					 </div>
+				</div>
+				<div class="col-md-6 p-5">
+					<div class="form-title__wrapper">
+						<h3>Выберите время</h3>
+					</div>
+					<ul class="select-time">
+						<li>
+							<div class="select-time__item active" data-time="08:00 - 09:00">
+								<span>08:00 - 09:00</span>
+								<input type="radio" name="time" id="time1" value="08:00 - 09:00"/>
+							</div>
+						</li>
+						<li>
+							<div class="select-time__item active" data-time="10:00 - 11:00">
+								<span>08:00 - 09:00</span>
+								<input type="radio" name="time" id="time1" value="10:00 - 11:00"/>
+							</div>
+						</li>
+						<li>
+							<div class="select-time__item" data-time="11:00 - 12:00">
+								<span>08:00 - 09:00</span>
+								<input type="radio" name="time" id="time1" value="11:00 - 12:00"/>
+							</div>
+						</li>
+						<li>
+							<div class="select-time__item" data-time="12:00 - 13:00">
+								<span>08:00 - 09:00</span>
+								<input type="radio" name="time" id="time1" value="12:00 - 13:00"/>
+							</div>
+						</li>
+						<li>
+							<div class="select-time__item" data-time="13:00 - 14:00">
+								<span>08:00 - 09:00</span>
+								<input type="radio" name="time" id="time1" value="13:00 - 14:00"/>
+							</div>
+						</li>
+						<li>
+							<div class="select-time__item" data-time="14:00 - 15:00">
+								<span>08:00 - 09:00</span>
+								<input type="radio" name="time" id="time1" value="14:00 - 15:00"/>
+							</div>
+						</li>
+						<li>
+							<div class="select-time__item active" data-time="15:00 - 16:00">
+								<span>08:00 - 09:00</span>
+								<input type="radio" name="time" id="time1" value="15:00 - 16:00"/>
+							</div>
+						</li>
+						<li>
+							<div class="select-time__item" data-time="16:00 - 17:00">
+								<span>08:00 - 09:00</span>
+								<input type="radio" name="time" id="time1" value="16:00 - 17:00"/>
+							</div>
+						</li>
+						<li>
+							<div class="select-time__item" data-time="17:00 - 18:00">
+								<span>08:00 - 09:00</span>
+								<input type="radio" name="time" id="time1" value="17:00 - 18:00"/>
+							</div>
+						</li>
+						<li>
+							<div class="select-time__item active" data-time="18:00 - 19:00">
+								<span>18:00 - 19:00</span>
+								<input type="radio" name="time" id="time1" value="15:00 - 16:00"/>
+							</div>
+						</li>
+						<li>
+							<div class="select-time__item" data-time="19:00 - 20:00">
+								<span>08:00 - 09:00</span>
+								<input type="radio" name="time" id="time1" value="19:00 - 20:00"/>
+							</div>
+						</li>
+					</ul>
+					<div class="form-content__wrapper">
+						<h3>Ваши данные:</h3>
+						<div class="row">
+							<div class="col-sm-6 p-3">
+								<input type="tel" placeholder="Номер телефона"/>
+							</div>
+							<div class="col-sm-6 p-3">
+								<input type="text" placeholder="Ваше имя"/>
+							</div>
+							<div class="col-12 p-3">
+								<textarea placeholder="Опишите вашу проблему"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<form>
+	</form>
+
+</section>
 <section id="review" class="review">
 	<div class="container">
 		<div class="d-flex align-items-center justify-content-between">
@@ -291,7 +485,6 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 			</div>
 		</div>
 	</div>
-
 	<div class="splide splide--reviews" id="splide-reviews">
 		<div class="splide__track" id="banner-track">
 			<ul class="splide__list" id="banner-list">
@@ -327,6 +520,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 		</div>
 	</div>
 </section>
+</div>
 <section id="news" class="news">
 	<div class="container">
 		<div class="d-flex align-items-center justify-content-between">

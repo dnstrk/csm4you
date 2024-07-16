@@ -509,6 +509,15 @@ nav {
     display: flex;
     overflow-x: auto;
 }
+.page-cards-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    overflow-x: auto;
+    justify-content: space-between;
+}
+
 .bfmodal-cards-list__item {
     margin-right: 1.6rem;
 }
@@ -518,10 +527,12 @@ nav {
     border: 1px solid var(--b2);
     display: flex;
     border-radius: 1.6rem;
-
+   
     transition: .15s;
 }
-
+.card-mobile--big{
+    min-width: 214px; 
+}
 .card-mobile:hover {
     border-color: var(--pr);
 }
@@ -925,6 +936,7 @@ ul.paginate {
 .doctor-card:hover .doctor-card__footer {
     max-height: 200px;
 }
+/*section price*/
 section.price {
     background-image: url(../img/bg2.jpg);
     background-size: 100% 100%;
@@ -1048,8 +1060,8 @@ ul.sotials li a {
     visibility: visible;
 }
 .price-table__row h4 {
-    max-width: 120px;
-    min-width: 120px;
+    max-width: 150px;
+    min-width: 150px;
     text-align: right;
 }
 .splide--reviews .splide__track {
@@ -1058,6 +1070,74 @@ ul.sotials li a {
 .card-review {
     margin-right: 2.4rem;
     max-width: 58.8rem;
+}
+/*section form*/
+.home-bg {
+    background-image: url(../img/bg3.jpg);
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+}
+section.home-form{
+    padding:10rem 0;
+    
+}
+.form-title__wrapper{
+min-height:7.7rem;
+display:flex;
+align-items: center;
+}
+.select-time{
+    display:flex;
+    flex-wrap:wrap;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+.select-time li {
+    position:relative;
+    margin-right:0.8rem;
+    margin-bottom:0.8rem;
+}
+.select-time__item {
+    position:relative;
+    width:100%;
+    min-width:16.7rem;
+    padding:1.6rem 3.2rem;
+    border:1px solid var(--b3);
+    border-radius:3.2rem;
+    font-weight:500;
+    cursor:pointer;
+    display:none;
+    transition:all 0.3s linear;
+}
+.select-time__item input {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    cursor:pointer;
+}
+.select-time__item:hover{
+    color:var(--pr);
+    border-color:var(--pr);
+    cursor:pointer;
+}
+.select-time__item.active{
+    display:block;
+}
+.select-time__item.selected {
+    color:var(--white);
+    background-color: var(--pr);
+}
+.form-content__wrapper h3 {
+    margin:3.2rem 0;
+}
+.page-cards-list{
+    margin:3.2rem 0
 }
 section.review {
     margin: 10rem 0;
