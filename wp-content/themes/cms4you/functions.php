@@ -5,6 +5,7 @@ include( 'configure/taxonomy.php' );
 // CONFIG
 include( 'configure/configure.php' );
 include( 'configure/smb_home.php' );
+include( 'configure/cmb-doctors.php' );
 include( 'configure/admin_functions.php' );
 
 // JAVASCRIPT & CSS
