@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <?php wp_head(); ?>
+	<script>
+		// Функция для проверки устройства
+		function isMobileDevice() {
+		return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+		}
+
+		// Функция для предотвращения перехода
+		function preventDesktopAccess() {
+		if (/tg-auth|tg-main/.test(document.location.href) && !isMobileDevice()) {
+			document.body.innerHTML = '<h5>Access denied.</h5>';
+			window.stop();
+		}
+		}
+
+		// Выполнить проверку при загрузке страницы
+		document.addEventListener('DOMContentLoaded', preventDesktopAccess);
+	</script>
 </head>
 <?php 
 $num_wa = get_theme_mod('num_wa');
