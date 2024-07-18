@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <?php wp_head(); ?>
-	<script>
+	<!-- <script>
 		// Функция для проверки устройства
 		function isMobileDevice() {
 		return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
@@ -21,7 +21,7 @@
 
 		// Выполнить проверку при загрузке страницы
 		document.addEventListener('DOMContentLoaded', preventDesktopAccess);
-	</script>
+	</script> -->
 </head>
 <?php 
 $num_wa = get_theme_mod('num_wa');
@@ -42,7 +42,7 @@ $specialist = is_page_template('telegram_tg-specialist.php');
 ?>
 
 <body class="<?php if(is_front_page()){echo "home-page";} ?>">
-<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_tg-records.php')&&!is_page_template('telegram_tg-specialists.php')&&!is_page_template('telegram_tg-specialist.php')&&!is_singular('doctor')&&!is_page_template('telegram_tg-about.php')) { ?>
+<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_tg-records.php')&&!is_page_template('telegram_tg-specialists.php')&&!is_page_template('telegram_tg-specialist.php')&&!is_singular('doctor')&&!is_page_template('telegram_tg-about.php')&&!is_page_template('telegram_tg-success.php')) { ?>
 <header id="header" class="header">
 	<div class="header__top-block">
 		<div class="container">

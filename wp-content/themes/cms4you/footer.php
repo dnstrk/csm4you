@@ -8,7 +8,7 @@ $confirm = is_page_template('telegram_tg-confirm.php');
 $specialists = is_page_template('telegram_specialists.php');
 $specialist = is_page_template('telegram_specialist.php');
 ?>
-<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_tg-records.php')&&!is_page_template('telegram_tg-specialists.php')&&!is_page_template('telegram_tg-specialist.php')&&!is_singular('doctor')&&!is_page_template('telegram_tg-about.php')) { ?>
+<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_tg-records.php')&&!is_page_template('telegram_tg-specialists.php')&&!is_page_template('telegram_tg-specialist.php')&&!is_singular('doctor')&&!is_page_template('telegram_tg-about.php')&&!is_page_template('telegram_tg-success.php')) { ?>
 <footer>
 	<div class="container">
 		<div class="d-flex flex-column flex-lg-row align-items-center justify-content-between">
