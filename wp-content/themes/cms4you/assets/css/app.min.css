@@ -527,11 +527,11 @@ nav {
     border: 1px solid var(--b2);
     display: flex;
     border-radius: 1.6rem;
-   
-    transition: .15s;
+
+    transition: 0.15s;
 }
-.card-mobile--big{
-    min-width: 214px; 
+.card-mobile--big {
+    min-width: 214px;
 }
 .card-mobile:hover {
     border-color: var(--pr);
@@ -1075,69 +1075,68 @@ ul.sotials li a {
 .home-bg {
     background-image: url(../img/bg3.jpg);
     background-size: 100% 100%;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
 }
-section.home-form{
-    padding:10rem 0;
-    
+section.home-form {
+    padding: 10rem 0;
 }
-.form-title__wrapper{
-min-height:7.7rem;
-display:flex;
-align-items: center;
+.form-title__wrapper {
+    min-height: 7.7rem;
+    display: flex;
+    align-items: center;
 }
-.select-time{
-    display:flex;
-    flex-wrap:wrap;
-    list-style:none;
-    padding:0;
-    margin:0;
+.select-time {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 .select-time li {
-    position:relative;
-    margin-right:0.8rem;
-    margin-bottom:0.8rem;
+    position: relative;
+    margin-right: 0.8rem;
+    margin-bottom: 0.8rem;
 }
 .select-time__item {
-    position:relative;
-    width:100%;
-    min-width:16.7rem;
-    padding:1.6rem 3.2rem;
-    border:1px solid var(--b3);
-    border-radius:3.2rem;
-    font-weight:500;
-    cursor:pointer;
-    display:none;
-    transition:all 0.3s linear;
+    position: relative;
+    width: 100%;
+    min-width: 16.7rem;
+    padding: 1.6rem 3.2rem;
+    border: 1px solid var(--b3);
+    border-radius: 3.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: none;
+    transition: all 0.3s linear;
 }
 .select-time__item input {
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    left:0;
-    opacity:0;
-    cursor:pointer;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
 }
-.select-time__item:hover{
-    color:var(--pr);
-    border-color:var(--pr);
-    cursor:pointer;
+.select-time__item:hover {
+    color: var(--pr);
+    border-color: var(--pr);
+    cursor: pointer;
 }
-.select-time__item.active{
-    display:block;
+.select-time__item.active {
+    display: block;
 }
 .select-time__item.selected {
-    color:var(--white);
+    color: var(--white);
     background-color: var(--pr);
 }
 .form-content__wrapper h3 {
-    margin:3.2rem 0;
+    margin: 3.2rem 0;
 }
-.page-cards-list{
-    margin:3.2rem 0
+.page-cards-list {
+    margin: 3.2rem 0;
 }
 section.review {
     margin: 10rem 0;
@@ -1506,7 +1505,6 @@ article .more {
         margin-right: 1.2rem;
     }
 
-    
     h4 {
         font-size: 1.6rem;
     }
@@ -1962,38 +1960,37 @@ article .more {
 }
 
 .splitter {
-	border: 1px var(--b3) solid;
+    border: 1px var(--b3) solid;
 }
 
 .record__posts {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .record__post {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .record__post_timing {
-	display: flex;
-	flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .record__post_timing p {
-	font-weight: 600;
+    font-weight: 600;
 }
 
 .record__post_doctor {
-	display: flex;
-	flex-direction: row;
-	gap: 6px;
-	align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
 }
-
 
 /* Специалисты и О Клинике */
 
@@ -2007,7 +2004,7 @@ article .more {
 
 .clinic-info__spec,
 .clinic-info__about {
-	color: var(--b9);
+    color: var(--b9);
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -2142,12 +2139,12 @@ article .more {
 }
 
 .tg-page_profile-wrap {
-	min-height: 680px;
+    min-height: 90vh;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-	justify-content: space-between;
+    justify-content: space-between;
 }
 
 .tg-page_profile-wrap img {
@@ -2156,7 +2153,7 @@ article .more {
 
 .profile-wrap__action_input {
     margin-top: 32px;
-	margin-bottom: auto;
+    margin-bottom: auto;
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -2181,35 +2178,34 @@ article .more {
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 14px;
-	transition: .1s;
+    transition: 0.1s;
 }
 
 .tg_inp_focus {
-	color: var(--pr) !important;
+    color: var(--pr) !important;
 }
 
 .profile-wrap__action_btn {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 .profile-wrap__action_btn button {
-	width: 100%;
-	text-align: center;
-	padding: 10px;
-	border: 1px var(--pr) solid;
-	border-radius: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border: 1px var(--pr) solid;
+    border-radius: 20px;
 }
 #tg-btn-save {
-	color: var(--white);
-	background-color: var(--pr);
+    color: var(--white);
+    background-color: var(--pr);
 }
 #tg-btn-discard {
-	color: var(--pr);
-	background-color: transparent;
+    color: var(--pr);
+    background-color: transparent;
 }
-
 
 /* Страница Логина по телефону */
 
@@ -2218,29 +2214,29 @@ article .more {
 }
 
 .tg-page_register-wrap {
-	min-height: 680px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .register-wrap__info {
-	height: 550px;
-	display: flex;
-	text-align: center;
-	align-items: center;
-	justify-content: center;
+    height: 500px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .register-wrap__info span {
-	width: 80%;
-	color: var(--b5);
+    width: 80%;
+    color: var(--b5);
 }
 
 .register-wrap__action {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .register-wrap__action_phone {
@@ -2256,10 +2252,8 @@ article .more {
     font-family: "Roboto", sans-serif;
     font-weight: 600;
     font-size: 14px;
-	transition: .1s;
+    transition: 0.1s;
 }
-
-
 
 /* Страница Подтверждения кодом СМС */
 
@@ -2268,113 +2262,111 @@ article .more {
 }
 
 .tg-page_confirm-wrap {
-	text-align: center;
-	min-height: 680px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+    text-align: center;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .confirm-wrap__frame {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 .confirm-wrap__frame p {
-	color: var(--b5);
+    color: var(--b5);
 }
-.confirm-wrap__frame p span{
-	color: var(--b9);
+.confirm-wrap__frame p span {
+    color: var(--b9);
 }
-
-
 
 .confirm-wrap__frame__SMSArea {
-	display: flex;
-	flex-direction: column;
-	gap: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 /* Сворованая стилизация полей для кода из СМС, лучше переделать */
 .form {
-	display: block;
-  }
+    display: block;
+}
 .form__group {
-margin: 10px 0 0;
+    margin: 10px 0 0;
 }
 .form__group--error.form__pincode > input {
-background-color: #eb3b3b;
+    background-color: #eb3b3b;
 }
 .form__group--error.form__pincode > input[disabled] {
-background-color: #eb3b3b;
-color: #fff;
-opacity: 1;
+    background-color: #eb3b3b;
+    color: #fff;
+    opacity: 1;
 }
 .form__group--success.form__pincode > input {
-background-color: #32c832;
+    background-color: #32c832;
 }
 .form__group--success.form__pincode > input[disabled] {
-background-color: #32c832;
-color: #fff;
-opacity: 1;
+    background-color: #32c832;
+    color: #fff;
+    opacity: 1;
 }
 .form__pincode {
-display: block;
-width: 100%;
-margin: 10px auto 20px;
-padding: 0;
+    display: block;
+    width: 100%;
+    margin: 10px auto 20px;
+    padding: 0;
 }
 .form__pincode:before,
 .form__pincode:after {
-display: table;
-content: '';
+    display: table;
+    content: "";
 }
 .form__pincode:after {
-clear: both;
+    clear: both;
 }
 .form__pincode > label {
-display: block;
-text-align: center;
-margin: 10px 0;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
 }
 .form__pincode > input[type="number"] {
--moz-appearance: none;
--webkit-appearance: none;
-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
 }
 .form__pincode > input {
-display: inline-block;
-float: left;
-width: 15%;
-height: 50px;
-line-height: 48px;
-text-align: center;
-font-size: 2em;
-color: #181819;
-border: 0;
-border-bottom: 2px solid rgba(0,0,0,0.3);
-border-radius: 2px 2px 0 0;
-transition: background-color 0.3s, color 0.3s, opacity 0.3s;
-cursor: default;
-user-select: none;
-margin: 0;
-margin-top: 10px;
-margin-right: 2%;
-padding: 0;
+    display: inline-block;
+    float: left;
+    width: 15%;
+    height: 50px;
+    line-height: 48px;
+    text-align: center;
+    font-size: 2em;
+    color: #181819;
+    border: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 2px 2px 0 0;
+    transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+    cursor: default;
+    user-select: none;
+    margin: 0;
+    margin-top: 10px;
+    margin-right: 2%;
+    padding: 0;
 }
 .form__pincode > input:focus {
-outline: 0;
-box-shadow: none;
-border-color: #1486f0;
-animation: border-pulsate 1.5s infinite;
--webkit-tap-highlight-color: transparent;
+    outline: 0;
+    box-shadow: none;
+    border-color: #1486f0;
+    animation: border-pulsate 1.5s infinite;
+    -webkit-tap-highlight-color: transparent;
 }
 .form__pincode > input:last-child {
-margin-right: 0;
+    margin-right: 0;
 }
 .form__pincode > input[disabled] {
-background: #eee;
-opacity: 1;
+    background: #eee;
+    opacity: 1;
 }
 
 /* Страница Записей */
@@ -2384,97 +2376,92 @@ opacity: 1;
 }
 
 .tg-page_records-wrap {
-	text-align: center;
-	min-height: 680px;
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
+    text-align: center;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .records-wrap__active-records {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	border-bottom: 1px var(--b4) solid;
-	padding-bottom: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px var(--b4) solid;
+    padding-bottom: 16px;
 }
 
 .records-wrap__active-records h5 {
-	align-self: flex-start;
+    align-self: flex-start;
 }
 
 .active-records__list {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .active-records__list-item {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .active-records__post_timing {
-	display: flex;
-	flex-direction: column;
-	align-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 .active-records__post_doctor {
-	display: flex;
-	flex-direction: row;
-	gap: 6px;
-	align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
 }
 
-
 .records-wrap__inactive-records {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	border-bottom: 1px var(--b4) solid;
-	padding-bottom: 16px;
-
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-bottom: 1px var(--b4) solid;
+    padding-bottom: 16px;
 }
 
 .records-wrap__inactive-records h5 {
-	align-self: flex-start;
+    align-self: flex-start;
 }
 
 .inactive-records__list {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .inactive-records__list-item {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .inactive-records__post_timing {
-	display: flex;
-	flex-direction: column;
-	align-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
 
 .inactive-records__post_timing p {
-	color: var(--b6);
+    color: var(--b6);
 }
-
-
 
 .inactive-records__post_doctor {
-	display: flex;
-	flex-direction: row;
-	gap: 6px;
-	align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+    align-items: center;
 }
-
 
 /* Страница Специалистов */
 
@@ -2483,47 +2470,47 @@ opacity: 1;
 }
 
 .tg-page_specialists-wrap {
-	text-align: center;
-	min-height: 680px;
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
+    text-align: center;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .tg-page_specialists-wrap h4 {
-	font-size: 20px;
-	align-self: self-start;
+    font-size: 20px;
+    align-self: self-start;
 }
 
 .specialists-wrap__list {
-	display: flex;
-	flex-direction: column;
-	gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .specialists-wrap__list-item {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .specialists-wrap__list-item img {
-	border-radius: 10px;
-	max-width: 44px;
-	max-height: 44px;
+    border-radius: 10px;
+    max-width: 44px;
+    max-height: 44px;
 }
 
 .specialists-wrap__list-item__info {
-	text-align: start;
-	margin-right: auto;
-	margin-left: 12px;
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
+    text-align: start;
+    margin-right: auto;
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .specialists-wrap__list-item__info p {
-	color: var(--b5);
+    color: var(--b5);
 }
 
 /* Страница Специалиста */
@@ -2540,61 +2527,52 @@ opacity: 1;
 }
 
 .tg-page_success-wrap {
-	text-align: center;
-	min-height: 680px;
-	max-height: 680px;
-	display: flex;
-	flex-direction: column;
+    text-align: center;
+    min-height: 90vh;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.tg-page_success-wrap img{
-	margin-bottom: 24px;
+.tg-page_success-wrap img {
+    margin-bottom: 24px;
 }
-.tg-page_success-wrap h3{
-	margin-bottom: 16px;
-	font-size: 24px;
+.tg-page_success-wrap h3 {
+    margin-bottom: 16px;
+    font-size: 24px;
 }
-.tg-page_success-wrap span{
-	margin-bottom: 24px;
-	color: var(--b4);
+.tg-page_success-wrap span {
+    margin-bottom: 24px;
+    color: var(--b4);
 }
 
 .success-wrap__specialist {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 16px;
-	width: 100%;
-	background-color: var(--b2);
-	border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    width: 100%;
+    background-color: var(--b2);
+    border-radius: 20px;
 }
-.success-wrap__specialist img{
-	margin-bottom: 8px;
+.success-wrap__specialist img {
+    margin-bottom: 8px;
 }
 
 .success-wrap__specialist_spec {
-	color: var(--b4);
+    color: var(--b4);
 }
 
 .success-wrap__specialist-timing {
-	margin-top: 16px;
-	display: flex;
-	flex-direction: row;
-	gap: 12px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
 }
 
 .success-wrap_btn {
-	margin-top: 24px;
+    margin-top: 24px;
 }
-
-
-
-
-
-
-
-
-
 
 /* Шаблон single-doctor */
 .doctor-img {
@@ -2608,14 +2586,14 @@ opacity: 1;
     .tg-page_specialist {
         padding: 20px 0;
     }
-    
+
     .tg-page_specialist-wrap {
-        min-height: 680px;
+        min-height: 90vh;
         display: flex;
         flex-direction: column;
         padding-bottom: 80px;
     }
-    
+
     .tg-page_specialist__btn {
         position: fixed;
         bottom: 22px;
@@ -2623,16 +2601,15 @@ opacity: 1;
         width: 90% !important;
         visibility: 1;
         opacity: 1;
-    
     }
-    
+
     .specialist-wrap__head {
         display: flex;
         flex-direction: column;
         padding-bottom: 24px;
         border-bottom: 1px var(--b4) solid;
     }
-    
+
     .specialist-wrap__head img {
         max-width: 74px;
         border-radius: 10px;
@@ -2646,23 +2623,21 @@ opacity: 1;
         font-size: 16px;
         color: var(--b6);
     }
-    
-    
+
     .specialist-wrap__bottom {
         margin-top: 24px;
         /* text-align: justify; */
     }
-    
 }
 
 .btn-blue-def {
-	width: 100%;
-	text-align: center;
-	padding: 12px;
-	border: 1px var(--pr) solid;
-	border-radius: 20px;
-	background-color: var(--pr);
-	color: var(--white);
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border: 1px var(--pr) solid;
+    border-radius: 20px;
+    background-color: var(--pr);
+    color: var(--white);
 }
 
 .par10 {
@@ -2680,7 +2655,7 @@ opacity: 1;
 }
 .par16 {
     font-size: 16px;
-	font-weight: 500;
+    font-weight: 500;
     font-family: "Regular", sans-serif;
 }
 
