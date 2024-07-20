@@ -22,6 +22,8 @@
 		// Выполнить проверку при загрузке страницы
 		document.addEventListener('DOMContentLoaded', preventDesktopAccess);
 	</script> -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 </head>
 <?php 
 $num_wa = get_theme_mod('num_wa');
@@ -42,7 +44,7 @@ $specialist = is_page_template('telegram_tg-specialist.php');
 ?>
 
 <body class="<?php if(is_front_page()){echo "home-page";} ?>">
-<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_tg-records.php')&&!is_page_template('telegram_tg-specialists.php')&&!is_page_template('telegram_tg-specialist.php')&&!is_singular('doctor')&&!is_page_template('telegram_tg-about.php')&&!is_page_template('telegram_tg-success.php')) { ?>
+<?php if(!is_page_template('telegram_tg-home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_tg-records.php')&&!is_page_template('telegram_tg-specialists.php')&&!is_page_template('telegram_tg-specialist.php')&&!is_singular('doctor')&&!is_page_template('telegram_tg-about.php')&&!is_page_template('telegram_tg-success.php')&&!is_page_template('telegram_tg-price-list.php')) { ?>
 <header id="header" class="header">
 	<div class="header__top-block">
 		<div class="container">
@@ -91,4 +93,4 @@ $specialist = is_page_template('telegram_tg-specialist.php');
 	</div>
 </header>
 <?php } ?>
-<main>
+<main class="<?php if(is_page_template('telegram_tg-home-page.php')||is_page_template('telegram_tg-profile.php')||is_page_template('telegram_tg-auth.php')||is_page_template('telegram_tg-confirm.php')||is_page_template('telegram_tg-records.php')||is_page_template('telegram_tg-specialists.php')||is_page_template('telegram_tg-specialist.php')||is_singular('doctor')||is_page_template('telegram_tg-about.php')||is_page_template('telegram_tg-success.php')||is_page_template('telegram_tg-price-list.php')) {echo "main-tg";} ?>">

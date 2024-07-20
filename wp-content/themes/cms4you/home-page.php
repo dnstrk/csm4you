@@ -85,17 +85,10 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 					<div class="col-md-4">
 						<div class="about-card">
 							<div class="about-card__header">
-								<div class="about-card__img">
-									<img src="<?php echo $card['banner_card_img'] ?>"/>
-									
-								</div>
-								<div class="about-card__title">
-									<h4><?php echo $card['banner_card_h5'] ?></h4>
-								</div>
+								<img class="about-card__img" src="<?php echo $card['banner_card_img'] ?>"/>
+								<h4 class="about-card__title"><?php echo $card['banner_card_h5'] ?></h4>
 							</div>
-							<div class="about-card__content">
-								<p><?php echo $card['banner_card_p'] ?></p>
-							</div>
+							<p class="about-card__content"><?php echo $card['banner_card_p'] ?></p>
 						</div>
 					</div>
 				<?php }?>
@@ -105,10 +98,9 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 			<div class="row">
 				<div class="col-md-6 ">
 					<h2><?php echo $aboutContent_h3 ?></h2>
-					<p><?php echo $aboutContent_p1 ?>
-					</p>
-					<p><?php echo $aboutContent_p2 ?>
-					</p>
+					<a href="/tg-auth">tg</a>
+					<p><?php echo $aboutContent_p1 ?></p>
+					<p><?php echo $aboutContent_p2 ?></p>
 					<a target="_blank" href="<?php echo $aboutContent_file ?>" class="btn btn--light pdf">Лицензия №ЛО-77-01-010748 от 11.08.2015</a>
 				</div>
 				<div class="col-md-6 ">

@@ -85,56 +85,7 @@ get_header();
                     <a href="#"><img src="<?php echo get_template_directory_uri()?>/assets/img/VK_white.png" alt=""></a>
                 </div>
             </div>
-            <div class="sectionNews">
-                <div class="sectionNews__top">
-                    <h3 class="sectionNews_title">Новости клиники</h3>
-                    <div class="splide__arrows splide__arrows--news">
-                        <button id ="arrow-news--prev-tg" class="splide__arrow splide__arrow--prev" type="button" aria-controls="banner-track" aria-label="Go to last slide">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><path d="M7.5 3.75L13.75 10L7.5 16.25"></path></svg>
-                        </button>
-                        <button id="arrow-news--next-tg" class="splide__arrow splide__arrow--next" type="button" aria-controls="banner-track" aria-label="Next slide">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" width="20" height="20"><path d="M7.5 3.75L13.75 10L7.5 16.25"></path></svg>
-                        </button>
-			        </div>
-                </div>
-                <!-- список новостей -->
-                <div class="splide splide--news-tg" id="splide-tg-news">
-                    <div class="splide__track" id="banner-track">
-                    <?php
-                    // Новый WP_Query
-                    $query = new WP_Query(array(
-                        'post_type' => 'post', // Кастомный тип записей
-                        'posts_per_page' => -1, // Выводим все отзывы
-                    ));
-                    if ($query->have_posts()) : ?>
-                    <ul class="splide__list" id="banner-list">
-                    <?php while ($query->have_posts()) : $query->the_post(); ?>
-                    <?php $news_date = get_post_meta(get_the_ID(), 'news_date', true); ?>
-                        <li class="splide__slide">
-                        <!--карточка новости-->
-                            <a href="<?php the_permalink() ?>" class="card news-card-tg">
-                                <div class="news-card-tg__img">
-                                    <?php the_post_thumbnail() ?>
-                                </div>
-                                <div class="news-card-tg__content">
-                                    <div class="post-data"><?php echo $news_date ?></div>
-                                    <h4><?php the_title() ?></h4>
-                                    <p><?php echo wp_trim_words(esc_attr(get_the_excerpt()), 5, '...') ?></p>
-                                </div>
-                            </a>
-                        </li>
-					<?php endwhile; ?>
-					<?php
-						// Восстановить глобальные данные поста
-						wp_reset_postdata();
-					else : ?>
-						<p><?php _e('No reviews found.', 'your-text-domain'); ?></p>
-					<?php endif; ?>
-				    </ul>
-                    </div>
-		        </div>
-                <a class="sectionNews__btn" href="/news">Все новости</a>
-            </div>
+            
         </div>
     </div>
 </div>

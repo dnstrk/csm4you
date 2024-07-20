@@ -2132,6 +2132,16 @@ article .more {
     padding: 12px;
 }
 
+
+
+
+/* ТЕЛЕГРАМ */
+
+.main-tg {
+    background-color: var(--white);
+}
+
+
 /* Страница профиля пользователя */
 
 .tg-page_profile {
@@ -2237,6 +2247,8 @@ article .more {
     display: flex;
     flex-direction: column;
     gap: 16px;
+
+    transition: .2s;
 }
 
 .register-wrap__action_phone {
@@ -2392,6 +2404,12 @@ article .more {
     padding-bottom: 16px;
 }
 
+.records-wrap__active-records_head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .records-wrap__active-records h5 {
     align-self: flex-start;
 }
@@ -2477,9 +2495,16 @@ article .more {
     gap: 16px;
 }
 
+.specialists-wrap_head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .tg-page_specialists-wrap h4 {
     font-size: 20px;
     align-self: self-start;
+    margin-bottom: 14px;
 }
 
 .specialists-wrap__list {
@@ -2629,6 +2654,47 @@ article .more {
         /* text-align: justify; */
     }
 }
+
+
+/* Страница Прайс-лист тг */
+
+.tg-page_price {
+    padding: 20px 0;
+}
+
+.tg-page_price-wrap {
+    min-height: 90vh;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.tg-page_price-wrap article {
+    margin-top: 0;
+}
+
+.tg-page_price-wrap h2 {
+    margin-bottom: 24px;
+}
+
+
+/* Страница О клинике тг */
+
+.tg-page_price {
+    padding: 20px 0;
+}
+
+.tg-page_price-wrap {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
 
 .btn-blue-def {
     width: 100%;
