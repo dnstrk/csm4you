@@ -25,11 +25,16 @@ get_header();
                     </form>
                     <p class="par14">Повторно код можно получить через <span>47</span> секунд</p>
                 </div>
-                <button class="btn-blue-def" id="tg-btn-confirm">Подтвердить</button>
+                <button onclick='redirect()' class="btn-blue-def" id="tg-btn-confirm">Подтвердить</button>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function redirect() {
+        document.location.href='http://csm4you/tg-main/'
+        }
+</script>
 </main>
 <?php
 get_footer();

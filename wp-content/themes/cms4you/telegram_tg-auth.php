@@ -17,11 +17,16 @@ get_header();
                     <input type="tel" id="tg-auth-phone">
                     <label>Ваш номер телефона</label>
                 </div>
-                <button class="btn-blue-def" id="tg-btn-auth">Авторизоваться</button>
+                <button onclick="redirect()" class="btn-blue-def" id="tg-btn-auth">Авторизоваться</button>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function redirect() {
+        document.location.href='http://csm4you/tg-confirm/'
+        }
+</script>
 </main>
 <?php
 get_footer();
