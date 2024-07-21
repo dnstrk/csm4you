@@ -582,7 +582,7 @@ nav {
     transition: 0.15s;
 
 }
-.card-mobile--big {
+.card-mobile--big{
     min-width: 214px;
 }
 .card-mobile:hover {
@@ -1142,22 +1142,23 @@ ul.sotials li a {
 .home-bg {
     background-image: url(../img/bg3.jpg);
     background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background-repeat:no-repeat;
 }
-section.home-form {
-    padding: 10rem 0;
+section.home-form{
+    padding:10rem 0;
+
 }
-.form-title__wrapper {
-    min-height: 7.7rem;
-    display: flex;
+.form-title__wrapper{
+    min-height:7.7rem;
+    display:flex;
     align-items: center;
 }
-.select-time {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.select-time{
+    display:flex;
+    flex-wrap:wrap;
+    list-style:none;
+    padding:0;
+    margin:0;
 }
 
 .select-time li.active {
@@ -1200,7 +1201,7 @@ section.home-form {
    cursor:pointer;
    opacity: 1;
    pointer-events: all;
-
+}
 .select-time li {
     position: relative;
     margin-right: 0.8rem;
@@ -1238,14 +1239,14 @@ section.home-form {
     display: block;
 }
 .select-time__item.selected {
-    color: var(--white);
+    color:var(--white);
     background-color: var(--pr);
 }
 .form-content__wrapper h3 {
-    margin: 3.2rem 0;
+    margin:3.2rem 0;
 }
-.page-cards-list {
-    margin: 3.2rem 0;
+.page-cards-list{
+    margin:3.2rem 0
 }
 section.review {
     margin: 10rem 0;
@@ -1617,6 +1618,7 @@ article .more {
         margin-right: 1.2rem;
     }
 
+
     h4 {
         font-size: 1.6rem;
     }
@@ -1965,7 +1967,7 @@ article .more {
         .xs-visiblity {
             display: block;
         }
-.select-time__item{
+    .select-time__item{
             min-width: 10.7rem;
             padding: 0.8rem;
     }
@@ -2127,6 +2129,7 @@ article .more {
     gap: 6px;
     align-items: center;
 }
+
 
 /* Специалисты и О Клинике */
 
@@ -2809,48 +2812,8 @@ padding: 0;
         margin-top: 24px;
         /* text-align: justify; */
     }
+
 }
-
-
-/* Страница Прайс-лист тг */
-
-.tg-page_price {
-    padding: 20px 0;
-}
-
-.tg-page_price-wrap {
-    min-height: 90vh;
-    max-height: 90vh;
-    display: flex;
-    flex-direction: column;
-}
-
-.tg-page_price-wrap article {
-    margin-top: 0;
-}
-
-.tg-page_price-wrap h2 {
-    margin-bottom: 24px;
-}
-
-
-/* Страница О клинике тг */
-
-.tg-page_price {
-    padding: 20px 0;
-}
-
-.tg-page_price-wrap {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-
-
-
 
 .btn-blue-def {
     width: 100%;
