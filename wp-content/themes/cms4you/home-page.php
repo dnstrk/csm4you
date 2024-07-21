@@ -277,7 +277,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 <div class="home-bg">
 <section id="home-form" class="home-form">
 	<div class="container">
-		<form class="online-form">
+		<form id="appointmentForm" class="online-form">
 			<div class="row">
 				<div class="col-12">
 					<h2>Онлайн запись</h2>
@@ -421,21 +421,30 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 						<h3>Ваши данные:</h3>
 						<div class="row">
 							<div class="col-sm-6 p-3">
-								<input type="tel" placeholder="Номер телефона" id="online-form-phone"/>
+								<input type="tel" name="phone" id="phone" placeholder="Номер телефона"/>
+
 							</div>
 							<div class="col-sm-6 p-3">
-								<input type="text" placeholder="Ваше имя"/>
+								<input type="text" name="name" id="name" placeholder="Ваше имя"/>
 							</div>
 							<div class="col-12 p-3">
-								<textarea placeholder="Опишите вашу проблему"></textarea>
+								<textarea  name="message"  placeholder="Опишите вашу проблему"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<small>Подавая заявку вы даёте<br> <a href="#">согласие на обработку данных</a></small>
+
+							</div>
+							<div class="col-md-6">
+								<input type="submit" class="btn w-100 btn--big btn--primary btn--rounded btn--shadow " value="Записаться">
+								<a href="<?php echo wp_logout_url( home_url() ); ?>">Выход</a>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		<form>
-	</form>
-
+		</form>
 </section>
 <section id="review" class="review">
 	<div class="container">

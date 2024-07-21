@@ -8,11 +8,17 @@ Author: Uldalex
 
 // Регистрация кастомного типа записи 'patient'
 // Регистрация кастомного типа записи 'patient'
-function doctor_appointment_enqueue_scripts() {
-    wp_enqueue_script('doctor-appointment-script', plugins_url('scripts.js', __FILE__), ['jquery'], null, true);
-}
 
-add_action('wp_enqueue_scripts', 'doctor_appointment_enqueue_scripts');
+function my_enqueue_scripts() {
+  wp_enqueue_script('jquery');
+  wp_enqueue_script('my-custom-script', plugin_dir_url(__FILE__) . 'scripts.js', array('jquery'), null, true);
+
+  // Передача переменной ajaxurl в JavaScript
+  wp_localize_script('my-custom-script', 'my_ajax_object', array(
+      'ajaxurl' => admin_url('admin-ajax.php')
+  ));
+}
+add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 function register_patient_post_type() {
     register_post_type('patient', [
         'labels' => [
@@ -99,6 +105,31 @@ function save_patient_metaboxes($post_id) {
 
 add_action('add_meta_boxes', 'add_patient_metaboxes');
 add_action('save_post', 'save_patient_metaboxes');
+// Создание кастомной роли при активации плагина
+function create_patient_role() {
+    add_role('patient', 'Пациент', array(
+        'read' => true, // Позволяет пользователю читать контент
+        'edit_posts' => false,
+        'edit_pages' => false,
+        'edit_others_posts' => false,
+        'publish_posts' => false,
+        'edit_theme_options' => false,
+        'delete_posts' => false,
+        'delete_others_posts' => false,
+        'delete_published_posts' => false,
+        'delete_private_posts' => false,
+        'manage_options' => false,
+        'edit_private_posts' => false,
+        'edit_published_posts' => false,
+    ));
+}
+register_activation_hook(__FILE__, 'create_patient_role');
+
+// Удаление кастомной роли при деактивации плагина (если нужно)
+function remove_patient_role() {
+    remove_role('patient');
+}
+register_deactivation_hook(__FILE__, 'remove_patient_role');
 // Обработка AJAX-запроса
 function submit_appointment() {
     $orderInput = sanitize_text_field($_POST['orderInput']);
@@ -109,9 +140,10 @@ function submit_appointment() {
     $message = sanitize_textarea_field($_POST['message']);
 
     // Проверка наличия пользователя по номеру телефона
-    $user = get_user_by('login', $phone);
-
-    if (!$user) {
+ if( !is_admin() ){   }
+	$user = get_user_by('login', $phone);
+	if (!$user) {
+		
         // Создание нового пользователя
         $password = wp_generate_password(8);
         $user_id = wp_create_user($phone, $password, $phone . '@example.com');
@@ -126,6 +158,7 @@ function submit_appointment() {
     } else {
         $user_id = $user->ID;
     }
+
 
     // Получение ID записи доктора по его имени
     $doctor_post = get_posts([
@@ -162,3 +195,104 @@ function submit_appointment() {
 
 add_action('wp_ajax_submit_appointment', 'submit_appointment');
 add_action('wp_ajax_nopriv_submit_appointment', 'submit_appointment');
+
+// Добавление дополнительных полей на страницу редактирования профиля
+function custom_user_profile_fields($user) {
+	 $verified_patient = get_the_author_meta('verified_patient', $user->ID);
+    $checked = $verified_patient ? 'checked="checked"' : '';
+    ?>
+    <h3><?php _e('Данные пациента', 'textdomain'); ?></h3>
+
+    <table class="form-table">
+        <tr>
+			<th><label for="1cid"><?php _e('ID в 1с', 'textdomain'); ?></label></th>
+				<td>
+					<input type="text" name="1cid" id="1cid" value="<?php echo esc_attr(get_the_author_meta('1cid', $user->ID)); ?>" class="regular-text" /><br />
+					<span class="description"><?php _e('ID в 1с', 'textdomain'); ?></span>
+				</td>
+		</tr>
+		<tr>
+			<th><label for="verified_patient"><?php _e('Верифицированный?', 'textdomain'); ?></label></th>
+            <td>
+                <input type="checkbox" name="verified_patient" id="verified_patient" value="1" <?php echo $checked; ?> /><br />
+                <span class="description"><?php _e('Верифицированный?', 'textdomain'); ?></span>
+            </td>
+        </tr>
+		<tr>
+		<th><label for="nam"><?php _e('Имя', 'textdomain'); ?></label></th>
+				<td>
+					<input type="text" name="nam" id="nam" value="<?php echo esc_attr(get_the_author_meta('nam', $user->ID)); ?>" class="regular-text" /><br />
+					<span class="description"><?php _e('Имя', 'textdomain'); ?></span>
+				</td>
+		</tr>
+		<tr>
+		<th><label for="nam"><?php _e('Фамилия', 'textdomain'); ?></label></th>
+				<td>
+					<input type="text" name="fam" id="fam" value="<?php echo esc_attr(get_the_author_meta('fam', $user->ID)); ?>" class="regular-text" /><br />
+					<span class="description"><?php _e('Фамилия', 'textdomain'); ?></span>
+				</td>
+		</tr>
+		<tr>
+		<th><label for="nam"><?php _e('Отчество', 'textdomain'); ?></label></th>
+				<td>
+					<input type="text" name="lastnam" id="lastnam" value="<?php echo esc_attr(get_the_author_meta('lastnam', $user->ID)); ?>" class="regular-text" /><br />
+					<span class="description"><?php _e('Отчество', 'textdomain'); ?></span>
+				</td>
+		</tr>
+		<tr>
+		<th><label for="bdr"><?php _e('Дата рождения', 'textdomain'); ?></label></th>
+				<td>
+					<input type="date" name="bdr" id="bdr" value="<?php echo esc_attr(get_the_author_meta('bdr', $user->ID)); ?>" class="regular-text" /><br />
+					<span class="description"><?php _e('Дата рождения', 'textdomain'); ?></span>
+				</td>
+		</tr>
+		<tr>
+		<th><label for="bdr"><?php _e('Пол', 'textdomain'); ?></label></th>
+				<td>
+					<input type="text" name="sex" id="sex" value="<?php echo esc_attr(get_the_author_meta('bdr', $user->ID)); ?>" class="regular-text" /><br />
+					<span class="description"><?php _e('Пол', 'textdomain'); ?></span>
+				</td>
+		</tr>
+		<tr>
+            <th><label for="phone"><?php _e('Phone', 'textdomain'); ?></label></th>
+            <td>
+                <input type="text" name="phone" id="phone" value="<?php echo esc_attr(get_the_author_meta('phone', $user->ID)); ?>" class="regular-text" /><br />
+                <span class="description"><?php _e('Телефон', 'textdomain'); ?></span>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="address"><?php _e('Email', 'textdomain'); ?></label></th>
+            <td>
+                <input type="text" name="email" id="email" value="<?php echo esc_attr(get_the_author_meta('email', $user->ID)); ?>" class="regular-text" /><br />
+                <span class="description"><?php _e('E-mail', 'textdomain'); ?></span>
+            </td>
+        </tr>
+    </table>
+    <?php
+}
+add_action('show_user_profile', 'custom_user_profile_fields',1);
+add_action('edit_user_profile', 'custom_user_profile_fields', 1);
+
+// Сохранение дополнительных полей
+function save_custom_user_profile_fields($user_id) {
+    // Проверка прав пользователя
+    if (!current_user_can('edit_user', $user_id)) {
+        return false;
+    }
+
+    // Сохранение полей
+	update_user_meta($user_id, '1cid', sanitize_text_field($_POST['1cid']));
+	update_user_meta($user_id, 'nam', sanitize_text_field($_POST['nam']));
+	update_user_meta($user_id, 'fam', sanitize_text_field($_POST['fam']));
+	update_user_meta($user_id, 'lastnam', sanitize_text_field($_POST['lastnam']));
+	update_user_meta($user_id, 'bdr', sanitize_text_field($_POST['bdr']));
+	update_user_meta($user_id, 'sex', sanitize_text_field($_POST['sex']));
+    update_user_meta($user_id, 'phone', sanitize_text_field($_POST['phone']));
+    update_user_meta($user_id, 'email', sanitize_text_field($_POST['email']));
+	// Сохранение значения чекбокса
+    $verified = isset($_POST['verified_patient']) ? 1 : 0;
+    update_user_meta($user_id, 'verified_patient', $verified);
+}
+
+add_action('personal_options_update', 'save_custom_user_profile_fields');
+add_action('edit_user_profile_update', 'save_custom_user_profile_fields');
