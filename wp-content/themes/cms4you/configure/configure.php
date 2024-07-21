@@ -471,4 +471,4 @@ function ajax_register() {
 }
 add_action('wp_ajax_nopriv_ajax_register', 'ajax_register');
 
-?>
+

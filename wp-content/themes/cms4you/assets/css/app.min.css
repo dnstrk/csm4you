@@ -245,6 +245,9 @@ article h2 {
     background-color: var(--b4) !important;
     color: var(--b5) !important;
 }
+.btn--shadow {
+    box-shadow: 0 1.5rem 3rem rgba(9, 141, 238, 0.3);
+}
 /*модалки*/
 .bfmodal__opened {
     position: fixed;
@@ -1514,6 +1517,26 @@ article .more {
 .bottom-block .news-card {
     margin-left: 0;
 }
+/*ЛК*/
+.user-wrapper {
+    padding:3.2rem;
+    border:1px solid var(--b2);
+    border-radius:2.4rem;
+}
+.user-wrapper .edit{
+    color:var(--b6);
+    font-size:1.4rem;
+    padding-left:3.2rem;
+    background-repeat:no-repeat;
+    background-position:left center;
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.79375 13.5H3C2.86739 13.5 2.74022 13.4473 2.64645 13.3536C2.55268 13.2598 2.5 13.1326 2.5 13V10.2062C2.49978 10.1413 2.51236 10.077 2.53702 10.0169C2.56169 9.95687 2.59796 9.90227 2.64375 9.85625L10.1438 2.35625C10.1903 2.30901 10.2457 2.27149 10.3069 2.24588C10.3681 2.22027 10.4337 2.20708 10.5 2.20708C10.5663 2.20708 10.632 2.22027 10.6931 2.24588C10.7543 2.27149 10.8097 2.30901 10.8563 2.35625L13.6438 5.14375C13.691 5.19027 13.7285 5.24573 13.7541 5.30689C13.7797 5.36805 13.7929 5.43369 13.7929 5.5C13.7929 5.5663 13.7797 5.63195 13.7541 5.69311C13.7285 5.75427 13.691 5.80972 13.6438 5.85625L6.14375 13.3562C6.09773 13.402 6.04313 13.4383 5.98307 13.463C5.92301 13.4876 5.85868 13.5002 5.79375 13.5V13.5Z' stroke='%23535F7C' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.5 4L12 7.5' stroke='%23535F7C' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.25 5.75L4.25 11.75' stroke='%23535F7C' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M5.96875 13.4688L2.53125 10.0312' stroke='%23535F7C' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+}
+.user-wrapper .label{
+    color:var(--b5);
+    font-size:1.4rem;
+    margin-bottom:1.8rem;
+}
 @media (min-width: 1024px) {
     .stkey-parent {
         position: relative;
@@ -2006,11 +2029,11 @@ article .more {
     margin-left: 16px;
     gap: 4px;
 
-    .card_infoName {
+    
+}
+.card_infoName {
         font-size: 12px;
     }
-}
-
 .user-data__card_edit {
     cursor: pointer;
     max-width: 24px;
@@ -2047,11 +2070,11 @@ article .more {
     margin-right: auto;
     margin-left: 16px;
 
-    .user-data__record_headInfo_text {
+    
+}
+.user-data__record_headInfo_text {
         color: var(--b5);
     }
-}
-
 .user-data__record_head a {
     align-self: flex-start;
     color: var(--pr);
