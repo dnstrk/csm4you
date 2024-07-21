@@ -3,10 +3,16 @@
     margin: 0;
     padding: 0;
 }
-
 @font-face {
     font-family: "Gilroy";
-    src: url("./fonts/TTNorms-Medium.woff2");
+    src: url("./fonts/TTFirsNeue-Regular.woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Gilroy";
+    src: url("./fonts/Gilroy-Medium.woff2");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -428,6 +434,38 @@ article h2 {
 .wk {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12 0.470703C5.37258 0.470703 0 5.84329 0 12.4707C0 19.0981 5.37258 24.4707 12 24.4707C18.6274 24.4707 24 19.0981 24 12.4707C24 5.84329 18.6274 0.470703 12 0.470703ZM12.9771 16.2588C12.8587 16.3835 12.6277 16.4087 12.6277 16.4087H11.8627C11.8627 16.4087 10.1749 16.5083 8.68801 14.9892C7.06654 13.3318 5.63477 10.0435 5.63477 10.0435C5.63477 10.0435 5.55213 9.82777 5.64166 9.72392C5.74245 9.60654 6.01729 9.59917 6.01729 9.59917L7.84597 9.58749C7.84597 9.58749 8.01814 9.61515 8.14147 9.70425C8.24351 9.778 8.30048 9.91504 8.30048 9.91504C8.30048 9.91504 8.59598 10.6488 8.98726 11.3125C9.75166 12.6085 10.1073 12.8918 10.3664 12.7529C10.7446 12.5507 10.6313 10.921 10.6313 10.921C10.6313 10.921 10.6381 10.3298 10.4409 10.0662C10.2882 9.86219 10.0002 9.80258 9.87312 9.78599C9.76982 9.77247 9.93885 9.53772 10.158 9.43263C10.4873 9.2747 11.0682 9.26548 11.755 9.27224C12.2903 9.27777 12.4443 9.31034 12.6534 9.36012C13.1387 9.47507 13.1235 9.84347 13.0908 10.6385C13.0811 10.8763 13.0697 11.1523 13.0697 11.471C13.0697 11.5426 13.0676 11.619 13.0654 11.6975C13.0541 12.1049 13.0411 12.5713 13.3145 12.7449C13.4547 12.8334 13.7972 12.7578 14.6542 11.3297C15.0606 10.6525 15.3648 9.85666 15.3648 9.85666C15.3648 9.85666 15.4318 9.7147 15.5351 9.65386C15.6409 9.59179 15.7836 9.61085 15.7836 9.61085L17.7081 9.59917C17.7081 9.59917 18.2866 9.53096 18.3799 9.78783C18.4782 10.0564 18.1639 10.6844 17.3776 11.7131C16.6317 12.6892 16.2687 13.0486 16.302 13.3665C16.3264 13.5987 16.5623 13.8088 17.0151 14.221C17.9603 15.0824 18.2136 15.5356 18.2745 15.6445C18.2795 15.6536 18.2833 15.6602 18.286 15.6646C18.7098 16.3547 17.8158 16.4087 17.8158 16.4087L16.1061 16.4321C16.1061 16.4321 15.7392 16.5034 15.2559 16.1777C15.0027 16.0072 14.7553 15.7288 14.5197 15.4636C14.1598 15.0586 13.8274 14.6845 13.5436 14.7729C13.0672 14.9216 13.0816 15.9288 13.0816 15.9288C13.0816 15.9288 13.0854 16.1445 12.9771 16.2588Z' fill='%23535F7C'/%3E%3C/svg%3E");
 }
+.message {
+    background-size: 2.4rem 2.4rem;
+    background-repeat: no-repeat;
+    padding: 1.2rem 2.4rem 1.2rem 4.2rem;
+    border-radius: 10rem;
+    background-position: left 1.2rem center;
+    font-family: 'Gilroy';
+   }
+.message--blue{
+    border: 1px solid var(--pr);
+    color:var(--pr);
+    background-color:rgba(9, 143, 238, 0.05);
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 18.4707C14.6421 18.4707 18 15.1128 18 10.9707C18 6.82857 14.6421 3.4707 10.5 3.4707C6.35786 3.4707 3 6.82857 3 10.9707C3 15.1128 6.35786 18.4707 10.5 18.4707Z' stroke='%23098DEE' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.875 10.3457H10.5V14.7207H11.125' stroke='%23098DEE' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.3438 8.1582C10.6889 8.1582 10.9688 7.87838 10.9688 7.5332C10.9688 7.18803 10.6889 6.9082 10.3438 6.9082C9.99857 6.9082 9.71875 7.18803 9.71875 7.5332C9.71875 7.87838 9.99857 8.1582 10.3438 8.1582Z' fill='%23098DEE'/%3E%3C/svg%3E");
+}
+.message--yellow{
+    border: 1px solid var(--yellow);
+    color:var(--yellow);
+    background-color:rgba(255, 225, 117, 0.05);
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 18.4707C14.6421 18.4707 18 15.1128 18 10.9707C18 6.82857 14.6421 3.4707 10.5 3.4707C6.35786 3.4707 3 6.82857 3 10.9707C3 15.1128 6.35786 18.4707 10.5 18.4707Z' stroke='%23FFE175' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.875 10.3457H10.5V14.7207H11.125' stroke='%23FFE175' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.3438 8.1582C10.6889 8.1582 10.9688 7.87838 10.9688 7.5332C10.9688 7.18803 10.6889 6.9082 10.3438 6.9082C9.99857 6.9082 9.71875 7.18803 9.71875 7.5332C9.71875 7.87838 9.99857 8.1582 10.3438 8.1582Z' fill='%23FFE175'/%3E%3C/svg%3E");
+}
+.message--red{
+    border: 1px solid var(--red);
+    color:var(--red);
+    background-color:rgba(255, 117, 117, 0.055);
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 18.4707C14.6421 18.4707 18 15.1128 18 10.9707C18 6.82857 14.6421 3.4707 10.5 3.4707C6.35786 3.4707 3 6.82857 3 10.9707C3 15.1128 6.35786 18.4707 10.5 18.4707Z' stroke='%23FF7575' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.875 10.3457H10.5V14.7207H11.125' stroke='%23FF7575' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.3438 8.1582C10.6889 8.1582 10.9688 7.87838 10.9688 7.5332C10.9688 7.18803 10.6889 6.9082 10.3438 6.9082C9.99857 6.9082 9.71875 7.18803 9.71875 7.5332C9.71875 7.87838 9.99857 8.1582 10.3438 8.1582Z' fill='%23FF7575'/%3E%3C/svg%3E");
+}
+.message--purple{
+    border: 1px solid var(--purple);
+    color:var(--purple);
+    background-color:rgba(117, 122, 255, 0.055);
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='21' height='21' viewBox='0 0 21 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 18.4707C14.6421 18.4707 18 15.1128 18 10.9707C18 6.82857 14.6421 3.4707 10.5 3.4707C6.35786 3.4707 3 6.82857 3 10.9707C3 15.1128 6.35786 18.4707 10.5 18.4707Z' stroke='%23757aff' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.875 10.3457H10.5V14.7207H11.125' stroke='%23757aff' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10.3438 8.1582C10.6889 8.1582 10.9688 7.87838 10.9688 7.5332C10.9688 7.18803 10.6889 6.9082 10.3438 6.9082C9.99857 6.9082 9.71875 7.18803 9.71875 7.5332C9.71875 7.87838 9.99857 8.1582 10.3438 8.1582Z' fill='%23757aff'/%3E%3C/svg%3E");
+}
 .arrow-right {
     background-repeat: no-repeat;
     background-position: right 3px center;
@@ -515,11 +553,23 @@ nav {
     list-style: none;
     display: flex;
     overflow-x: auto;
-    justify-content: space-between;
 }
-
-.bfmodal-cards-list__item {
+.page-cards-list .message{
+    display:none;
+}
+.page-cards-list .message.active{
+    display:block;
+}
+.bfmodal-cards-list__item{
+    visibility: hidden;
+    position:absolute
+}
+.bfmodal-cards-list__item.active {
+    display:block;
     margin-right: 1.6rem;
+    max-width:21.4rem;
+    visibility: visible;
+    position:relative;
 }
 .card-mobile {
     cursor: pointer;
@@ -527,8 +577,10 @@ nav {
     border: 1px solid var(--b2);
     display: flex;
     border-radius: 1.6rem;
-
+   height:100%;
+    transition: .15s;
     transition: 0.15s;
+
 }
 .card-mobile--big {
     min-width: 214px;
@@ -572,7 +624,11 @@ nav {
     min-height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    
+}
+.card-mobile__content .data-dates{
+    visibility: hidden;
+    position: absolute;
 }
 .card-mobile__title {
     font-size: 1.4rem;
@@ -847,12 +903,23 @@ ul.paginate {
 /*секция врачей*/
 .splide--doctors .splide__track {
     margin: 0 -5rem 0 -5rem;
-    padding: 13.2rem 5rem 5rem 5rem;
+    padding: 13.2rem 5rem 5rem 0;
 }
 .splide--doctors .blobs {
     left: 0;
     width: 20%;
 }
+.scrollMouse{
+    overflow-y: hidden;
+}
+.scrollMouse::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  /*Убрать полосу прокрутки для всей страницы*/
+  ::-webkit-scrollbar {
+    width: 0;
+  }
 .splide--doctors .blobs .blob6 {
     right: 0;
     bottom: 0;
@@ -1092,6 +1159,48 @@ section.home-form {
     padding: 0;
     margin: 0;
 }
+
+.select-time li.active {
+    position:relative;
+    margin-right:0.8rem;
+    margin-bottom:0.8rem;
+}
+.select-time__item {
+    position:relative;
+    width:100%;
+    min-width:16.7rem;
+    padding:1.6rem 3.2rem;
+    border:1px solid var(--b3);
+    border-radius:3.2rem;
+    font-weight:500;
+    pointer-events: none;
+    opacity: 0.5;
+
+    transition:all 0.3s linear;
+}
+.select-time__item input {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    opacity:0;
+    cursor:pointer;
+}
+.select-time__item.active:hover{
+    color:var(--pr);
+    border-color:var(--pr);
+    pointer-events: all;
+}
+.select-time__item.active{
+   position: relative;
+   visibility: visible; 
+   cursor:pointer;
+   opacity: 1;
+   pointer-events: all;
+
 .select-time li {
     position: relative;
     margin-right: 0.8rem;
@@ -1150,9 +1259,6 @@ section.review h2 {
 }
 .card-review h4 {
     margin: 1.2rem 0;
-}
-
-.cardReview__content {
 }
 
 .review__content_hidden {
@@ -1420,11 +1526,11 @@ article .more {
     padding: 18px 16px;
     &:hover {
         border-color: var(--pr-hover);
-        columns: var(--pr-hover);
+        color: var(--pr-hover);
     }
     &:active {
         border-color: var(--pr-active);
-        columns: var(--pr-active);
+        color: var(--pr-active);
     }
 }
 
@@ -1446,6 +1552,12 @@ article .more {
         position: sticky;
         top: 7rem;
     }
+}@media (max-width: 1024px) {
+    .top, .doctors .splide {
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: inherit;
+}
 }
 @media (max-width: 930px) {
     body,
@@ -1533,8 +1645,17 @@ article .more {
     .footer-menu {
         margin-top: 1.6rem;
     }
-
+.select-time__item{
+        min-width: 10.7rem;
+        padding: 0.8rem;
+        }
+}
     @media (max-width: 600px) {
+.top, .doctors .splide {
+            max-width: 100%;
+            overflow-x: inherit;
+            overflow-y: inherit;
+        }
         .header__bottom-block {
             padding: 1.2rem 0;
         }
@@ -1731,9 +1852,20 @@ article .more {
             font-size: 1.2rem;
             white-space: break-spaces;
         }
+.splide--doctors .splide__track {
+            margin: 0 ;
+            padding: 3.2rem 0 3rem 0;
+        }
         .doctor-card {
-            max-width: 300px;
+            max-width: 100%;
             margin-left: 0;
+        }
+.doctor-card:hover{
+            transform: none;
+        }
+        .doctor-card__img img {
+            width:100%;
+            height:auto;
         }
         section.price {
             background-image: none;
@@ -1833,7 +1965,11 @@ article .more {
         .xs-visiblity {
             display: block;
         }
+.select-time__item{
+            min-width: 10.7rem;
+            padding: 0.8rem;
     }
+
 }
 
 /* Страница ТГ Главная */
@@ -2347,6 +2483,25 @@ article .more {
     appearance: none;
 }
 .form__pincode > input {
+
+display: inline-block;
+width: 15%;
+height: 50px;
+line-height: 48px;
+text-align: center;
+font-size: 2em;
+color: #181819;
+border: 0;
+border-bottom: 2px solid rgba(0,0,0,0.3);
+border-radius: 2px 2px 0 0;
+transition: background-color 0.3s, color 0.3s, opacity 0.3s;
+cursor: default;
+user-select: none;
+margin: 0;
+margin-top: 10px;
+margin-right: 2%;
+padding: 0;
+
     display: inline-block;
     float: left;
     width: 15%;
@@ -2365,6 +2520,7 @@ article .more {
     margin-top: 10px;
     margin-right: 2%;
     padding: 0;
+
 }
 .form__pincode > input:focus {
     outline: 0;

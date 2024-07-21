@@ -69,78 +69,30 @@ $specialist = is_page_template('telegram_specialist.php');
 		<div class="bfmodal__content">
 		<div class="bfmodal-cards-wrapper">
 			<ul class="bfmodal-cards-list">
-				<li class="bfmodal-cards-list__item">
-					<!--карточка врача-->
-					<div class="card-mobile active selected">
-						<div class="card-mobile__img">
-							<img src="<?php echo get_template_directory_uri()?>/assets/img/pavlova.png"/>
+			<?php
+				$query = new WP_Query(array(
+				'post_type' => 'doctor', 
+				'posts_per_page' => -1, 
+				));
+				?>
+				<?php while ($query->have_posts()) : $query->the_post(); 
+				$fio = get_post_meta( get_the_ID(), 'fio', true );
+				$position = get_post_meta( get_the_ID(), 'position', true );
+				$photo_mini = get_post_meta( get_the_ID(), 'photo_mini', true );
+				?>
+					<li class="bfmodal-cards-list__item">
+						<!--карточка врача-->
+						<div class="card-mobile card-mobile--big active selected">
+							<div class="card-mobile__img">
+								<img src="<?php  echo $photo_mini ?>"/>
+							</div>
+							<div class="card-mobile__content">
+								<p class="card-mobile__title"><?php echo $fio; ?></p>
+								<span class="card-mobile__position"><?php echo $position; ?></span>
+							</div>
 						</div>
-						<div class="card-mobile__content">
-							<p class="card-mobile__title">Павлова З.Ш.</p>
-							<span class="card-mobile__position">Эндокринолог-андролог</span>
-						</div>
-					</div>
 				</li>
-				<li class="bfmodal-cards-list__item">
-					<!--карточка врача-->
-					<div class="card-mobile active">
-						<div class="card-mobile__img">
-							<img src="<?php echo get_template_directory_uri()?>/assets/img/terehova.png"/>
-						</div>
-						<div class="card-mobile__content">
-							<p class="card-mobile__title">Терехова А.Л..</p>
-							<span class="card-mobile__position">Эндокринолог</span>
-						</div>
-					</div>
-				</li>
-				<li class="bfmodal-cards-list__item">
-					<!--карточка врача-->
-					<div class="card-mobile">
-						<div class="card-mobile__img">
-							<img src="<?php echo get_template_directory_uri()?>/assets/img/ryabseva.png"/>
-						</div>
-						<div class="card-mobile__content">
-							<p class="card-mobile__title">Рябцева О.Ю.</p>
-							<span class="card-mobile__position">Эндокринолог</span>
-						</div>
-					</div>
-				</li>
-				<li class="bfmodal-cards-list__item">
-					<!--карточка врача-->
-					<div class="card-mobile">
-						<div class="card-mobile__img">
-							<img src="<?php echo get_template_directory_uri()?>/assets/img/dolgushin.png"/>
-						</div>
-						<div class="card-mobile__content">
-							<p class="card-mobile__title">Долгушин Г.О.</p>
-							<span class="card-mobile__position">Эндокринолог</span>
-						</div>
-					</div>
-				</li>
-				<li class="bfmodal-cards-list__item">
-					<!--карточка врача-->
-					<div class="card-mobile active">
-						<div class="card-mobile__img">
-							<img src="<?php echo get_template_directory_uri()?>/assets/img/tishuk.png"/>
-						</div>
-						<div class="card-mobile__content">
-							<p class="card-mobile__title">Тишук А.В.</p>
-							<span class="card-mobile__position">Врач УЗИ</span>
-						</div>
-					</div>
-				</li>
-				<li class="bfmodal-cards-list__item">
-					<!--карточка врача-->
-					<div class="card-mobile">
-						<div class="card-mobile__img">
-							<img src="<?php echo get_template_directory_uri()?>/assets/img/gorbunov.png"/>
-						</div>
-						<div class="card-mobile__content">
-							<p class="card-mobile__title">Горбунов Р.М.</p>
-							<span class="card-mobile__position">Врач УЗИ</span>
-						</div>
-					</div>
-				</li>
+				<?php endwhile; ?>
 			</ul>
 		</div>
 		</div>

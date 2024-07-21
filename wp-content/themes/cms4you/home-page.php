@@ -28,7 +28,6 @@ $aboutContent_file = get_post_meta( get_the_ID(), 'aboutContent_file', true );
 
 //секция doctors
 $doctors_h3 = get_post_meta( get_the_ID(), 'doctors_h3', true );
-
 //секция Price-list
 $priceList_h3 = get_post_meta( get_the_ID(), 'priceList_h3', true );
 
@@ -51,12 +50,8 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 		<img class="blob4" src="<?php echo get_template_directory_uri()?>/assets/img/blob4.png"/>
 		<img class="blob5" src="<?php echo get_template_directory_uri()?>/assets/img/blob5.png"/>
 	</div>
-	<div class="row h-100">
-			<div class="h-100 col-md-7 d-flex flex-column justify-content-center">
-				<h1><?php echo $banner_h1 ?></h1>
-				<p class="subtitle"><?php echo $banner_p ?></p>
-			</div>
-			<div class="offset-lg-1 col-md-4">
+	<div class="row h-lg-100">
+			<div class="offset-lg-1 order-lg-2 offset-lg-1 col-md-6 offset-md-6 col-lg-4">
 				<div class="top-card">
 					<div class="top-card__header">
 						<div class="top-card__img">
@@ -72,7 +67,17 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 					</div>
 				</div>
 			</div>
-		</div>
+			<div class="h-lg-100 col-lg-7 d-flex order-lg-1 flex-column justify-content-center">
+				<h1><?php echo $banner_h1 ?></h1>
+				<p class="subtitle"><?php echo $banner_p ?></p>
+			</div>
+	</div>
+
+
+
+
+			
+</div>
 	</div>
 </section>
 <!--вторая секция-->
@@ -150,7 +155,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 				<?php 
 				$query = new WP_Query(array(
 					'post_type' => 'doctor', // Кастомный тип записей
-					'posts_per_page' => -1, // Выводим все отзывы
+					'posts_per_page' => -1, 
 				));
 				if ($query->have_posts()) : ?>
                 <ul class="splide__list" id="banner-list">
@@ -279,91 +284,60 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 					<p>Выберите дату или врача</p>
 				</div>
 				<div class="col-12">
-					<ul class="page-cards-list">
-						<li class="bfmodal-cards-list__item">
+				<ul class="page-cards-list scrollMouse">
+						
 						<?php
 						$query = new WP_Query(array(
-						'post_type' => 'doctor', // Кастомный тип записей
-						'posts_per_page' => -1, // Выводим все отзывы
-						)); ?>
-						<?php while ($query->have_posts()) : $query->the_post(); ?>
+							'post_type' => 'doctor', 
+							'posts_per_page' => -1, 
+						));
+						?>
+						<?php while ($query->have_posts()) : $query->the_post(); 
+						$fio = get_post_meta( get_the_ID(), 'fio', true );
+						$position = get_post_meta( get_the_ID(), 'position', true );
+						$photo_mini = get_post_meta( get_the_ID(), 'photo_mini', true );
+						$schedule = get_post_meta(get_the_ID(), '_doctor_schedule_time_slots', true);
+						?>
+					
+						<li class="bfmodal-cards-list__item active" 
+							<?php if ($schedule && is_array($schedule)) : ?>
+								<?php foreach ($schedule as $date => $slots) : ?>
+									data-date-<?php echo esc_attr($date); ?>="true" 
+									<?php foreach ($slots as $slot) : ?>
+										data-slot-<?php echo esc_attr($slot); ?>="true"
+										data-alltime="<?php echo esc_attr($date); ?>-<?php echo esc_attr($slot); ?>"
+									<?php endforeach; ?>
+								<?php endforeach; ?>
+							<?php endif; ?>
+						>
 							<!--карточка врача-->
-							<div class="card-mobile card-mobile--big active selected">
+							<div class="card-mobile card-mobile--big active">
 								<div class="card-mobile__img">
-									<img src="<?php echo get_template_directory_uri()?>/assets/img/pavlova.png"/>
+									<img src="<?php  echo $photo_mini ?>"/>
 								</div>
 								<div class="card-mobile__content">
-									<p class="card-mobile__title"><?php the_title(); ?></p>
-									<span class="card-mobile__position">Эндокринолог-андролог</span>
+									<p class="card-mobile__title"><?php echo $fio; ?></p>
+									<span class="card-mobile__position"><?php echo $position; ?></span>
+									<div class="data-dates">
+										<?php if ($schedule && is_array($schedule)) : ?>
+											<?php foreach ($schedule as $date => $slots) : ?>
+												<?php foreach ($slots as $slot) : ?>
+													<span class="data-date"><?php echo esc_html($date); ?></span>
+												<?php endforeach; ?>
+											<?php endforeach; ?>
+										<?php endif; ?>
+									</div>
 								</div>
 							</div>
 						</li>
+					
 						<?php endwhile; ?>
-						<li class="bfmodal-cards-list__item">
-							<!--карточка врача-->
-							<div class="card-mobile card-mobile--big active">
-								<div class="card-mobile__img">
-									<img src="<?php echo get_template_directory_uri()?>/assets/img/terehova.png"/>
-								</div>
-								<div class="card-mobile__content">
-									<p class="card-mobile__title">Терехова А.Л..</p>
-									<span class="card-mobile__position">Эндокринолог</span>
-								</div>
-							</div>
-						</li>
-						<li class="bfmodal-cards-list__item">
-							<!--карточка врача-->
-							<div class="card-mobile card-mobile--big">
-								<div class="card-mobile__img">
-									<img src="<?php echo get_template_directory_uri()?>/assets/img/ryabseva.png"/>
-								</div>
-								<div class="card-mobile__content">
-									<p class="card-mobile__title">Рябцева О.Ю.</p>
-									<span class="card-mobile__position">Эндокринолог</span>
-								</div>
-							</div>
-						</li>
-						<li class="bfmodal-cards-list__item">
-							<!--карточка врача-->
-							<div class="card-mobile card-mobile--big">
-								<div class="card-mobile__img">
-									<img src="<?php echo get_template_directory_uri()?>/assets/img/dolgushin.png"/>
-								</div>
-								<div class="card-mobile__content">
-									<p class="card-mobile__title">Долгушин Г.О.</p>
-									<span class="card-mobile__position">Эндокринолог</span>
-								</div>
-							</div>
-						</li>
-						<li class="bfmodal-cards-list__item">
-							<!--карточка врача-->
-							<div class="card-mobile card-mobile--big active">
-								<div class="card-mobile__img">
-									<img src="<?php echo get_template_directory_uri()?>/assets/img/tishuk.png"/>
-								</div>
-								<div class="card-mobile__content">
-									<p class="card-mobile__title">Тишук А.В.</p>
-									<span class="card-mobile__position">Врач УЗИ</span>
-								</div>
-							</div>
-						</li>
-						<li class="bfmodal-cards-list__item">
-							<!--карточка врача-->
-							<div class="card-mobile card-mobile--big">
-								<div class="card-mobile__img">
-									<img src="<?php echo get_template_directory_uri()?>/assets/img/gorbunov.png"/>
-								</div>
-								<div class="card-mobile__content">
-									<p class="card-mobile__title">Горбунов Р.М.</p>
-									<span class="card-mobile__position">Врач УЗИ</span>
-								</div>
-							</div>
-						</li>
+						<div class='message message--purple'>Мы не нашли расписание для докторов на этот день.</div>
 					</ul>
 				</div>
 			</div>
-			<div class="row gx-5">
-				<div class="col-md-6 p-5">
+			<div class="row gx-md-5">
+				<div class="col-md-6 p-md-5">
                      <div class="calendar__wrapper">
                         <div id="order">
 
@@ -371,74 +345,74 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 						<input type="hidden" id="orderInput"/>
 					 </div>
 				</div>
-				<div class="col-md-6 p-5">
+				<div class="col-md-6 p-md-5">
 					<div class="form-title__wrapper">
 						<h3>Выберите время</h3>
 					</div>
 					<ul class="select-time">
-						<li>
-							<div class="select-time__item active" data-time="08:00 - 09:00">
+						<li class="active">
+							<div class="select-time__item" data-date="" data-time="08:00">
 								<span>08:00 - 09:00</span>
-								<input type="radio" name="time" id="time1" value="08:00 - 09:00"/>
+								<input type="radio" name="time" id="time1" value="08:00"/>
+							</div>
+						</li>
+						<li class="active">
+							<div class="select-time__item" data-date="" data-time="10:00">
+								<span>10:00 - 11:00</span>
+								<input type="radio" name="time" id="time1" value="10:00"/>
 							</div>
 						</li>
 						<li>
-							<div class="select-time__item active" data-time="10:00 - 11:00">
-								<span>08:00 - 09:00</span>
-								<input type="radio" name="time" id="time1" value="10:00 - 11:00"/>
+							<div class="select-time__item" data-date="" data-time="11:00">
+								<span>11:00 - 12:00</span>
+								<input type="radio" name="time" id="time1" value="11:00"/>
 							</div>
 						</li>
 						<li>
-							<div class="select-time__item" data-time="11:00 - 12:00">
-								<span>08:00 - 09:00</span>
-								<input type="radio" name="time" id="time1" value="11:00 - 12:00"/>
+							<div class="select-time__item" data-date="" data-time="12:00">
+								<span>12:00 - 13:00</span>
+								<input type="radio" name="time" id="time1" value="12:00"/>
 							</div>
 						</li>
 						<li>
-							<div class="select-time__item" data-time="12:00 - 13:00">
-								<span>08:00 - 09:00</span>
-								<input type="radio" name="time" id="time1" value="12:00 - 13:00"/>
+							<div class="select-time__item" data-date="" data-time="13:00">
+								<span>13:00 - 14:00</span>
+								<input type="radio" name="time" id="time1" value="13:00"/>
 							</div>
 						</li>
 						<li>
-							<div class="select-time__item" data-time="13:00 - 14:00">
-								<span>08:00 - 09:00</span>
-								<input type="radio" name="time" id="time1" value="13:00 - 14:00"/>
+							<div class="select-time__item" data-date="" data-time="14:00 ">
+								<span>14:00 - 15:00</span>
+								<input type="radio" name="time" id="time1" value="14:00"/>
 							</div>
 						</li>
-						<li>
-							<div class="select-time__item" data-time="14:00 - 15:00">
-								<span>08:00 - 09:00</span>
-								<input type="radio" name="time" id="time1" value="14:00 - 15:00"/>
-							</div>
-						</li>
-						<li>
-							<div class="select-time__item active" data-time="15:00 - 16:00">
-								<span>08:00 - 09:00</span>
+						<li class="active">
+							<div class="select-time__item" data-date="" data-time="15:00">
+								<span>15:00 - 16:00</span>
 								<input type="radio" name="time" id="time1" value="15:00 - 16:00"/>
 							</div>
 						</li>
 						<li>
-							<div class="select-time__item" data-time="16:00 - 17:00">
-								<span>08:00 - 09:00</span>
+							<div class="select-time__item" data-date="" data-time="16:00">
+								<span>16:00 - 17:00</span>
 								<input type="radio" name="time" id="time1" value="16:00 - 17:00"/>
 							</div>
 						</li>
 						<li>
-							<div class="select-time__item" data-time="17:00 - 18:00">
-								<span>08:00 - 09:00</span>
+							<div class="select-time__item" data-date="" data-time="17:00">
+								<span>17:00 - 18:00</span>
 								<input type="radio" name="time" id="time1" value="17:00 - 18:00"/>
 							</div>
 						</li>
-						<li>
-							<div class="select-time__item active" data-time="18:00 - 19:00">
+						<li class="active">
+							<div class="select-time__item" data-date="" data-time="18:00">
 								<span>18:00 - 19:00</span>
 								<input type="radio" name="time" id="time1" value="15:00 - 16:00"/>
 							</div>
 						</li>
 						<li>
-							<div class="select-time__item" data-time="19:00 - 20:00">
-								<span>08:00 - 09:00</span>
+							<div class="select-time__item" data-date="" data-time="19:00">
+								<span>19:00 - 20:00</span>
 								<input type="radio" name="time" id="time1" value="19:00 - 20:00"/>
 							</div>
 						</li>
@@ -588,9 +562,9 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 		<a href="#post" data-bfmodal="#post" class="btn btn--big btn--rounded btn--primary btn-shadow">Записаться</a>
 	</div>
 	<div class="map">
-		<span class="xs-hidden"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0b06614e806b736acbc5e523f37c4b677c7eeb7396defa69a43605e5e5a93e00&amp;width=100%25&amp;height=539&amp;lang=ru_RU&amp;scroll=false"></script></span>
+		<!--<span class="xs-hidden"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0b06614e806b736acbc5e523f37c4b677c7eeb7396defa69a43605e5e5a93e00&amp;width=100%25&amp;height=539&amp;lang=ru_RU&amp;scroll=false"></script></span>
 		<span class="xs-visiblity"><script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A0b06614e806b736acbc5e523f37c4b677c7eeb7396defa69a43605e5e5a93e00&amp;width=100%25&amp;height=285&amp;lang=ru_RU&amp;scroll=true"></script></span>
-	</div>
+					--></div>
 
 	</div>
 </section>
