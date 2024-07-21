@@ -1171,11 +1171,11 @@ section.home-form{
     width:100%;
     min-width:16.7rem;
     padding:1.6rem 3.2rem;
-    border:1px solid var(--b3);
+    border:1px solid var(--b4);
     border-radius:3.2rem;
     font-weight:500;
     pointer-events: none;
-    opacity: 0.5;
+    opacity: 0.4;
 
     transition:all 0.3s linear;
 }
@@ -1207,37 +1207,7 @@ section.home-form{
     margin-right: 0.8rem;
     margin-bottom: 0.8rem;
 }
-.select-time__item {
-    position: relative;
-    width: 100%;
-    min-width: 16.7rem;
-    padding: 1.6rem 3.2rem;
-    border: 1px solid var(--b3);
-    border-radius: 3.2rem;
-    font-weight: 500;
-    cursor: pointer;
-    display: none;
-    transition: all 0.3s linear;
-}
-.select-time__item input {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
-}
-.select-time__item:hover {
-    color: var(--pr);
-    border-color: var(--pr);
-    cursor: pointer;
-}
-.select-time__item.active {
-    display: block;
-}
+
 .select-time__item.selected {
     color:var(--white);
     background-color: var(--pr);
