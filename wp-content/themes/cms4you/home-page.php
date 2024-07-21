@@ -305,18 +305,18 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 									data-date-<?php echo esc_attr($date); ?>="true" 
 									<?php foreach ($slots as $slot) : ?>
 										data-slot-<?php echo esc_attr($slot); ?>="true"
-										data-alltime="<?php echo esc_attr($date); ?>-<?php echo esc_attr($slot); ?>"
 									<?php endforeach; ?>
 								<?php endforeach; ?>
-							<?php endif; ?>
-						>
+								data-alltime="<?php foreach ($schedule as $date => $slots) : ?><?php foreach ($slots as $slot) : ?><?php echo esc_attr($date); ?>-<?php echo esc_attr($slot); ?>,<?php endforeach; ?><?php endforeach; ?>"
+							<?php endif; ?>>
 							<!--карточка врача-->
-							<div class="card-mobile card-mobile--big active">
+							<div class="card-mobile card-mobile--big">
 								<div class="card-mobile__img">
 									<img src="<?php  echo $photo_mini ?>"/>
 								</div>
 								<div class="card-mobile__content">
 									<p class="card-mobile__title"><?php echo $fio; ?></p>
+									<input type="hidden" name="doctor-name" value="<?php echo $fio; ?>"/>
 									<span class="card-mobile__position"><?php echo $position; ?></span>
 									<div class="data-dates">
 										<?php if ($schedule && is_array($schedule)) : ?>
@@ -339,7 +339,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 			<div class="row gx-md-5">
 				<div class="col-md-6 p-md-5">
                      <div class="calendar__wrapper">
-                        <div id="order">
+                        <div id="order" class="order">
 
 						</div>
 						<input type="hidden" id="orderInput"/>
