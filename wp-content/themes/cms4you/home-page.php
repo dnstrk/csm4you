@@ -430,12 +430,14 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 								<textarea placeholder="Опишите вашу проблему"></textarea>
 							</div>
 						</div>
+						<div class="row">
+							<div class="col-md-6"></div>
+							<div class="col-md-6"></div>
+						</div>
 					</div>
 				</div>
 			</div>
 		<form>
-	</form>
-
 </section>
 <section id="review" class="review">
 	<div class="container">
