@@ -422,6 +422,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 						<div class="row">
 							<div class="col-sm-6 p-3">
 								<input type="tel" name="phone" id="phone" placeholder="Номер телефона"/>
+
 							</div>
 							<div class="col-sm-6 p-3">
 								<input type="text" name="name" id="name" placeholder="Ваше имя"/>

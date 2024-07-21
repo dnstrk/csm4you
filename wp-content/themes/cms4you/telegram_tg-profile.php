@@ -12,7 +12,7 @@ get_header();
             <img src="<?php echo get_template_directory_uri()?>/assets/img/lk_avatar-big.png" alt="">
             <div class="profile-wrap__action_input">
                 <div class="profile-wrap__action_input_phone">
-                    <input type="text" id="tg-profile-phone">
+                    <input type="text" id="tg-profile-phone" placeholder="+71234567890">
                     <label>Номер телефона</label>
                 </div>
                 <div class="profile-wrap__action_input_name">
