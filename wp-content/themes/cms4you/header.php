@@ -5,6 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <?php wp_head(); ?>
+	<!-- <script>
+		// Функция для проверки устройства
+		function isMobileDevice() {
+		return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+		}
+
+		// Функция для предотвращения перехода
+		function preventDesktopAccess() {
+		if (/tg-auth|tg-main/.test(document.location.href) && !isMobileDevice()) {
+			document.body.innerHTML = '<h5>Access denied.</h5>';
+			window.stop();
+		}
+		}
+
+		// Выполнить проверку при загрузке страницы
+		document.addEventListener('DOMContentLoaded', preventDesktopAccess);
+	</script> -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
 </head>
 <?php 
 $num_wa = get_theme_mod('num_wa');
@@ -25,7 +44,7 @@ $specialist = is_page_template('telegram_tg-specialist.php');
 ?>
 
 <body class="<?php if(is_front_page()){echo "home-page";} ?>">
-<?php if(!is_page_template('telegram_home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_tg-records.php')&&!is_page_template('telegram_tg-specialists.php')&&!is_page_template('telegram_tg-specialist.php')&&!is_singular('doctor')) { ?>
+<?php if(!is_page_template('telegram_tg-home-page.php')&&!is_page_template('telegram_tg-profile.php')&&!is_page_template('telegram_tg-auth.php')&&!is_page_template('telegram_tg-confirm.php')&&!is_page_template('telegram_tg-records.php')&&!is_page_template('telegram_tg-specialists.php')&&!is_page_template('telegram_tg-specialist.php')&&!is_singular('doctor')&&!is_page_template('telegram_tg-about.php')&&!is_page_template('telegram_tg-success.php')&&!is_page_template('telegram_tg-price-list.php')) { ?>
 <header id="header" class="header">
 	<div class="header__top-block">
 		<div class="container">
@@ -80,4 +99,4 @@ $specialist = is_page_template('telegram_tg-specialist.php');
 	</div>
 </header>
 <?php } ?>
-<main>
+<main class="<?php if(is_page_template('telegram_tg-home-page.php')||is_page_template('telegram_tg-profile.php')||is_page_template('telegram_tg-auth.php')||is_page_template('telegram_tg-confirm.php')||is_page_template('telegram_tg-records.php')||is_page_template('telegram_tg-specialists.php')||is_page_template('telegram_tg-specialist.php')||is_singular('doctor')||is_page_template('telegram_tg-about.php')||is_page_template('telegram_tg-success.php')||is_page_template('telegram_tg-price-list.php')) {echo "main-tg";} ?>">
