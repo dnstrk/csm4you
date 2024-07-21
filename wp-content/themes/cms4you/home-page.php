@@ -421,7 +421,7 @@ $review_h3 = get_post_meta( get_the_ID(), 'review_h3', true );
 						<h3>Ваши данные:</h3>
 						<div class="row">
 							<div class="col-sm-6 p-3">
-								<input type="tel" placeholder="Номер телефона"/>
+								<input type="tel" placeholder="Номер телефона" id="online-form-phone"/>
 							</div>
 							<div class="col-sm-6 p-3">
 								<input type="text" placeholder="Ваше имя"/>

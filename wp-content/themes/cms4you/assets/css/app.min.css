@@ -2785,6 +2785,124 @@ padding: 0;
 
 }
 
+/* Страница Прайс-лист тг */
+
+.tg-page_price {
+    padding: 20px 0;
+}
+
+.tg-page_price-wrap {
+    min-height: 90vh;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.tg-page_price-wrap article {
+    margin-top: 0;
+}
+
+.tg-page_price-wrap h2 {
+    margin-bottom: 24px;
+}
+
+
+/* Страница О клинике тг */
+
+.tg-page_about {
+    padding: 20px 0;
+}
+
+.tg-page_about-wrap {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/*карусель тг*/
+@media (max-width: 390px) {
+.carousel-wrapper-tg {
+    position: relative;
+    width: 20rem;
+    height: 17rem;
+}
+li.carusel__item-tg {
+    width: 20rem;
+    height: 17rem;
+    display: inline-block;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.carusel__item-tg {
+    position: absolute;
+}
+.carusel__item-tg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.main-pos {
+    z-index: 5;
+}
+
+.left-pos {
+    opacity: 0.3;
+    margin-left: -7em !important;
+    z-index: 4;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+}
+.right-pos {
+    opacity: 0.3;
+    margin-left: 11rem !important;
+    z-index: 4;
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    transform: scale(0.75);
+}
+
+.back-pos {
+    margin-left: 2em !important;
+    opacity: 0.05;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    transform: scale(0.5);
+}
+
+ul.paginate-tg {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    padding: 0;
+    margin: 0;
+    margin-top: 15rem;
+    list-style: none;
+    z-index: 6;
+}
+.paginate__item-tg {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background-color: var(--white);
+    margin: 0 0.4rem;
+    transition: all 0.3s linear;
+}
+.paginate__item-tg.active {
+    background-color: var(--b5);
+    width: 0.8rem;
+    height: 0.8rem;
+}
+}
+
+
+
+
 .btn-blue-def {
     width: 100%;
     text-align: center;
