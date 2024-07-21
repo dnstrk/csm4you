@@ -99,7 +99,10 @@
 .air-datepicker-cell.-disabled-.-current-.-focus- {
     color: var(--adp-color-disabled)
 }
-
+.air-datepicker-cell.active, .air-datepicker-cell.-current-.active{
+    border:1px solid var(--pr);
+    background-color:rgba(9, 143, 238, 0.05);
+}
 .air-datepicker-cell.-in-range- {
     background: var(--adp-cell-background-color-in-range);
     border-radius: 0
@@ -239,7 +242,8 @@
 }
 
 .air-datepicker-nav--action.-disabled- {
-    visibility: hidden
+   pointer-events:none;
+   opacity: 0.5;
 }
 
 .air-datepicker-nav--action svg {
@@ -584,7 +588,26 @@
     --adp-mobile-width: 320px;
     --adp-mobile-day-cell-height: 38px;
     --adp-mobile-month-cell-height: 48px;
-    --adp-mobile-year-cell-height: 64px
+    --adp-mobile-year-cell-height: 64px;
+    --white: #ffffff;
+    --b9: #000000;
+    --b8: #020b23;
+    --b7: #182543;
+    --b6: #535f7c;
+    --b5: #9097a8;
+    --b4: #c8ccd6;
+    --b3: #e9ebef;
+    --b2: #f1f3f7;
+    --pr: #098dee;
+    --pr-hover: #058bc4;
+    --pr-active: #005f86;
+    --sec: #7adbff;
+    --sec-rgb: 122, 219, 255;
+    --sec-hover: #4dbae1;
+    --sec-active: #35829e;
+    --yellow: #ffe175;
+    --red: #ff7575;
+    --purple: #757aff;
 }
 
 .air-datepicker-overlay {
@@ -645,12 +668,10 @@
     opacity: 1;
     transform: none;
 }
-@media(min-width:650px){
-    .air-datepicker.-inline- {
-        min-width:576px;
-        align-items: center;
-    }
+#order .air-datepicker{
+    max-width:100%
 }
+
 
 .air-datepicker.-inline- .air-datepicker--pointer {
     display: none
@@ -847,4 +868,85 @@
     width: 100%;
     height: 100%;
     transition: opacity var(--adp-overlay-transition-duration) var(--adp-overlay-transition-ease), height 0s, width 0s
+}
+@media(min-width:1160px){
+    #order .air-datepicker{
+        min-width:576px;
+        align-items: center;
+    }
+}
+@media(max-width:1160px){
+.air-datepicker-nav{
+        flex-direction: column;
+        align-items:flex-start;
+    }
+    .air-datepicker-body--day-name{
+        width:4.3rem;
+    }
+    .air-datepicker-body--cells.-days-{
+        grid-auto-rows: 5.5rem;
+    }
+    .air-datepicker-cell{
+        max-width:4.3rem;
+        width: 4rem;
+        height: 4rem;
+    }
+    .air-datepicker-nav .d-flex{
+        width:100%;
+    }
+    .air-datepicker-nav--action{
+        width:4rem;
+        height:4rem;
+    }
+
+}
+@media(max-width:340px){
+    .air-datepicker--content{
+        margin-left:-10px;
+    }
+}
+.doctor-schedule-calendar {
+    display:flex;
+  
+}
+.doctor-schedule-calendar .air-datepicker {
+    min-width: 500px;
+    align-items: center; 
+    font-size: 1.2rem;
+}
+.doctor-schedule-calendar .air-datepicker-body--cells.-days-{
+    grid-auto-rows: 4rem;
+}
+.doctor-schedule-calendar  .air-datepicker-cell{
+    max-width: 3.6rem;
+    width: 3.6rem;
+    height: 3.6rem;
+    margin:0.5rem;
+}
+.doctor-schedule-calendar  .air-datepicker-body--day-name{
+    width: 3.6rem;
+    font-size: 1.2rem;
+}
+.doctor-schedule-calendar .air-datepicker-nav--title{
+    font-size:1.2rem;
+}
+.doctor-schedule-calendar h3 {
+    display:none;
+}
+.doctor-schedule-calendar .d-flex.align-items-center.justify-content-between{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    width: 100%;
+}
+.doctor-schedule-calendar .slots {
+    display:flex;
+    flex-wrap:wrap;
+}
+.doctor-schedule-calendar .slots div {
+    background-color:#f1f3f7;  
+    border:1px solid #e9ebef;
+    padding:0.8rem;
+    margin-right:1.2rem;
+    margin-bottom:1.2rem;
 }

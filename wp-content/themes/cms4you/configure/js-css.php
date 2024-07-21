@@ -17,8 +17,8 @@ add_action('wp_enqueue_scripts', '_add_javascript');
 //подключаем календарь для админки
 function enqueue_custom_scripts() {
   // Подключаем стили и скрипты Air Datepicker
-  wp_enqueue_style('air-datepicker-css', 'https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/3.0.0/css/datepicker.min.css');
-  wp_enqueue_script('air-datepicker-js', '/assets/js/air-datepicker.js', array('jquery'), null, true);
+  wp_enqueue_style('air-datepicker', get_template_directory_uri().'/assets/css/air-datepicker.css', null, null, 'all' ); 
+  wp_enqueue_script('air-datepicker-js', get_template_directory_uri(). '/assets/js/air-datepicker.js', array('jquery'), null, true);
 
   // Подключаем наш кастомный скрипт
   wp_enqueue_script('custom-cmb2-js', get_template_directory_uri() . '/assets/js/custom-cmb2.js', array('jquery', 'air-datepicker-js'), null, true);
