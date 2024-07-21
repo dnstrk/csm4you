@@ -207,7 +207,7 @@ $specialist = is_page_template('telegram_specialist.php');
 						<h3>Ваши данные:</h3>
 						<div class="row">
 							<div class="col-sm-6 p-3">
-								<input type="tel" placeholder="Номер телефона"/>
+								<input type="tel" placeholder="Номер телефона" id="online-form-phone-modal"/>
 							</div>
 							<div class="col-sm-6 p-3">
 								<input type="text" placeholder="Ваше имя"/>
